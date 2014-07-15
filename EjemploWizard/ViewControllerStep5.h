@@ -10,4 +10,7 @@
 
 @interface ViewControllerStep5 : UIViewController
 
+- (IBAction)pushButtonAceptar:(id)sender;
+- (IBAction)pushButtonCancelar:(id)sender;
+
 @end

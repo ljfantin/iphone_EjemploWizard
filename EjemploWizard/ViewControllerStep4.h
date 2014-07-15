@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewControllerStep4 : UIViewController
+@interface ViewControllerStep4 : UIViewController<UITextViewDelegate>
+- (IBAction)pushButtonSiguiente:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
+@property (weak, nonatomic) IBOutlet UITextView *textViewDescripcion;
 
 @end

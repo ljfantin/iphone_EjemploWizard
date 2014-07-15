@@ -7,6 +7,8 @@
 //
 
 #import "ViewControllerStep3.h"
+#import "ViewControllerStep4.h"
+
 
 @interface ViewControllerStep3 ()
 
@@ -35,4 +37,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)pushButtonSiguiente:(id)sender {
+    ViewControllerStep4 *nextView = [[ViewControllerStep4 alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:nextView animated:YES];
+}
+
+- (IBAction)handleChangeTittle:(id)sender {
+    UITextField* textField = (UITextField*)sender;
+    //saco los espacios en blanco y los saltos de linea
+    NSString * titulo = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    //habilito el boton si tengo al menos un caracter
+    self.buttonSiguiente.enabled=(titulo.length > 0);
+}
 @end

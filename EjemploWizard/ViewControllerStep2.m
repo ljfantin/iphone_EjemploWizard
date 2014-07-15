@@ -7,6 +7,8 @@
 //
 
 #import "ViewControllerStep2.h"
+#import "ViewControllerStep3.h"
+
 
 @interface ViewControllerStep2 ()
 
@@ -26,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.textFieldTitulo.delegate=self;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -35,4 +38,33 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)pushButtonSiguiente:(id)sender {
+    ViewControllerStep3 *nextView = [[ViewControllerStep3 alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:nextView animated:YES];
+}
+
+- (IBAction)handleChangeTittle:(id)sender {
+    
+    UITextField* textField = (UITextField*)sender;
+    //saco los espacios en blanco y los saltos de linea
+    NSString * titulo = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    //habilito el boton si tengo al menos un caracter
+    self.buttonSiguiente.enabled=(titulo.length > 0);
+}
+
+#pragma mark Implementacion de UITextFieldDelegate
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    //NSLog(textField.text);
+    //self.buttonSiguiente.enabled=(textField.text.length>0);
+}
+
+/*- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField;        // return NO to disallow editing.
+- (void)textFieldDidBeginEditing:(UITextField *)textField;           // became first responder
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField;          // return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to end
+- (void)textFieldDidEndEditing:(UITextField *)textField;             // may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;   // return NO to not change text
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField;               // called when clear button pressed. return NO to ignore (no notifications)
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;              // called when 'return' key pressed. return NO to ignore.*/
 @end

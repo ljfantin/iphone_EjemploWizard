@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewControllerStep1 : UIViewController
+- (IBAction)pushButtonIngresar:(id)sender;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerStep1.h"
+#import "ViewControllerStep2.h"
 
 @interface ViewControllerStep1 ()
 
@@ -35,4 +36,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)pushButtonIngresar:(id)sender {
+    //[self.navigationController]
+    ViewControllerStep2 *nextView = [[ViewControllerStep2 alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:nextView animated:YES];
+}
 @end

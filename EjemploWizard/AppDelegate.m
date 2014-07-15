@@ -7,12 +7,25 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewControllerStep1.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    //Creo el viewController del paso 1 del wizard
+    ViewControllerStep1 * step1 = [[ViewControllerStep1 alloc] initWithNibName:nil
+                                                                bundle:nil];
+    
+    //Creo un navigationcontrolles con el paso 1
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:step1];
+    
+    //le seteo el navigation controller
+    [self.window setRootViewController:navigationController];
+
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
