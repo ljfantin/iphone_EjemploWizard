@@ -1,20 +1,21 @@
 //
-//  ViewControllerStep4.m
+//  ViewControllerStep3.m
 //  EjemploWizard
 //
 //  Created by Leandro Fantin on 15/07/14.
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
+#import "ViewControllerStep3.h"
 #import "ViewControllerStep4.h"
-#import "ViewControllerStep5.h"
 #import "UIButton+Copado.h"
 
-@interface ViewControllerStep4 ()
+
+@interface ViewControllerStep3 ()
 
 @end
 
-@implementation ViewControllerStep4
+@implementation ViewControllerStep3
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,7 +30,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.textViewDescripcion.delegate = self;
     [self.buttonSiguiente makeCopado];
 }
 
@@ -40,17 +40,17 @@
 }
 
 - (IBAction)pushButtonSiguiente:(id)sender {
-    ViewControllerStep5 *nextView = [[ViewControllerStep5 alloc] initWithNibName:nil bundle:nil];
+    ViewControllerStep4 *nextView = [[ViewControllerStep4 alloc] initWithNibName:nil bundle:nil];
+    nextView.titulo = self.titulo;
+    ///nextView.kilometraje = self.text; del textfield
     [self.navigationController pushViewController:nextView animated:YES];
 }
 
-#pragma mark implementacion de protocolo
-- (void)textViewDidChange:(UITextView *)textView    {
-
+- (IBAction)handleChangeTextFieldDescripcion:(id)sender {
+    UITextField* textField = (UITextField*)sender;
     //saco los espacios en blanco y los saltos de linea
-    NSString * titulo = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString * titulo = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     //habilito el boton si tengo al menos un caracter
     self.buttonSiguiente.enabled=(titulo.length > 0);
 }
-
 @end

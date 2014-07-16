@@ -8,6 +8,7 @@
 
 #import "ViewControllerStep2.h"
 #import "ViewControllerStep3.h"
+#import "UIButton+Copado.h"
 
 
 @interface ViewControllerStep2 ()
@@ -28,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.textFieldTitulo.delegate=self;
+    [self.buttonSiguiente makeCopado];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -43,7 +44,7 @@
     [self.navigationController pushViewController:nextView animated:YES];
 }
 
-- (IBAction)handleChangeTittle:(id)sender {
+- (IBAction)handleChangeTitulo:(id)sender {
     
     UITextField* textField = (UITextField*)sender;
     //saco los espacios en blanco y los saltos de linea
@@ -52,11 +53,7 @@
     self.buttonSiguiente.enabled=(titulo.length > 0);
 }
 
-#pragma mark Implementacion de UITextFieldDelegate
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    //NSLog(textField.text);
-    //self.buttonSiguiente.enabled=(textField.text.length>0);
-}
+//#pragma mark Implementacion de UITextFieldDelegate
 
 /*- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField;        // return NO to disallow editing.
 - (void)textFieldDidBeginEditing:(UITextField *)textField;           // became first responder

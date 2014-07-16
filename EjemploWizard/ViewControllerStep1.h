@@ -10,5 +10,6 @@
 
 @interface ViewControllerStep1 : UIViewController
 - (IBAction)pushButtonIngresar:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonIngresar;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "ViewControllerStep1.h"
 #import "ViewControllerStep2.h"
+#import "UIButton+Copado.h"
 
 @interface ViewControllerStep1 ()
 
@@ -28,6 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.buttonIngresar makeCopado];
 }
 
 - (void)didReceiveMemoryWarning

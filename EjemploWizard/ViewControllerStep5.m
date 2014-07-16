@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerStep5.h"
+#import "UIButton+Copado.h"
 
 @interface ViewControllerStep5 ()
 
@@ -26,7 +27,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.labelTitulo.text=self.titulo;
+    self.labelDescripcion.text=self.descripcion;
+    self.labelKilometraje.text=self.kilometraje;
+ 
+    [self.buttonAceptar makeCopado];
+    [self.buttonCancelar makeCopado];
+
 }
 
 - (void)didReceiveMemoryWarning

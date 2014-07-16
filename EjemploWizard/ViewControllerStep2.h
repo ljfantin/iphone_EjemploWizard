@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewControllerStep2 : UIViewController<UITextFieldDelegate>
-- (IBAction)handleChangeTittle:(id)sender;
+@interface ViewControllerStep2 : UIViewController
+- (IBAction)handleChangeTitulo:(id)sender;
+//- (IBAction)handleChangeTittle:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldTitulo;
 - (IBAction)pushButtonSiguiente:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;

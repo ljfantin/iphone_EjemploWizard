@@ -1,5 +1,5 @@
 //
-//  ViewControllerStep4.h
+//  ViewControllerStep3.h
 //  EjemploWizard
 //
 //  Created by Leandro Fantin on 15/07/14.
@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewControllerStep4 : UIViewController<UITextViewDelegate>
-@property (retain, nonatomic) NSString * titulo;
-@property (retain, nonatomic) NSString * kilometraje;
+@interface ViewControllerStep3 : UIViewController
+
+@property (nonatomic,retain) NSString * titulo;
 
 - (IBAction)pushButtonSiguiente:(id)sender;
+- (IBAction)handleChangeTextFieldDescripcion:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
-@property (weak, nonatomic) IBOutlet UITextView *textViewDescripcion;
 
 @end
