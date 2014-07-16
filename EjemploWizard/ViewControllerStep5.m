@@ -7,7 +7,9 @@
 //
 
 #import "ViewControllerStep5.h"
+#import "ViewControllerStep2.h"
 #import "UIButton+Copado.h"
+#import "UINavigationController+Wizard.h"
 
 @interface ViewControllerStep5 ()
 
@@ -27,13 +29,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.labelTitulo.text=self.titulo;
-    self.labelDescripcion.text=self.descripcion;
-    self.labelKilometraje.text=self.kilometraje;
- 
     [self.buttonAceptar makeCopado];
     [self.buttonCancelar makeCopado];
 
+    self.labelTitulo.text=self.navigationController.titulo;
+    self.labelDescripcion.text=self.navigationController.descripcion;
+    self.labelKilometraje.text=self.navigationController.kilometraje;
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,9 +44,14 @@
 }
 
 - (IBAction)pushButtonAceptar:(id)sender {
+    [self.navigationController reset];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
-
 - (IBAction)pushButtonCancelar:(id)sender {
-    
+    for (UIViewController * viewController in self.navigationController.viewControllers) {
+        if ([viewController isKindOfClass:[ViewControllerStep2 class]]) {
+            [self.navigationController popToViewController:viewController animated:YES];
+        }
+    }
 }
 @end

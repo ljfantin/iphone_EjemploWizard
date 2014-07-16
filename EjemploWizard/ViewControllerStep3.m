@@ -9,7 +9,7 @@
 #import "ViewControllerStep3.h"
 #import "ViewControllerStep4.h"
 #import "UIButton+Copado.h"
-
+#import "UINavigationController+Wizard.h"
 
 @interface ViewControllerStep3 ()
 
@@ -31,6 +31,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.buttonSiguiente makeCopado];
+    self.textfieldKilometraje.text = self.navigationController.kilometraje;
+    [self handleChangeKilometraje:self.textfieldKilometraje];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,12 +43,11 @@
 
 - (IBAction)pushButtonSiguiente:(id)sender {
     ViewControllerStep4 *nextView = [[ViewControllerStep4 alloc] initWithNibName:nil bundle:nil];
-    nextView.titulo = self.titulo;
-    ///nextView.kilometraje = self.text; del textfield
+    self.navigationController.kilometraje = self.textfieldKilometraje.text;
     [self.navigationController pushViewController:nextView animated:YES];
 }
 
-- (IBAction)handleChangeTextFieldDescripcion:(id)sender {
+- (IBAction)handleChangeKilometraje:(id)sender {
     UITextField* textField = (UITextField*)sender;
     //saco los espacios en blanco y los saltos de linea
     NSString * titulo = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

@@ -10,10 +10,10 @@
 
 @interface ViewControllerStep3 : UIViewController
 
-@property (nonatomic,retain) NSString * titulo;
+@property (weak, nonatomic) IBOutlet UITextField *textfieldKilometraje;
+@property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
 
 - (IBAction)pushButtonSiguiente:(id)sender;
-- (IBAction)handleChangeTextFieldDescripcion:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
+- (IBAction)handleChangeKilometraje:(id)sender;
 
 @end

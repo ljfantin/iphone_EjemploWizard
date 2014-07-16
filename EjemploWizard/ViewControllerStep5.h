@@ -16,11 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelDescripcion;
 @property (weak, nonatomic) IBOutlet UILabel *labelKilometraje;
 
-@property (retain,nonatomic) NSString * titulo;
-@property (retain,nonatomic) NSString * descripcion;
-@property (retain,nonatomic) NSString * kilometraje;
-
-- (IBAction)pushButtonAceptar:(id)sender;
 - (IBAction)pushButtonCancelar:(id)sender;
+- (IBAction)pushButtonAceptar:(id)sender;
 
 @end

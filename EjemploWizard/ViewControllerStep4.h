@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewControllerStep4 : UIViewController<UITextViewDelegate>
-@property (retain, nonatomic) NSString * titulo;
-@property (retain, nonatomic) NSString * kilometraje;
 
 - (IBAction)pushButtonSiguiente:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
-@property (weak, nonatomic) IBOutlet UITextView *textViewDescripcion;
+@property (weak, nonatomic) IBOutlet UITextView * textViewDescripcion;
+
 
 @end

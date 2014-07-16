@@ -43,6 +43,9 @@
                     <state key="normal" title="Cancelar">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="pushButtonCancelar:" destination="-1" eventType="touchUpInside" id="F9z-oy-ukQ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEz-Df-9DD">
                     <rect key="frame" x="173" y="401" width="82" height="30"/>
@@ -50,6 +53,9 @@
                     <state key="normal" title="Aceptar">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="pushButtonAceptar:" destination="-1" eventType="touchUpInside" id="utg-YH-iKW"/>
+                    </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LabelTitulo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pM-UO-gPz">
                     <rect key="frame" x="36" y="190" width="96" height="21"/>

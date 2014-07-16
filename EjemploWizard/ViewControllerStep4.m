@@ -9,6 +9,7 @@
 #import "ViewControllerStep4.h"
 #import "ViewControllerStep5.h"
 #import "UIButton+Copado.h"
+#import "UINavigationController+Wizard.h"
 
 @interface ViewControllerStep4 ()
 
@@ -31,6 +32,8 @@
     // Do any additional setup after loading the view from its nib.
     self.textViewDescripcion.delegate = self;
     [self.buttonSiguiente makeCopado];
+    self.textViewDescripcion.text = self.navigationController.descripcion;
+    [self textViewDidChange:self.textViewDescripcion];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,6 +44,7 @@
 
 - (IBAction)pushButtonSiguiente:(id)sender {
     ViewControllerStep5 *nextView = [[ViewControllerStep5 alloc] initWithNibName:nil bundle:nil];
+    self.navigationController.descripcion = self.textViewDescripcion.text;
     [self.navigationController pushViewController:nextView animated:YES];
 }
 

@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerStep3">
             <connections>
                 <outlet property="buttonSiguiente" destination="KMc-I8-TXD" id="PeE-go-h90"/>
+                <outlet property="textfieldKilometraje" destination="BMt-5n-GM2" id="9kC-76-5e4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,7 +28,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <action selector="handleChangeTextFieldDescripcion:" destination="-1" eventType="editingChanged" id="JdK-ZD-6l1"/>
+                        <action selector="handleChangeKilometraje:" destination="-1" eventType="editingChanged" id="KjC-RG-XcC"/>
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMc-I8-TXD">
