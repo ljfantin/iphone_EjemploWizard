@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F08ECD11976B62500CBAD23 /* UINavigationController+Wizard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F08ECD01976B62500CBAD23 /* UINavigationController+Wizard.m */; };
+		4F08ECDA1976FFCD00CBAD23 /* CarInformationDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F08ECD91976FFCD00CBAD23 /* CarInformationDTO.m */; };
 		4F9D9B1E1975995A0045B680 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9D9B1D1975995A0045B680 /* Foundation.framework */; };
 		4F9D9B201975995A0045B680 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9D9B1F1975995A0045B680 /* CoreGraphics.framework */; };
 		4F9D9B221975995A0045B680 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9D9B211975995A0045B680 /* UIKit.framework */; };
@@ -45,8 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4F08ECCF1976B62500CBAD23 /* UINavigationController+Wizard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Wizard.h"; sourceTree = "<group>"; };
-		4F08ECD01976B62500CBAD23 /* UINavigationController+Wizard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Wizard.m"; sourceTree = "<group>"; };
+		4F08ECD81976FFCD00CBAD23 /* CarInformationDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInformationDTO.h; sourceTree = "<group>"; };
+		4F08ECD91976FFCD00CBAD23 /* CarInformationDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInformationDTO.m; sourceTree = "<group>"; };
 		4F9D9B1A1975995A0045B680 /* EjemploWizard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EjemploWizard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9D9B1D1975995A0045B680 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4F9D9B1F1975995A0045B680 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -141,6 +141,8 @@
 		4F9D9B231975995A0045B680 /* EjemploWizard */ = {
 			isa = PBXGroup;
 			children = (
+				4F08ECD81976FFCD00CBAD23 /* CarInformationDTO.h */,
+				4F08ECD91976FFCD00CBAD23 /* CarInformationDTO.m */,
 				8B8D17D11975EFA200D17E7B /* ViewControllerStep3.h */,
 				8B8D17D21975EFA200D17E7B /* ViewControllerStep3.m */,
 				8B8D17D31975EFA200D17E7B /* ViewControllerStep3.xib */,
@@ -164,8 +166,6 @@
 				8B8D17D71975FA8E00D17E7B /* UIButton+Copado.m */,
 				8B8D17DC197604D700D17E7B /* UiTextViewCopado.h */,
 				8B8D17DD197604D700D17E7B /* UiTextViewCopado.m */,
-				4F08ECCF1976B62500CBAD23 /* UINavigationController+Wizard.h */,
-				4F08ECD01976B62500CBAD23 /* UINavigationController+Wizard.m */,
 			);
 			path = EjemploWizard;
 			sourceTree = "<group>";
@@ -300,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F9D9B2E1975995A0045B680 /* AppDelegate.m in Sources */,
+				4F08ECDA1976FFCD00CBAD23 /* CarInformationDTO.m in Sources */,
 				8B8D17CD1975EF4900D17E7B /* ViewControllerStep4.m in Sources */,
 				8B8D17D41975EFA200D17E7B /* ViewControllerStep3.m in Sources */,
 				8B8D17CB1975EF4900D17E7B /* ViewControllerStep2.m in Sources */,
@@ -307,7 +308,6 @@
 				8B8D17DE197604D700D17E7B /* UiTextViewCopado.m in Sources */,
 				8B8D17CF1975EF4900D17E7B /* ViewControllerStep5.m in Sources */,
 				4F9D9B2A1975995A0045B680 /* main.m in Sources */,
-				4F08ECD11976B62500CBAD23 /* UINavigationController+Wizard.m in Sources */,
 				8B8D17D81975FA8E00D17E7B /* UIButton+Copado.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

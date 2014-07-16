@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CarInformationDTO.h"
 
 @interface ViewControllerStep1 : UIViewController
-- (IBAction)pushButtonIngresar:(id)sender;
+
+@property (retain, nonatomic) CarInformationDTO * carInformation;
 @property (weak, nonatomic) IBOutlet UIButton *buttonIngresar;
+
+- (IBAction)pushButtonIngresar:(id)sender;
 
 @end

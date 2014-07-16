@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CarInformationDTO.h"
 
 @interface ViewControllerStep4 : UIViewController<UITextViewDelegate>
 
-- (IBAction)pushButtonSiguiente:(id)sender;
+@property (retain, nonatomic) CarInformationDTO * carInformation;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
 @property (weak, nonatomic) IBOutlet UITextView * textViewDescripcion;
 
+- (IBAction)pushButtonSiguiente:(id)sender;
 
 @end

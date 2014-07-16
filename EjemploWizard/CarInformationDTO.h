@@ -1,19 +1,19 @@
 //
-//  UINavigationController+Wizard.h
+//  CarInformation.h
 //  EjemploWizard
 //
 //  Created by Leandro Fantin on 16/07/14.
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface UINavigationController (Wizard)
+@interface CarInformationDTO : NSObject
 
 @property (nonatomic,retain) NSString * titulo;
 @property (nonatomic,retain) NSString * descripcion;
 @property (nonatomic,retain) NSString * kilometraje;
 
-- (void) reset;
+-(void) reset;
 
 @end

@@ -9,7 +9,6 @@
 #import "ViewControllerStep4.h"
 #import "ViewControllerStep5.h"
 #import "UIButton+Copado.h"
-#import "UINavigationController+Wizard.h"
 
 @interface ViewControllerStep4 ()
 
@@ -21,7 +20,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.title=@"Paso 3";
     }
     return self;
 }
@@ -32,7 +31,11 @@
     // Do any additional setup after loading the view from its nib.
     self.textViewDescripcion.delegate = self;
     [self.buttonSiguiente makeCopado];
-    self.textViewDescripcion.text = self.navigationController.descripcion;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.textViewDescripcion.text = self.carInformation.descripcion;
     [self textViewDidChange:self.textViewDescripcion];
 }
 
@@ -44,7 +47,8 @@
 
 - (IBAction)pushButtonSiguiente:(id)sender {
     ViewControllerStep5 *nextView = [[ViewControllerStep5 alloc] initWithNibName:nil bundle:nil];
-    self.navigationController.descripcion = self.textViewDescripcion.text;
+    self.carInformation.descripcion = self.textViewDescripcion.text;
+    nextView.carInformation = self.carInformation;
     [self.navigationController pushViewController:nextView animated:YES];
 }
 

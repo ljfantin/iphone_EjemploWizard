@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CarInformationDTO.h"
 
 @interface ViewControllerStep5 : UIViewController
 
+@property (retain, nonatomic) CarInformationDTO * carInformation;
 @property (weak, nonatomic) IBOutlet UIButton *buttonCancelar;
 @property (weak, nonatomic) IBOutlet UIButton *buttonAceptar;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitulo;

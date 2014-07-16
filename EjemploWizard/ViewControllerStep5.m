@@ -9,7 +9,6 @@
 #import "ViewControllerStep5.h"
 #import "ViewControllerStep2.h"
 #import "UIButton+Copado.h"
-#import "UINavigationController+Wizard.h"
 
 @interface ViewControllerStep5 ()
 
@@ -22,6 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title=@"Fin Publicacion";
     }
     return self;
 }
@@ -31,10 +31,13 @@
     [super viewDidLoad];
     [self.buttonAceptar makeCopado];
     [self.buttonCancelar makeCopado];
+}
 
-    self.labelTitulo.text=self.navigationController.titulo;
-    self.labelDescripcion.text=self.navigationController.descripcion;
-    self.labelKilometraje.text=self.navigationController.kilometraje;
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.labelTitulo.text=self.carInformation.titulo;
+    self.labelDescripcion.text=self.carInformation.descripcion;
+    self.labelKilometraje.text=self.carInformation.kilometraje;
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,7 +47,7 @@
 }
 
 - (IBAction)pushButtonAceptar:(id)sender {
-    [self.navigationController reset];
+    [self.carInformation reset];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 - (IBAction)pushButtonCancelar:(id)sender {

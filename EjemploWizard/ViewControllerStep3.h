@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CarInformationDTO.h"
 
-@interface ViewControllerStep3 : UIViewController
+@interface ViewControllerStep3 : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textfieldKilometraje;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
+@property (retain, nonatomic) CarInformationDTO * carInformation;
 
 - (IBAction)pushButtonSiguiente:(id)sender;
 - (IBAction)handleChangeKilometraje:(id)sender;

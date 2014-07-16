@@ -9,8 +9,6 @@
 #import "ViewControllerStep2.h"
 #import "ViewControllerStep3.h"
 #import "UIButton+Copado.h"
-#import "UINavigationController+Wizard.h"
-
 
 @interface ViewControllerStep2 ()
 
@@ -22,7 +20,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.title=@"Paso 1";
         // Custom initialization
+        self.carInformation = [[CarInformationDTO alloc] init];
     }
     return self;
 }
@@ -32,9 +32,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.buttonSiguiente makeCopado];
-    self.textFieldTitulo.text = self.navigationController.titulo;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.textFieldTitulo.text = self.carInformation.titulo;
     [self handleChangeTitulo:self.textFieldTitulo];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -44,7 +49,8 @@
 
 - (IBAction)pushButtonSiguiente:(id)sender {
     ViewControllerStep3 *nextView = [[ViewControllerStep3 alloc] initWithNibName:nil bundle:nil];
-    self.navigationController.titulo = self.textFieldTitulo.text;
+    self.carInformation.titulo = self.textFieldTitulo.text;
+    nextView.carInformation = self.carInformation;
     [self.navigationController pushViewController:nextView animated:YES];
 }
 

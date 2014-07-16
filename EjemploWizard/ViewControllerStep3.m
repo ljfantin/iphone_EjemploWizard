@@ -9,7 +9,8 @@
 #import "ViewControllerStep3.h"
 #import "ViewControllerStep4.h"
 #import "UIButton+Copado.h"
-#import "UINavigationController+Wizard.h"
+
+///http://www.punteroavoid.com/blog/2012/03/01/como-evitar-que-el-teclado-de-ios-oculte-campos-de-texto/
 
 @interface ViewControllerStep3 ()
 
@@ -21,7 +22,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.title=@"Paso 2";
     }
     return self;
 }
@@ -31,7 +32,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.buttonSiguiente makeCopado];
-    self.textfieldKilometraje.text = self.navigationController.kilometraje;
+    //VER SI VA ACA O EN EL WILL APPEAR
+    self.textfieldKilometraje.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    //////////////hay que ponerlo en el metodo appears
+    self.textfieldKilometraje.text = self.carInformation.kilometraje;
     [self handleChangeKilometraje:self.textfieldKilometraje];
 }
 
@@ -43,7 +51,8 @@
 
 - (IBAction)pushButtonSiguiente:(id)sender {
     ViewControllerStep4 *nextView = [[ViewControllerStep4 alloc] initWithNibName:nil bundle:nil];
-    self.navigationController.kilometraje = self.textfieldKilometraje.text;
+    self.carInformation.kilometraje = self.textfieldKilometraje.text;
+    nextView.carInformation = self.carInformation;
     [self.navigationController pushViewController:nextView animated:YES];
 }
 
@@ -54,4 +63,18 @@
     //habilito el boton si tengo al menos un caracter
     self.buttonSiguiente.enabled=(titulo.length > 0);
 }
+
+#pragma mark Implementacion
+- (BOOL) textField: (UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString: (NSString *)string {
+    
+    NSCharacterSet *nonNumberSet = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789."] invertedSet];
+    
+    if (range.length == 1){
+        return YES;
+    }else{
+        return ([string stringByTrimmingCharactersInSet:nonNumberSet].length > 0);
+    }
+    
+}
+
 @end
