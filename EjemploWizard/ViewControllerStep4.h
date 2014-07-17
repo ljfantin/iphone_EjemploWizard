@@ -11,6 +11,8 @@
 
 @interface ViewControllerStep4 : UIViewController<UITextViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITextField *textFieldBorrar;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (retain, nonatomic) CarInformationDTO * carInformation;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
 @property (weak, nonatomic) IBOutlet UITextView * textViewDescripcion;

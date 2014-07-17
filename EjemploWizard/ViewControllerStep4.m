@@ -31,6 +31,42 @@
     // Do any additional setup after loading the view from its nib.
     self.textViewDescripcion.delegate = self;
     [self.buttonSiguiente makeCopado];
+    
+    //Me atacho a los eventos del teclado
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(apareceElTeclado:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(desapareceElTeclado:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    
+    //Creo identificador de gestos.
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewPulsado)];
+    [tapRecognizer setCancelsTouchesInView:NO];
+    
+    //agrego al scroll view el identificador de gestos
+    [[self scrollView] addGestureRecognizer:tapRecognizer];
+    
+    [[self scrollView] setContentSize:[[self view] frame].size];
+    
+    //[selfscrollView.setScrollEnabled:YES];
+    //[scroller setContentSize:CGSizeMake(320,910)];
+    //[self.view addSubView:scroller];
+
+}
+
+- (void) viewDidUnload
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillShowNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardDidHideNotification
+                                                  object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -50,6 +86,36 @@
     self.carInformation.descripcion = self.textViewDescripcion.text;
     nextView.carInformation = self.carInformation;
     [self.navigationController pushViewController:nextView animated:YES];
+}
+
+- (void) apareceElTeclado:(NSNotification *)laNotificacion
+{
+    //Obtenemos el tamaño del teclado
+    NSDictionary *infoNotificacion = [laNotificacion userInfo];
+    CGSize tamanioTeclado = [[infoNotificacion objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    //Modificamos el tamaño de la 'ventana' de nuestro scroll view
+    UIEdgeInsets edgeInsets = UIEdgeInsetsMake(0, 0, tamanioTeclado.height, 0);
+    [[self scrollView] setContentInset:edgeInsets];
+    [[self scrollView] setScrollIndicatorInsets:edgeInsets];
+    
+    [[self scrollView] scrollRectToVisible:[self textFieldBorrar].frame animated:YES];
+}
+
+
+- (void) desapareceElTeclado:(NSNotification *)laNotificacion
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    UIEdgeInsets edgeInsets = UIEdgeInsetsZero;
+    [[self scrollView] setContentInset:edgeInsets];
+    [[self scrollView] setScrollIndicatorInsets:edgeInsets];
+    [UIView commitAnimations];
+}
+
+- (void) scrollViewPulsado
+{
+    [[self view] endEditing:YES];
 }
 
 #pragma mark implementacion de protocolo
