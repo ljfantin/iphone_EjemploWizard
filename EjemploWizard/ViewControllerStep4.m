@@ -11,8 +11,7 @@
 #import "UIButton+Copado.h"
 
 @interface ViewControllerStep4 ()
-    @property BOOL keyboardVisible;
-    @property UITextField * activeField;
+@property UITextField * activeField;
 @end
 
 @implementation ViewControllerStep4
@@ -29,13 +28,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    // [[self scroll] setContentSize:[[self view] frame].size];
+    //Le seteo el content size
     [[self scroll] setContentSize:[[self view] frame].size];
-
     
-    //self.textFieldBorrar.delegate = self;
-    self.textViewDescripcion.delegate = self;
+    //hago el boton copado
     [self.buttonSiguiente makeCopado];
     
     //Me atacho a los eventos del teclado
@@ -63,7 +59,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"Houston! Me estoy quedando sin memoria");
 }
 
 - (IBAction)pushButtonSiguiente:(id)sender {
@@ -77,7 +73,7 @@
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(apareceElTeclado:)
-                                                 name:UIKeyboardDidShowNotification object:nil];
+                                                 name:UIKeyboardWillShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(desapareceElTeclado:)
@@ -100,6 +96,7 @@
 #pragma mark - Notificaciones del teclado
 - (void) apareceElTeclado:(NSNotification *)laNotificacion
 {
+    NSLog(@"Aparece el teclado");
     NSDictionary* info = [laNotificacion userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
@@ -111,45 +108,21 @@
     // Your app might not need or want this behavior.
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbSize.height;
-    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
-        [self.scroll scrollRectToVisible:self.activeField.frame animated:YES];
+    if (!CGRectContainsPoint(aRect, self.buttonSiguiente.frame.origin) ) {
+        [self.scroll scrollRectToVisible:self.buttonSiguiente.frame animated:YES];
     }
-    
-    //Obtenemos el tamaño del teclado
-    /*NSDictionary *infoNotificacion = [laNotificacion userInfo];
-    CGSize tamanioTeclado = [[infoNotificacion objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    
-    //Modificamos el tamaño de la 'ventana' de nuestro scroll view
-    UIEdgeInsets edgeInsets = UIEdgeInsetsMake(0.0, 0.0, tamanioTeclado.height, 0.0);
-    [[self scrollView] setContentInset:edgeInsets];
-    [[self scrollView] setScrollIndicatorInsets:edgeInsets];
-    
-    CGRect aRect = self.view.frame;
-    aRect.size.height -= tamanioTeclado.height;
-    if (!CGRectContainsPoint(aRect, _activeField.frame.origin) ) {
-        [self.scrollView scrollRectToVisible:_activeField.frame animated:YES];
-    }*/
-    
-    /*NSDictionary* info = [laNotificacion userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    CGRect bkgndRect = self.activeField.superview.frame;
-    bkgndRect.size.height += kbSize.height;
-    [self.activeField.superview setFrame:bkgndRect];
-    [self.scroll setContentOffset:CGPointMake(0.0, self.activeField.frame.origin.y-kbSize.height) animated:YES];*/
 }
 
 
 - (void) desapareceElTeclado:(NSNotification *)laNotificacion
 {
-    /*[UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.3];
-    UIEdgeInsets edgeInsets = UIEdgeInsetsZero;
-    [[self scrollView] setContentInset:edgeInsets];
-    [[self scrollView] setScrollIndicatorInsets:edgeInsets];
-    [UIView commitAnimations];*/
+    NSLog(@"Desaparece el teclado");
+    //[UIView beginAnimations:nil context:NULL];
+    //[UIView setAnimationDuration:0.3];
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     self.scroll.contentInset = contentInsets;
     self.scroll.scrollIndicatorInsets = contentInsets;
+    //[UIView commitAnimations];
 }
 
 - (void) scrollViewPulsado

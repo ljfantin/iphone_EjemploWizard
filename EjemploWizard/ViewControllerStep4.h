@@ -13,10 +13,9 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 @property (retain, nonatomic) CarInformationDTO * carInformation;
-@property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
 @property (weak, nonatomic) IBOutlet UITextView * textViewDescripcion;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldBorrar;
 
 - (IBAction)pushButtonSiguiente:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
 
 @end
