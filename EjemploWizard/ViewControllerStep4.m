@@ -27,15 +27,13 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"viewDidLoad");
     [super viewDidLoad];
     //Le seteo el content size
     [[self scroll] setContentSize:[[self view] frame].size];
     
     //hago el boton copado
     [self.buttonSiguiente makeCopado];
-    
-    //Me atacho a los eventos del teclado
-    [self registerForKeyboardNotifications];
     
     //Creo identificador de gestos.
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewPulsado)];
@@ -45,16 +43,31 @@
     [[self scroll] addGestureRecognizer:tapRecognizer];
 }
 
+
 - (void) viewDidUnload
 {
+    NSLog(@"viewDidUnload");
+    [super viewDidLoad];
     [self unregisterForKeyboardNotifications];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSLog(@"viewWillAppear");
+    [super viewWillAppear:animated];
     self.textViewDescripcion.text = self.carInformation.descripcion;
     [self textViewDidChange:self.textViewDescripcion];
+    //Me atacho a los eventos del teclado
+    [self registerForKeyboardNotifications];
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    NSLog(@"viewWillDisappear");
+    [super viewWillDisappear:animated];
+    [self unregisterForKeyboardNotifications];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -73,7 +86,7 @@
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(apareceElTeclado:)
-                                                 name:UIKeyboardWillShowNotification object:nil];
+                                                 name:UIKeyboardDidShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(desapareceElTeclado:)
@@ -89,7 +102,7 @@
                                                   object:nil];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardDidHideNotification
+                                                    name:UIKeyboardWillHideNotification
                                                   object:nil];
 }
 
@@ -139,15 +152,5 @@
     self.buttonSiguiente.enabled=(titulo.length > 0);
 }
 
-#pragma mark Delegate textfield
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    _activeField = textField;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    _activeField = nil;
-}
 
 @end

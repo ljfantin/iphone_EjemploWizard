@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
+#import "UiTextViewCopado.h"
 
 @interface ViewControllerStep4 : UIViewController<UITextViewDelegate,UIScrollViewDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 @property (retain, nonatomic) CarInformationDTO * carInformation;
-@property (weak, nonatomic) IBOutlet UITextView * textViewDescripcion;
+
+@property (weak, nonatomic) IBOutlet UiTextViewCopado *textViewDescripcion;
+
 
 - (IBAction)pushButtonSiguiente:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;

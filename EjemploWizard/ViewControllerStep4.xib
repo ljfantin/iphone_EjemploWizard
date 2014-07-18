@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="buttonSiguiente" destination="aCN-l5-W9m" id="hYm-J5-2cj"/>
                 <outlet property="scroll" destination="c4O-39-I2E" id="4Gx-sO-VVY"/>
+                <outlet property="textViewDescripcion" destination="UKK-hZ-8oy" id="6MX-Sl-xQy"/>
                 <outlet property="view" destination="4wc-VG-7Vy" id="t4m-HN-AXd"/>
             </connections>
         </placeholder>
@@ -33,7 +34,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light"/>
                             <connections>
-                                <outlet property="delegate" destination="-1" id="JFZ-gt-U4K"/>
+                                <outlet property="delegate" destination="-1" id="Vai-ha-XmB"/>
                             </connections>
                         </textView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCN-l5-W9m">
