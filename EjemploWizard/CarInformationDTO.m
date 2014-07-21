@@ -13,8 +13,9 @@
 -(void) reset   {
     
     self.titulo = @"";
+    self.subtitulo = @"";
     self.descripcion = @"";
     self.kilometraje = @"";
-    
+    self.precio = @"";
 }
 @end

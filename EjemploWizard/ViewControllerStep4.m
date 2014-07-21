@@ -56,7 +56,7 @@
     NSLog(@"viewWillAppear");
     [super viewWillAppear:animated];
     self.textViewDescripcion.text = self.carInformation.descripcion;
-    [self textViewDidChange:self.textViewDescripcion];
+    // [self textViewDidChange:self.textViewDescripcion];
     //Me atacho a los eventos del teclado
     [self registerForKeyboardNotifications];
 }
@@ -142,15 +142,5 @@
 {
     [[self view] endEditing:YES];
 }
-
-#pragma mark implementacion de protocolo
-- (void)textViewDidChange:(UITextView *)textView    {
-
-    //saco los espacios en blanco y los saltos de linea
-    NSString * titulo = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    //habilito el boton si tengo al menos un caracter
-    self.buttonSiguiente.enabled=(titulo.length > 0);
-}
-
 
 @end

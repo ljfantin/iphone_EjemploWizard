@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerStep4">
             <connections>
-                <outlet property="buttonSiguiente" destination="aCN-l5-W9m" id="hYm-J5-2cj"/>
+                <outlet property="buttonSiguiente" destination="MBP-eE-pOg" id="fzE-eW-C79"/>
                 <outlet property="scroll" destination="c4O-39-I2E" id="4Gx-sO-VVY"/>
                 <outlet property="textViewDescripcion" destination="UKK-hZ-8oy" id="6MX-Sl-xQy"/>
                 <outlet property="view" destination="4wc-VG-7Vy" id="t4m-HN-AXd"/>
@@ -21,13 +21,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descripcion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfM-MP-Ejs">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Descripcion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfM-MP-Ejs">
                             <rect key="frame" x="30" y="77" width="250" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKK-hZ-8oy" customClass="UiTextViewCopado">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKK-hZ-8oy" customClass="UiTextViewCopado">
                             <rect key="frame" x="30" y="106" width="250" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,17 +37,24 @@
                                 <outlet property="delegate" destination="-1" id="Vai-ha-XmB"/>
                             </connections>
                         </textView>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCN-l5-W9m">
-                            <rect key="frame" x="30" y="242" width="250" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBP-eE-pOg">
+                            <rect key="frame" x="30" y="254" width="250" height="18"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Siguiente">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="pushButtonSiguiente:" destination="-1" eventType="touchUpInside" id="Hpv-9m-d9o"/>
+                                <action selector="pushButtonSiguiente:" destination="-1" eventType="touchUpInside" id="AIW-Ka-j8e"/>
                             </connections>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="UKK-hZ-8oy" firstAttribute="top" secondItem="tfM-MP-Ejs" secondAttribute="bottom" constant="8" id="Vjs-xN-CDo"/>
+                        <constraint firstItem="MBP-eE-pOg" firstAttribute="width" secondItem="UKK-hZ-8oy" secondAttribute="width" id="dJc-zX-QBg"/>
+                        <constraint firstItem="MBP-eE-pOg" firstAttribute="top" secondItem="UKK-hZ-8oy" secondAttribute="bottom" constant="20" id="jzS-N0-px1"/>
+                        <constraint firstItem="tfM-MP-Ejs" firstAttribute="width" secondItem="UKK-hZ-8oy" secondAttribute="width" id="skY-Kt-Jqh"/>
+                        <constraint firstItem="tfM-MP-Ejs" firstAttribute="width" secondItem="UKK-hZ-8oy" secondAttribute="width" id="wI7-Bi-7eJ"/>
+                    </constraints>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </scrollView>

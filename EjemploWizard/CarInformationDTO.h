@@ -11,8 +11,10 @@
 @interface CarInformationDTO : NSObject
 
 @property (nonatomic,retain) NSString * titulo;
+@property (nonatomic,retain) NSString * subtitulo;
 @property (nonatomic,retain) NSString * descripcion;
 @property (nonatomic,retain) NSString * kilometraje;
+@property (nonatomic,retain) NSString * precio;
 
 -(void) reset;
 
