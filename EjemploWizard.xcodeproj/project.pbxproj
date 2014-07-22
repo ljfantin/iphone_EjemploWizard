@@ -22,8 +22,8 @@
 		4F9D9B431975995A0045B680 /* EjemploWizardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D9B421975995A0045B680 /* EjemploWizardTests.m */; };
 		4FAAA7E8197EA0230091A34A /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAA7E7197EA0230091A34A /* NSString+Utils.m */; };
 		4FAAA7EC197EA4230091A34A /* ValidatorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */; };
-		4FAAA7F0197EB79A0091A34A /* ViewControllerStep5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAA7EE197EB79A0091A34A /* ViewControllerStep5.m */; };
-		4FAAA7F1197EB79A0091A34A /* ViewControllerStep5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FAAA7EF197EB79A0091A34A /* ViewControllerStep5.xib */; };
+		4FB8621A197EC1F80053B448 /* ViewControllerStep5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB86218197EC1F80053B448 /* ViewControllerStep5.m */; };
+		4FB8621B197EC1F80053B448 /* ViewControllerStep5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FB86219197EC1F80053B448 /* ViewControllerStep5.xib */; };
 		8B8D17C91975EF4900D17E7B /* ViewControllerStep1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D17BE1975EF4900D17E7B /* ViewControllerStep1.m */; };
 		8B8D17CA1975EF4900D17E7B /* ViewControllerStep1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B8D17BF1975EF4900D17E7B /* ViewControllerStep1.xib */; };
 		8B8D17CB1975EF4900D17E7B /* ViewControllerStep2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D17C11975EF4900D17E7B /* ViewControllerStep2.m */; };
@@ -72,9 +72,9 @@
 		4FAAA7E9197EA3860091A34A /* Validator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Validator.h; sourceTree = "<group>"; };
 		4FAAA7EA197EA4230091A34A /* ValidatorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatorImpl.h; sourceTree = "<group>"; };
 		4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatorImpl.m; sourceTree = "<group>"; };
-		4FAAA7ED197EB79A0091A34A /* ViewControllerStep5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerStep5.h; sourceTree = "<group>"; };
-		4FAAA7EE197EB79A0091A34A /* ViewControllerStep5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerStep5.m; sourceTree = "<group>"; };
-		4FAAA7EF197EB79A0091A34A /* ViewControllerStep5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerStep5.xib; sourceTree = "<group>"; };
+		4FB86217197EC1F80053B448 /* ViewControllerStep5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerStep5.h; path = ../ViewControllerStep5.h; sourceTree = "<group>"; };
+		4FB86218197EC1F80053B448 /* ViewControllerStep5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerStep5.m; path = ../ViewControllerStep5.m; sourceTree = "<group>"; };
+		4FB86219197EC1F80053B448 /* ViewControllerStep5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewControllerStep5.xib; path = ../ViewControllerStep5.xib; sourceTree = "<group>"; };
 		8B8D17BD1975EF4900D17E7B /* ViewControllerStep1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerStep1.h; sourceTree = "<group>"; };
 		8B8D17BE1975EF4900D17E7B /* ViewControllerStep1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerStep1.m; sourceTree = "<group>"; };
 		8B8D17BF1975EF4900D17E7B /* ViewControllerStep1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerStep1.xib; sourceTree = "<group>"; };
@@ -153,6 +153,9 @@
 		4F9D9B231975995A0045B680 /* EjemploWizard */ = {
 			isa = PBXGroup;
 			children = (
+				4FB86217197EC1F80053B448 /* ViewControllerStep5.h */,
+				4FB86218197EC1F80053B448 /* ViewControllerStep5.m */,
+				4FB86219197EC1F80053B448 /* ViewControllerStep5.xib */,
 				4F08ECD81976FFCD00CBAD23 /* CarInformationDTO.h */,
 				4F08ECD91976FFCD00CBAD23 /* CarInformationDTO.m */,
 				8B8D17D11975EFA200D17E7B /* ViewControllerStep3.h */,
@@ -183,9 +186,6 @@
 				4FAAA7E9197EA3860091A34A /* Validator.h */,
 				4FAAA7EA197EA4230091A34A /* ValidatorImpl.h */,
 				4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */,
-				4FAAA7ED197EB79A0091A34A /* ViewControllerStep5.h */,
-				4FAAA7EE197EB79A0091A34A /* ViewControllerStep5.m */,
-				4FAAA7EF197EB79A0091A34A /* ViewControllerStep5.xib */,
 			);
 			path = EjemploWizard;
 			sourceTree = "<group>";
@@ -294,9 +294,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FAAA7F1197EB79A0091A34A /* ViewControllerStep5.xib in Resources */,
 				4F9D9B281975995A0045B680 /* InfoPlist.strings in Resources */,
 				8B8D17CE1975EF4900D17E7B /* ViewControllerStep4.xib in Resources */,
+				4FB8621B197EC1F80053B448 /* ViewControllerStep5.xib in Resources */,
 				8B8D17CC1975EF4900D17E7B /* ViewControllerStep2.xib in Resources */,
 				8B8D17CA1975EF4900D17E7B /* ViewControllerStep1.xib in Resources */,
 				8B8D17D01975EF4900D17E7B /* ViewControllerStep6.xib in Resources */,
@@ -326,10 +326,10 @@
 				8B8D17D41975EFA200D17E7B /* ViewControllerStep3.m in Sources */,
 				4FAAA7E8197EA0230091A34A /* NSString+Utils.m in Sources */,
 				8B8D17CB1975EF4900D17E7B /* ViewControllerStep2.m in Sources */,
-				4FAAA7F0197EB79A0091A34A /* ViewControllerStep5.m in Sources */,
 				8B8D17C91975EF4900D17E7B /* ViewControllerStep1.m in Sources */,
 				8B8D17DE197604D700D17E7B /* UiTextViewCopado.m in Sources */,
 				8B8D17CF1975EF4900D17E7B /* ViewControllerStep6.m in Sources */,
+				4FB8621A197EC1F80053B448 /* ViewControllerStep5.m in Sources */,
 				4F9D9B2A1975995A0045B680 /* main.m in Sources */,
 				4FAAA7EC197EA4230091A34A /* ValidatorImpl.m in Sources */,
 				8B8D17D81975FA8E00D17E7B /* UIButton+Copado.m in Sources */,
