@@ -16,11 +16,16 @@
 @property (weak, nonatomic) UITextField * activeField;
 
 @property (retain, nonatomic) CarInformationDTO * carInformation;
+//textfields
 @property (weak, nonatomic) IBOutlet UITextField *textFieldTitulo;
-@property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldSubtitulo;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPrecio;
+@property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
 
+//actions
 - (IBAction)pushButtonSiguiente:(id)sender;
+- (IBAction)textFieldChangePrecio:(id)sender;
+- (IBAction)textFieldChangeSubtitulo:(id)sender;
+- (IBAction)textFieldChangeTitulo:(id)sender;
 
 @end

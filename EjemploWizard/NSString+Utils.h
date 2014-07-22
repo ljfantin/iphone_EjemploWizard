@@ -1,13 +1,13 @@
 //
-//  ViewControllerStep5.h
+//  NSString+Utils.h
 //  EjemploWizard
 //
 //  Created by Leandro Fantin on 22/07/14.
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface ViewControllerStep5 : UIViewController
-
+@interface NSString (Utils)
+-(NSString *) trim;
 @end

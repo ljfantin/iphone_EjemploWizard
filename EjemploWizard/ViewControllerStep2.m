@@ -9,9 +9,14 @@
 #import "ViewControllerStep2.h"
 #import "ViewControllerStep3.h"
 #import "UIButton+Copado.h"
+#import "NSString+Utils.h"
+#import "ValidatorImpl.h"
 
 @interface ViewControllerStep2 ()
-
+@property (nonatomic, retain) ValidatorImpl * validator;
+@property BOOL notEmptyTextFieldTitulo;
+@property BOOL notEmptyTextFieldSubtitulo;
+@property BOOL notEmptyTextFieldPrecio;
 @end
 
 @implementation ViewControllerStep2
@@ -23,6 +28,10 @@
         self.title=@"Paso 1";
         // Custom initialization
         self.carInformation = [[CarInformationDTO alloc] init];
+        self.validator = [[ValidatorImpl alloc] init];
+        self.notEmptyTextFieldTitulo = NO;
+        self.notEmptyTextFieldSubtitulo = NO;
+        self.notEmptyTextFieldPrecio = NO;
     }
     return self;
 }
@@ -30,7 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    //Hago que se vea lindo el boton
     [self.buttonSiguiente makeCopado];
     
     //seteo el content size
@@ -45,16 +54,15 @@
     //agrego al scroll view el identificador de gestos
     [[self scroll] addGestureRecognizer:tapRecognizer];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
-
+    //self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     self.textFieldTitulo.text = self.carInformation.titulo;
-    //[self handleChangeTitulo:self.textFieldTitulo];
+    self.textFieldSubtitulo.text = self.carInformation.subtitulo;
+    self.textFieldPrecio.text = self.carInformation.precio;
 }
-
 
 - (IBAction)pushButtonSiguiente:(id)sender {
     ViewControllerStep3 *nextView = [[ViewControllerStep3 alloc] initWithNibName:nil bundle:nil];
@@ -63,15 +71,32 @@
     [self.navigationController pushViewController:nextView animated:YES];
 }
 
-/*
-- (IBAction)handleChangeTitulo:(id)sender {
+- (IBAction)textFieldChangeSubtitulo:(id)sender {
     
-    UITextField* textField = (UITextField*)sender;
-    //saco los espacios en blanco y los saltos de linea
-    NSString * titulo = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    //habilito el boton si tengo al menos un caracter
-    self.buttonSiguiente.enabled=(titulo.length > 0);
-}*/
+    UITextField * textField = (UITextField *) sender;
+    self.notEmptyTextFieldSubtitulo = [self.validator isNotEmpty:textField.text];
+    self.buttonSiguiente.enabled=(self.notEmptyTextFieldSubtitulo &&
+                                  self.notEmptyTextFieldTitulo &&
+                                  self.notEmptyTextFieldPrecio);
+}
+
+- (IBAction)textFieldChangeTitulo:(id)sender {
+    
+    UITextField * textField = (UITextField *) sender;
+    self.notEmptyTextFieldTitulo = [self.validator isNotEmpty:textField.text];
+    self.buttonSiguiente.enabled=(self.notEmptyTextFieldSubtitulo &&
+                                  self.notEmptyTextFieldTitulo &&
+                                  self.notEmptyTextFieldPrecio);
+}
+
+- (IBAction)textFieldChangePrecio:(id)sender {
+    
+    UITextField * textField = (UITextField *) sender;
+    self.notEmptyTextFieldPrecio = [self.validator isNotEmpty:textField.text];
+    self.buttonSiguiente.enabled=(self.notEmptyTextFieldSubtitulo &&
+                                  self.notEmptyTextFieldTitulo &&
+                                  self.notEmptyTextFieldPrecio);
+}
 
 - (void)registerForKeyboardNotifications
 {
@@ -105,25 +130,24 @@
     //Nota: El ScrollView no tiene que estar en autolayout para que funcione
     NSDictionary* info = [notificacion userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    //Es como un padding
+    
+    //Es como un padding, y lo pones del tamanio del teclado para que active las barras de scroll
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
     self.scroll.contentInset = contentInsets;
     self.scroll.scrollIndicatorInsets = contentInsets;
     
+    //muevo las scrollbars hasta el active field que tenia el foco del usuario
     CGRect aRect = self.view.frame;
     aRect.size.height = kbSize.height;
     if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
         CGRect rect = self.activeField.frame;
-        //rect.origin.y = rect.origin.y + self.navigationController.view.frame.size.height;
-        //CGFloat height = self.navigationController.navigationBar.frame.size.height;
-        //rect.origin.y = rect.origin.y + 100;
         [self.scroll scrollRectToVisible:rect animated:YES];
     }
 }
 
 - (void) keyboardWillBeHidden:(NSNotification *)notificacion
 {
-    
+    //cuando el teclado desaparece, le sacamos el "padding" al scrollview
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     self.scroll.contentInset = contentInsets;
     self.scroll.scrollIndicatorInsets = contentInsets;
@@ -144,6 +168,21 @@
 - (void) scrollViewPulsado
 {
     [[self view] endEditing:YES];
+}
+//
+#pragma mark Implementacion
+- (BOOL) textField: (UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString: (NSString *)string {
+    
+    //Si no es el precio entonces le doy ok
+    if (![textField isEqual:self.textFieldPrecio])  {
+        return YES;
+    }
+    
+    if (range.length == 1){
+        return YES;
+    }else{
+        return [self.validator isNumber:string];
+    }
 }
 
 @end

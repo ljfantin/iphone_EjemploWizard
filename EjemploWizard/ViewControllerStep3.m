@@ -9,8 +9,8 @@
 #import "ViewControllerStep3.h"
 #import "ViewControllerStep4.h"
 #import "UIButton+Copado.h"
+#import "NSString+Utils.h"
 
-///http://www.punteroavoid.com/blog/2012/03/01/como-evitar-que-el-teclado-de-ios-oculte-campos-de-texto/
 
 @interface ViewControllerStep3 ()
 
@@ -59,7 +59,7 @@
 - (IBAction)handleChangeKilometraje:(id)sender {
     UITextField* textField = (UITextField*)sender;
     //saco los espacios en blanco y los saltos de linea
-    NSString * titulo = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString * titulo = [textField.text trim];
     //habilito el boton si tengo al menos un caracter
     self.buttonSiguiente.enabled=(titulo.length > 0);
 }

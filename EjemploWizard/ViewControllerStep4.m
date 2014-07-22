@@ -7,7 +7,7 @@
 //
 
 #import "ViewControllerStep4.h"
-#import "ViewControllerStep5.h"
+#import "ViewControllerStep6.h"
 #import "UIButton+Copado.h"
 
 @interface ViewControllerStep4 ()
@@ -76,7 +76,7 @@
 }
 
 - (IBAction)pushButtonSiguiente:(id)sender {
-    ViewControllerStep5 *nextView = [[ViewControllerStep5 alloc] initWithNibName:nil bundle:nil];
+    ViewControllerStep6 *nextView = [[ViewControllerStep6 alloc] initWithNibName:nil bundle:nil];
     self.carInformation.descripcion = self.textViewDescripcion.text;
     nextView.carInformation = self.carInformation;
     [self.navigationController pushViewController:nextView animated:YES];
