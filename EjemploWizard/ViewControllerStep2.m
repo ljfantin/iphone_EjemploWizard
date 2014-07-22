@@ -44,6 +44,9 @@
     [tapRecognizer setCancelsTouchesInView:NO];
     //agrego al scroll view el identificador de gestos
     [[self scroll] addGestureRecognizer:tapRecognizer];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -52,12 +55,6 @@
     //[self handleChangeTitulo:self.textFieldTitulo];
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (IBAction)pushButtonSiguiente:(id)sender {
     ViewControllerStep3 *nextView = [[ViewControllerStep3 alloc] initWithNibName:nil bundle:nil];
@@ -85,7 +82,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillBeHidden:)
-                                                 name:UIKeyboardWillHideNotification object:nil];
+                                                 name:UIKeyboardDidHideNotification object:nil];
     
 }
 
@@ -93,7 +90,7 @@
 {
     //me desatacho los eventos del teclado
     [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardDidShowNotification
+                                                    name:UIKeyboardWillShowNotification
                                                   object:nil];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self
@@ -117,6 +114,9 @@
     aRect.size.height = kbSize.height;
     if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
         CGRect rect = self.activeField.frame;
+        //rect.origin.y = rect.origin.y + self.navigationController.view.frame.size.height;
+        //CGFloat height = self.navigationController.navigationBar.frame.size.height;
+        //rect.origin.y = rect.origin.y + 100;
         [self.scroll scrollRectToVisible:rect animated:YES];
     }
 }
