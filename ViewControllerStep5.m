@@ -8,7 +8,7 @@
 
 #import "ViewControllerStep5.h"
 #import "UIButton+Copado.h"
-
+#import "UIPhotoCollectionViewCell.h"
 
 @interface ViewControllerStep5 ()
 
@@ -33,10 +33,15 @@
     [self.buttonSiguiente makeCopado];
     [self.buttonAddImage makeCopado];
     
-    
     //seteo el content size
     [[self scroll] setContentSize:[[self view] frame].size];
 
+    //inicializo la gelaria
+    [self setupCollectionView];
+}
+
+-(void)setupCollectionView {
+    [self.collectionViewGallery registerClass:[UIPhotoCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,8 +110,20 @@
 {
     [self.navigationController dismissViewControllerAnimated: YES completion: nil];
     UIImage *image = [info valueForKey: UIImagePickerControllerOriginalImage];
+    [self.carInformation.gallery addObject:image];
     //NSData *imageData = UIImageJPEGRepresentation(image, 0.1);
-    self.imageView1.image = image;
+    ////self.imageView1.image = image;
+    
+    [self.collectionViewGallery performBatchUpdates:^{
+        NSArray* itemPaths = [self.collectionViewGallery indexPathsForSelectedItems];
+        [self.collectionViewGallery insertItemsAtIndexPaths:self.carInformation.gallery];
+        // Delete the items from the data source.
+        //[self deleteItemsFromDataSourceAtIndexPaths:itemPaths];
+        
+        // Now delete the items from the collection view.
+        //[self.collectionView deleteItemsAtIndexPaths:tempArray];
+    } completion:nil];
+
     
 }
 
@@ -115,5 +132,21 @@
     [self.navigationController dismissViewControllerAnimated: YES completion: nil];
 }
 
+
+#pragma mark Implementacion protocolo UICollectionViewDataSource
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.carInformation.gallery count];
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UIPhotoCollectionViewCell *cell = (UIPhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    UIImage *image = [self.carInformation.gallery objectAtIndex:indexPath.row];
+    [cell updateCell:image];
+    return cell;
+}
 
 @end

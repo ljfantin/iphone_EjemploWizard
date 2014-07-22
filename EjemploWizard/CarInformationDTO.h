@@ -15,6 +15,8 @@
 @property (nonatomic,retain) NSString * descripcion;
 @property (nonatomic,retain) NSString * kilometraje;
 @property (nonatomic,retain) NSString * precio;
+@property (nonatomic, strong) NSMutableArray * gallery;
+
 
 -(void) reset;
 
