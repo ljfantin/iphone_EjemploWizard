@@ -44,6 +44,13 @@
 
 -(void)setupCollectionView {
     [self.collectionViewGallery registerClass:[UIPhotoCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    //[flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    //[flowLayout setMinimumInteritemSpacing:0.0f];
+    //[flowLayout setMinimumLineSpacing:0.0f];
+    //[self.collectionViewGallery setPagingEnabled:YES];
+    //[self.collectionViewGallery setCollectionViewLayout:flowLayout];
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,21 +120,19 @@
     [self.navigationController dismissViewControllerAnimated: YES completion: nil];
     UIImage *image = [info valueForKey: UIImagePickerControllerOriginalImage];
     [self.carInformation.gallery addObject:image];
-    //NSData *imageData = UIImageJPEGRepresentation(image, 0.1);
-    ////self.imageView1.image = image;
-    [self.collectionViewGallery reloadData];
-    /*[self.collectionViewGallery performBatchUpdates:^{
-        //NSArray* itemPaths = [self.collectionViewGallery indexPathsForSelectedItems];
-        [self.collectionViewGallery insertItemsAtIndexPaths:self.carInformation.gallery];
-        NSLog(@"Se agrego imagen");
-        // Delete the items from the data source.
-        //[self deleteItemsFromDataSourceAtIndexPaths:itemPaths];
-        
-        // Now delete the items from the collection view.
-        //[self.collectionView deleteItemsAtIndexPaths:tempArray];
-    } completion:nil];*/
-
+    // Parche que saque de aca: http://stackoverflow.com/questions/19199985/invalid-update-invalid-number-of-items-on-uicollectionview
     
+    if (self.carInformation.gallery.count == 1) {
+      [self.collectionViewGallery reloadData];
+    } else {
+        [self.collectionViewGallery performBatchUpdates:^{
+            NSMutableArray * arrayWithIndex = [NSMutableArray array];
+            NSInteger index = [self.carInformation.gallery count]-1;
+            [arrayWithIndex addObject:[NSIndexPath indexPathForRow:index inSection:0]];
+            [self.collectionViewGallery insertItemsAtIndexPaths:arrayWithIndex];
+
+        } completion:nil];
+    }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
