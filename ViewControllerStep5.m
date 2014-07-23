@@ -20,6 +20,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        ///BOORRRARRRRR
+        self.carInformation = [[CarInformationDTO alloc] init];
         // Custom initialization
     }
     return self;
@@ -143,6 +145,7 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     UIPhotoCollectionViewCell *cell = (UIPhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
     UIImage *image = [self.carInformation.gallery objectAtIndex:indexPath.row];
     [cell updateCell:image];

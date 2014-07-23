@@ -10,6 +10,15 @@
 
 @implementation CarInformationDTO
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.gallery = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 -(void) reset   {
     
     self.titulo = @"";
