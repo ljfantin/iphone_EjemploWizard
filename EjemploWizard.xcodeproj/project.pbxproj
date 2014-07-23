@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F08ECDA1976FFCD00CBAD23 /* CarInformationDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F08ECD91976FFCD00CBAD23 /* CarInformationDTO.m */; };
+		4F0C9606198055F400B97685 /* FooterGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C9605198055F400B97685 /* FooterGallery.m */; };
+		4F0C960A198058D700B97685 /* FooterGallery.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C9609198058D700B97685 /* FooterGallery.xib */; };
 		4F9D9B1E1975995A0045B680 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9D9B1D1975995A0045B680 /* Foundation.framework */; };
 		4F9D9B201975995A0045B680 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9D9B1F1975995A0045B680 /* CoreGraphics.framework */; };
 		4F9D9B221975995A0045B680 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9D9B211975995A0045B680 /* UIKit.framework */; };
@@ -53,6 +55,9 @@
 /* Begin PBXFileReference section */
 		4F08ECD81976FFCD00CBAD23 /* CarInformationDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInformationDTO.h; sourceTree = "<group>"; };
 		4F08ECD91976FFCD00CBAD23 /* CarInformationDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInformationDTO.m; sourceTree = "<group>"; };
+		4F0C9604198055F400B97685 /* FooterGallery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterGallery.h; sourceTree = "<group>"; };
+		4F0C9605198055F400B97685 /* FooterGallery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterGallery.m; sourceTree = "<group>"; };
+		4F0C9609198058D700B97685 /* FooterGallery.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterGallery.xib; sourceTree = "<group>"; };
 		4F9D9B1A1975995A0045B680 /* EjemploWizard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EjemploWizard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9D9B1D1975995A0045B680 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4F9D9B1F1975995A0045B680 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -170,6 +175,7 @@
 				8B8D17BE1975EF4900D17E7B /* ViewControllerStep1.m */,
 				8B8D17BF1975EF4900D17E7B /* ViewControllerStep1.xib */,
 				4FB8621F197EED820053B448 /* UIPhotoCollectionViewCell.xib */,
+				4F0C9609198058D700B97685 /* FooterGallery.xib */,
 				8B8D17C01975EF4900D17E7B /* ViewControllerStep2.h */,
 				8B8D17C11975EF4900D17E7B /* ViewControllerStep2.m */,
 				8B8D17C21975EF4900D17E7B /* ViewControllerStep2.xib */,
@@ -194,6 +200,8 @@
 				4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */,
 				4FB8621C197EEC740053B448 /* UIPhotoCollectionViewCell.h */,
 				4FB8621D197EEC740053B448 /* UIPhotoCollectionViewCell.m */,
+				4F0C9604198055F400B97685 /* FooterGallery.h */,
+				4F0C9605198055F400B97685 /* FooterGallery.m */,
 			);
 			path = EjemploWizard;
 			sourceTree = "<group>";
@@ -303,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F9D9B281975995A0045B680 /* InfoPlist.strings in Resources */,
+				4F0C960A198058D700B97685 /* FooterGallery.xib in Resources */,
 				8B8D17CE1975EF4900D17E7B /* ViewControllerStep4.xib in Resources */,
 				4FB86220197EED820053B448 /* UIPhotoCollectionViewCell.xib in Resources */,
 				4FB8621B197EC1F80053B448 /* ViewControllerStep5.xib in Resources */,
@@ -340,6 +349,7 @@
 				8B8D17CF1975EF4900D17E7B /* ViewControllerStep6.m in Sources */,
 				4FB8621A197EC1F80053B448 /* ViewControllerStep5.m in Sources */,
 				4F9D9B2A1975995A0045B680 /* main.m in Sources */,
+				4F0C9606198055F400B97685 /* FooterGallery.m in Sources */,
 				4FB8621E197EEC740053B448 /* UIPhotoCollectionViewCell.m in Sources */,
 				4FAAA7EC197EA4230091A34A /* ValidatorImpl.m in Sources */,
 				8B8D17D81975FA8E00D17E7B /* UIButton+Copado.m in Sources */,
