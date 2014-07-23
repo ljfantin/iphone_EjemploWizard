@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewControllerStep5.h"
+#import "ViewControllerStep1.h"
 
 @implementation AppDelegate
 
@@ -16,7 +16,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     //Creo el viewController del paso 1 del wizard
-    ViewControllerStep5 * step1 = [[ViewControllerStep5 alloc] initWithNibName:nil
+    ViewControllerStep1 * step1 = [[ViewControllerStep1 alloc] initWithNibName:nil
                                                                 bundle:nil];
     
     //Creo un navigationcontrolles con el paso 1

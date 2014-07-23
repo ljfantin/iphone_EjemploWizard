@@ -56,7 +56,6 @@
     NSLog(@"viewWillAppear");
     [super viewWillAppear:animated];
     self.textViewDescripcion.text = self.carInformation.descripcion;
-    // [self textViewDidChange:self.textViewDescripcion];
     //Me atacho a los eventos del teclado
     [self registerForKeyboardNotifications];
 }
@@ -77,8 +76,8 @@
 
 - (IBAction)pushButtonSiguiente:(id)sender {
     ViewControllerStep5 *nextView = [[ViewControllerStep5 alloc] initWithNibName:nil bundle:nil];
-    //self.carInformation.descripcion = self.textViewDescripcion.text;
-    //nextView.carInformation = self.carInformation;
+    self.carInformation.descripcion = self.textViewDescripcion.text;
+    nextView.carInformation = self.carInformation;
     [self.navigationController pushViewController:nextView animated:YES];
 }
 

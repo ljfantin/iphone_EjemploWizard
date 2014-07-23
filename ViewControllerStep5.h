@@ -15,6 +15,7 @@
 
 - (IBAction)addImagePushButton:(id)sender;
 
+- (IBAction)siguientePushButton:(id)sender;
 
 //@property (weak, nonatomic) IBOutlet UIImageView *imageView1;
 @property (weak, nonatomic) IBOutlet UIButton *buttonAddImage;

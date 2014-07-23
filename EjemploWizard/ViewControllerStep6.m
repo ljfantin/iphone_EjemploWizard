@@ -64,6 +64,8 @@
     }
     
     self.labelTitulo.text=self.carInformation.titulo;
+    self.labelSubtitulo.text=self.carInformation.subtitulo;
+    self.labelPrecio.text=self.carInformation.precio;
     self.labelDescripcion.text=self.carInformation.descripcion;
     self.labelKilometraje.text=self.carInformation.kilometraje;
     

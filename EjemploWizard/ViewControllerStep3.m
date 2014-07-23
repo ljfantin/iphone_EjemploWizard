@@ -32,13 +32,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.buttonSiguiente makeCopado];
-    //VER SI VA ACA O EN EL WILL APPEAR
-    self.textfieldKilometraje.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //////////////hay que ponerlo en el metodo appears
     self.textfieldKilometraje.text = self.carInformation.kilometraje;
     [self handleChangeKilometraje:self.textfieldKilometraje];
 }

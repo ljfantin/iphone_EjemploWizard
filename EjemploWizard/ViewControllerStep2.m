@@ -67,6 +67,9 @@
 - (IBAction)pushButtonSiguiente:(id)sender {
     ViewControllerStep3 *nextView = [[ViewControllerStep3 alloc] initWithNibName:nil bundle:nil];
     self.carInformation.titulo = self.textFieldTitulo.text;
+    self.carInformation.subtitulo = self.textFieldSubtitulo.text;
+    self.carInformation.precio = self.textFieldPrecio.text;
+    
     nextView.carInformation = self.carInformation;
     [self.navigationController pushViewController:nextView animated:YES];
 }

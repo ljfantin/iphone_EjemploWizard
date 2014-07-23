@@ -9,6 +9,9 @@
 #import "ViewControllerStep5.h"
 #import "UIButton+Copado.h"
 #import "UIPhotoCollectionViewCell.h"
+#import "ViewControllerStep6.h"
+
+const NSInteger CANT_MAX_FOTOS = 6;
 
 @interface ViewControllerStep5 ()
 
@@ -20,9 +23,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        ///BOORRRARRRRR
-        self.carInformation = [[CarInformationDTO alloc] init];
-        // Custom initialization
+        self.title=@"Paso 4";
     }
     return self;
 }
@@ -38,19 +39,21 @@
     //seteo el content size
     [[self scroll] setContentSize:[[self view] frame].size];
 
-    //inicializo la gelaria
+    //inicializo la galeria
     [self setupCollectionView];
 }
 
 -(void)setupCollectionView {
+    //registro la clase de la celda
     [self.collectionViewGallery registerClass:[UIPhotoCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    //[flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    //[flowLayout setMinimumInteritemSpacing:0.0f];
-    //[flowLayout setMinimumLineSpacing:0.0f];
-    //[self.collectionViewGallery setPagingEnabled:YES];
-    //[self.collectionViewGallery setCollectionViewLayout:flowLayout];
+    //registro la clase del header
+    [self.collectionViewGallery registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
+    
+    //registro la clase del footer
+    [self.collectionViewGallery registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
+        withReuseIdentifier:@"FooterView"];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,6 +71,12 @@
                                                     otherButtonTitles: @"Tomar una foto", @"Elegir foto del carrete", nil];
     [actionSheet showInView:self.view];
     //[actionSheet release];
+}
+
+- (IBAction)siguientePushButton:(id)sender {
+    ViewControllerStep6 *nextView = [[ViewControllerStep6 alloc] initWithNibName:nil bundle:nil];
+    nextView.carInformation = self.carInformation;
+    [self.navigationController pushViewController:nextView animated:YES];
 }
 
 
@@ -118,10 +127,12 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [self.navigationController dismissViewControllerAnimated: YES completion: nil];
+    //agarro la imagen del uiimagepicker
     UIImage *image = [info valueForKey: UIImagePickerControllerOriginalImage];
+    //agrego la imagen a la galeria
     [self.carInformation.gallery addObject:image];
-    // Parche que saque de aca: http://stackoverflow.com/questions/19199985/invalid-update-invalid-number-of-items-on-uicollectionview
     
+    // Parche que saque de aca: http://stackoverflow.com/questions/19199985/invalid-update-invalid-number-of-items-on-uicollectionview
     if (self.carInformation.gallery.count == 1) {
       [self.collectionViewGallery reloadData];
     } else {
@@ -133,11 +144,16 @@
 
         } completion:nil];
     }
+    //desabilito el boton si seleccione la cantidad maxima de fotos
+    if ([self.carInformation.gallery count]==CANT_MAX_FOTOS)
+        self.buttonAddImage.enabled = false;
+        
+    //[self.collectionViewGallery reloadSections:[NSIndexSet indexSetWithIndex:0]];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
 {
-    [self.navigationController dismissViewControllerAnimated: YES completion: nil];
+    [self.navigationController dismissViewControllerAnimated:YES completion: nil];
 }
 
 
@@ -158,4 +174,35 @@
     return cell;
 }
 
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    if (kind == UICollectionElementKindSectionHeader) {
+        
+        UICollectionReusableView *reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        
+        if (reusableview==nil) {
+            reusableview=[[UICollectionReusableView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        }
+        
+        UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        label.text=@"Agrega fotos de tu vehiculo";
+        [reusableview addSubview:label];
+        return reusableview;
+    } else  {
+        if (kind == UICollectionElementKindSectionFooter) {
+            
+            UICollectionReusableView *reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
+            
+            if (reusableview==nil) {
+                reusableview=[[UICollectionReusableView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+            }
+            
+            UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+            label.text=[NSString stringWithFormat:@"%i fotos disponibles", CANT_MAX_FOTOS - self.carInformation.gallery.count];
+            [reusableview addSubview:label];
+            return reusableview;
+        }
+    }
+    return nil;
+}
 @end
