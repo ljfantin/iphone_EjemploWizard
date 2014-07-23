@@ -27,7 +27,6 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"viewDidLoad");
     [super viewDidLoad];
     //Le seteo el content size
     [[self scroll] setContentSize:[[self view] frame].size];
@@ -46,14 +45,12 @@
 
 - (void) viewDidUnload
 {
-    NSLog(@"viewDidUnload");
     [super viewDidLoad];
     [self unregisterForKeyboardNotifications];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"viewWillAppear");
     [super viewWillAppear:animated];
     self.textViewDescripcion.text = self.carInformation.descripcion;
     //Me atacho a los eventos del teclado
@@ -62,7 +59,6 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    NSLog(@"viewWillDisappear");
     [super viewWillDisappear:animated];
     [self unregisterForKeyboardNotifications];
 }

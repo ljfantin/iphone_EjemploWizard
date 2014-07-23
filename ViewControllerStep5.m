@@ -43,6 +43,17 @@ const NSInteger CANT_MAX_FOTOS = 6;
     [self setupCollectionView];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    //desabilito el boton si seleccione la cantidad maxima de fotos
+    if ([self.carInformation.gallery count]==CANT_MAX_FOTOS)
+        self.buttonAddImage.enabled = false;
+
+}
+
+
 -(void)setupCollectionView {
     //registro la clase de la celda
     [self.collectionViewGallery registerClass:[UIPhotoCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
@@ -132,6 +143,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
     //agrego la imagen a la galeria
     [self.carInformation.gallery addObject:image];
     
+    //Actualizo el collectionview
     // Parche que saque de aca: http://stackoverflow.com/questions/19199985/invalid-update-invalid-number-of-items-on-uicollectionview
     if (self.carInformation.gallery.count == 1) {
       [self.collectionViewGallery reloadData];
@@ -158,14 +170,17 @@ const NSInteger CANT_MAX_FOTOS = 6;
 
 
 #pragma mark Implementacion protocolo UICollectionViewDataSource
+//Devuelve la cantidad de secciones
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
+//Devuelve la cantidad de celdas en la seccion
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.carInformation.gallery count];
 }
 
+//Devuelve la celda
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     UIPhotoCollectionViewCell *cell = (UIPhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
@@ -173,6 +188,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
     [cell updateCell:image];
     return cell;
 }
+
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {

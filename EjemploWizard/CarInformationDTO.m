@@ -26,5 +26,6 @@
     self.descripcion = @"";
     self.kilometraje = @"";
     self.precio = @"";
+    [self.gallery removeAllObjects];
 }
 @end

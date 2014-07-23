@@ -10,10 +10,11 @@
 #import "ViewControllerStep4.h"
 #import "UIButton+Copado.h"
 #import "NSString+Utils.h"
+#import "ValidatorImpl.h"
 
 
 @interface ViewControllerStep3 ()
-
+@property (nonatomic, retain) ValidatorImpl * validator;
 @end
 
 @implementation ViewControllerStep3
@@ -23,6 +24,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title=@"Paso 2";
+        self.validator = [[ValidatorImpl alloc] init];
     }
     return self;
 }
@@ -55,23 +57,17 @@
 
 - (IBAction)handleChangeKilometraje:(id)sender {
     UITextField* textField = (UITextField*)sender;
-    //saco los espacios en blanco y los saltos de linea
-    NSString * titulo = [textField.text trim];
-    //habilito el boton si tengo al menos un caracter
-    self.buttonSiguiente.enabled=(titulo.length > 0);
+    self.buttonSiguiente.enabled=[self.validator isNotEmpty:textField.text];
 }
 
 #pragma mark Implementacion
 - (BOOL) textField: (UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString: (NSString *)string {
-    
-    NSCharacterSet *nonNumberSet = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789."] invertedSet];
-    
+
     if (range.length == 1){
         return YES;
     }else{
-        return ([string stringByTrimmingCharactersInSet:nonNumberSet].length > 0);
+        return [self.validator isNumber:string];
     }
-    
 }
 
 @end
