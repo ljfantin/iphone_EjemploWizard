@@ -115,16 +115,17 @@
     [self.carInformation.gallery addObject:image];
     //NSData *imageData = UIImageJPEGRepresentation(image, 0.1);
     ////self.imageView1.image = image;
-    
-    [self.collectionViewGallery performBatchUpdates:^{
-        NSArray* itemPaths = [self.collectionViewGallery indexPathsForSelectedItems];
+    [self.collectionViewGallery reloadData];
+    /*[self.collectionViewGallery performBatchUpdates:^{
+        //NSArray* itemPaths = [self.collectionViewGallery indexPathsForSelectedItems];
         [self.collectionViewGallery insertItemsAtIndexPaths:self.carInformation.gallery];
+        NSLog(@"Se agrego imagen");
         // Delete the items from the data source.
         //[self deleteItemsFromDataSourceAtIndexPaths:itemPaths];
         
         // Now delete the items from the collection view.
         //[self.collectionView deleteItemsAtIndexPaths:tempArray];
-    } completion:nil];
+    } completion:nil];*/
 
     
 }

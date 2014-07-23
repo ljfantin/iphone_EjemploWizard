@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        NSArray *arrayOfViews = [[NSBundle mainBundle] loadNibNamed:nil owner:self options:nil];
+        NSArray *arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"UIPhotoCollectionViewCell" owner:self options:nil];
         
         if ([arrayOfViews count] < 1) {
             return nil;
