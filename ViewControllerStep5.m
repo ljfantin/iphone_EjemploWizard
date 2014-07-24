@@ -10,6 +10,7 @@
 #import "UIButton+Copado.h"
 #import "UIPhotoCollectionViewCell.h"
 #import "ViewControllerStep6.h"
+#import "FooterGallery.h"
 
 const NSInteger CANT_MAX_FOTOS = 6;
 
@@ -62,7 +63,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
     [self.collectionViewGallery registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
     
     //registro la clase del footer
-    [self.collectionViewGallery registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
+    [self.collectionViewGallery registerClass:[FooterGallery class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
         withReuseIdentifier:@"FooterView"];
 
 }
@@ -160,7 +161,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
     if ([self.carInformation.gallery count]==CANT_MAX_FOTOS)
         self.buttonAddImage.enabled = false;
         
-    //[self.collectionViewGallery reloadSections:[NSIndexSet indexSetWithIndex:0]];
+    [self.collectionViewGallery reloadSections:[NSIndexSet indexSetWithIndex:0]];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
@@ -207,15 +208,15 @@ const NSInteger CANT_MAX_FOTOS = 6;
     } else  {
         if (kind == UICollectionElementKindSectionFooter) {
             
-            UICollectionReusableView *reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
+            FooterGallery *reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
             
             if (reusableview==nil) {
-                reusableview=[[UICollectionReusableView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+                reusableview=[[FooterGallery alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
             }
-            
-            UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+            [reusableview updateCantidadFotos: CANT_MAX_FOTOS - self.carInformation.gallery.count];
+            /*UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
             label.text=[NSString stringWithFormat:@"%i fotos disponibles", CANT_MAX_FOTOS - self.carInformation.gallery.count];
-            [reusableview addSubview:label];
+            [reusableview addSubview:label];*/
             return reusableview;
         }
     }

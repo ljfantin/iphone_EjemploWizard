@@ -14,7 +14,18 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        NSArray *arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"FooterGallery" owner:self options:nil];
+        //[self addSubview:self.categoryNameLabel];
+        
+        if ([arrayOfViews count] < 1) {
+            return nil;
+        }
+        
+        if (![[arrayOfViews objectAtIndex:0] isKindOfClass:[self class]]) {
+            return nil;
+        }
+        
+        self = [arrayOfViews objectAtIndex:0];
     }
     return self;
 }
@@ -23,7 +34,8 @@
 
 - (void) updateCantidadFotos:(NSInteger)newCant
 {
-    self.labelCantidadFotos.text = 
+    NSLog(@"%i Cantidad de fotos disponibles:",newCant);
+    self.labelCantidadFotos.text =  [NSString stringWithFormat:@"%i fotos disponibles", newCant];
 }
 /*
 // Only override drawRect: if you perform custom drawing.
