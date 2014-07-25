@@ -43,21 +43,6 @@
     if ([descripcion length]==0)  {
         [self.labelDescripcion removeFromSuperview];
         [self.labelTittleDescripcion removeFromSuperview];
-        /*NSDictionary * views = NSDictionaryOfVariableBindings(_labelTitulo,_labelTittleKilometro);
-        NSArray * constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[_labelTitulo]-20-[_labelTittleKilometro]"
-                                                options:0
-                                                metrics:nil
-                                                views:views];
-        
-        [self.view addConstraints:constraints];*/
-        //self.constraintKilometrajeToLabelTitulo.constant=20.0;
-        //self.constraint.constant = 0;
-        
-        /*CGRect frame = self.labelDescripcion.frame;
-        frame.size.height = 0;
-        frame = self.labelTittleDescripcion.frame;
-        frame.size.height = 0;*/
-        //self.constraintKilometrajeSubtitulo.constant = 0;
     }   else {
         [self.view addSubview:self.labelTittleDescripcion];
         [self.view addSubview:self.labelDescripcion];

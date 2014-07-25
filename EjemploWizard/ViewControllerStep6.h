@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
 
-@interface ViewControllerStep6 : UIViewController
+@interface ViewControllerStep6 : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintKilometrajeSubtitulo;
 //carInformation
@@ -31,5 +31,6 @@
 
 - (IBAction)pushButtonCancelar:(id)sender;
 - (IBAction)pushButtonAceptar:(id)sender;
+
 
 @end

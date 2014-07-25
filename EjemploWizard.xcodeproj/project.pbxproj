@@ -30,6 +30,8 @@
 		4FB8621B197EC1F80053B448 /* ViewControllerStep5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FB86219197EC1F80053B448 /* ViewControllerStep5.xib */; };
 		4FB8621E197EEC740053B448 /* UIPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB8621D197EEC740053B448 /* UIPhotoCollectionViewCell.m */; };
 		4FB86220197EED820053B448 /* UIPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FB8621F197EED820053B448 /* UIPhotoCollectionViewCell.xib */; };
+		8B1C3BD31981DD6F00FA5763 /* ViewControllerStep6TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C3BD11981DD6F00FA5763 /* ViewControllerStep6TableView.m */; };
+		8B1C3BD41981DD6F00FA5763 /* ViewControllerStep6TableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B1C3BD21981DD6F00FA5763 /* ViewControllerStep6TableView.xib */; };
 		8B8D17C91975EF4900D17E7B /* ViewControllerStep1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D17BE1975EF4900D17E7B /* ViewControllerStep1.m */; };
 		8B8D17CA1975EF4900D17E7B /* ViewControllerStep1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B8D17BF1975EF4900D17E7B /* ViewControllerStep1.xib */; };
 		8B8D17CB1975EF4900D17E7B /* ViewControllerStep2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D17C11975EF4900D17E7B /* ViewControllerStep2.m */; };
@@ -89,6 +91,9 @@
 		4FB8621C197EEC740053B448 /* UIPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		4FB8621D197EEC740053B448 /* UIPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		4FB8621F197EED820053B448 /* UIPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		8B1C3BD01981DD6F00FA5763 /* ViewControllerStep6TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerStep6TableView.h; path = ../ViewControllerStep6TableView.h; sourceTree = "<group>"; };
+		8B1C3BD11981DD6F00FA5763 /* ViewControllerStep6TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerStep6TableView.m; path = ../ViewControllerStep6TableView.m; sourceTree = "<group>"; };
+		8B1C3BD21981DD6F00FA5763 /* ViewControllerStep6TableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewControllerStep6TableView.xib; path = ../ViewControllerStep6TableView.xib; sourceTree = "<group>"; };
 		8B8D17BD1975EF4900D17E7B /* ViewControllerStep1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerStep1.h; sourceTree = "<group>"; };
 		8B8D17BE1975EF4900D17E7B /* ViewControllerStep1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerStep1.m; sourceTree = "<group>"; };
 		8B8D17BF1975EF4900D17E7B /* ViewControllerStep1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerStep1.xib; sourceTree = "<group>"; };
@@ -167,6 +172,9 @@
 		4F9D9B231975995A0045B680 /* EjemploWizard */ = {
 			isa = PBXGroup;
 			children = (
+				8B1C3BD01981DD6F00FA5763 /* ViewControllerStep6TableView.h */,
+				8B1C3BD11981DD6F00FA5763 /* ViewControllerStep6TableView.m */,
+				8B1C3BD21981DD6F00FA5763 /* ViewControllerStep6TableView.xib */,
 				4FB86217197EC1F80053B448 /* ViewControllerStep5.h */,
 				4FB86218197EC1F80053B448 /* ViewControllerStep5.m */,
 				4FB86219197EC1F80053B448 /* ViewControllerStep5.xib */,
@@ -324,6 +332,7 @@
 				4FB8621B197EC1F80053B448 /* ViewControllerStep5.xib in Resources */,
 				8B8D17CC1975EF4900D17E7B /* ViewControllerStep2.xib in Resources */,
 				4F9E554B198147D700F91825 /* MyLaunchImage.png in Resources */,
+				8B1C3BD41981DD6F00FA5763 /* ViewControllerStep6TableView.xib in Resources */,
 				8B8D17CA1975EF4900D17E7B /* ViewControllerStep1.xib in Resources */,
 				8B8D17D01975EF4900D17E7B /* ViewControllerStep6.xib in Resources */,
 				4F9D9B301975995A0045B680 /* Images.xcassets in Resources */,
@@ -359,6 +368,7 @@
 				4F9D9B2A1975995A0045B680 /* main.m in Sources */,
 				4F0C9606198055F400B97685 /* FooterGallery.m in Sources */,
 				4FB8621E197EEC740053B448 /* UIPhotoCollectionViewCell.m in Sources */,
+				8B1C3BD31981DD6F00FA5763 /* ViewControllerStep6TableView.m in Sources */,
 				4FAAA7EC197EA4230091A34A /* ValidatorImpl.m in Sources */,
 				8B8D17D81975FA8E00D17E7B /* UIButton+Copado.m in Sources */,
 			);
