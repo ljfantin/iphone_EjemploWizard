@@ -9,11 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TableViewHeader : UIView
-+ (id)initFromXib:(NSString *) xib;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-- (IBAction)changePage:(id)sender;
 
-@property (retain, nonatomic) NSArray * images;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
++ (id)initFromXib:(NSString *) xib;
+
 @end
