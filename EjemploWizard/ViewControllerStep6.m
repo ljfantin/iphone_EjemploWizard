@@ -10,9 +10,12 @@
 #import "ViewControllerStep2.h"
 #import "UIButton+Copado.h"
 #import "NSString+Utils.h"
+#import "TableViewHeader.h"
+
+#define COUNT_SECTIONS 1
 
 @interface ViewControllerStep6 ()
-
+@property NSMutableDictionary * values;
 @end
 
 @implementation ViewControllerStep6
@@ -23,6 +26,7 @@
     if (self) {
         // Custom initialization
         self.title=@"Fin Publicacion";
+        self.values = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -30,45 +34,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //cargo el footer
+    UIView * v = [[[NSBundle mainBundle] loadNibNamed:@"TableViewFooter" owner:self options:nil] firstObject];
+    //seteo el footer
+    self.tableView.tableFooterView = v;
     [self.buttonAceptar makeCopado];
     [self.buttonCancelar makeCopado];
+    
+    //cargo el header
+    TableViewHeader * header = [TableViewHeader initFromXib:nil];
+    //seteo el header
+    self.tableView.tableHeaderView = header;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    NSString * descripcion = [self.carInformation.descripcion trim];
+    //TODO BORRAR ESTO;
+    self.carInformation = [[CarInformationDTO alloc] init];
+    [self.carInformation reset];
     
-    if ([descripcion length]==0)  {
-        [self.labelDescripcion removeFromSuperview];
-        [self.labelTittleDescripcion removeFromSuperview];
-        /*NSDictionary * views = NSDictionaryOfVariableBindings(_labelTitulo,_labelTittleKilometro);
-        NSArray * constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[_labelTitulo]-20-[_labelTittleKilometro]"
-                                                options:0
-                                                metrics:nil
-                                                views:views];
-        
-        [self.view addConstraints:constraints];*/
-        //self.constraintKilometrajeToLabelTitulo.constant=20.0;
-        //self.constraint.constant = 0;
-        
-        /*CGRect frame = self.labelDescripcion.frame;
-        frame.size.height = 0;
-        frame = self.labelTittleDescripcion.frame;
-        frame.size.height = 0;*/
-        //self.constraintKilometrajeSubtitulo.constant = 0;
-    }   else {
-        [self.view addSubview:self.labelTittleDescripcion];
-        [self.view addSubview:self.labelDescripcion];
-    }
-    
-    self.labelTitulo.text=self.carInformation.titulo;
-    self.labelSubtitulo.text=self.carInformation.subtitulo;
-    self.labelPrecio.text=self.carInformation.precio;
-    self.labelDescripcion.text=self.carInformation.descripcion;
-    self.labelKilometraje.text=self.carInformation.kilometraje;
-    
+    [self.values setObject:self.carInformation.titulo forKey:@"Titulo"];
+    [self.values setObject:self.carInformation.subtitulo forKey:@"Subtitulo"];
+    [self.values setObject:self.carInformation.precio forKey:@"Precio"];
+    [self.values setObject:self.carInformation.descripcion forKey:@"Descripcion"];
+    [self.values setObject:self.carInformation.precio forKey:@"Precio"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,6 +73,7 @@
     [self.carInformation reset];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
 - (IBAction)pushButtonCancelar:(id)sender {
     for (UIViewController * viewController in self.navigationController.viewControllers) {
         if ([viewController isKindOfClass:[ViewControllerStep2 class]]) {
@@ -88,4 +81,30 @@
         }
     }
 }
+
+#pragma mark - Table view data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return COUNT_SECTIONS;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.values count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellDetail"];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"cellDetail"];
+        
+        NSString * key = [self.values.keyEnumerator.allObjects objectAtIndex:indexPath.row];
+        cell.textLabel.text = key;
+        cell.detailTextLabel.text = [self.values valueForKey:key];
+    }
+    return cell;
+}
+
 @end

@@ -9,27 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
 
-@interface ViewControllerStep6 : UIViewController
+@interface ViewControllerStep6 : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintKilometrajeSubtitulo;
 //carInformation
 @property (retain, nonatomic) CarInformationDTO * carInformation;
-//botones
-@property (weak, nonatomic) IBOutlet UIButton *buttonCancelar;
-@property (weak, nonatomic) IBOutlet UIButton *buttonAceptar;
-//labels
-@property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
-@property (weak, nonatomic) IBOutlet UILabel *labelDescripcion;
-@property (weak, nonatomic) IBOutlet UILabel *labelKilometraje;
-@property (weak, nonatomic) IBOutlet UILabel *descripcion;
-@property (weak, nonatomic) IBOutlet UILabel *labelTittleTitulo;
-@property (weak, nonatomic) IBOutlet UILabel *labelTittleDescripcion;
-@property (weak, nonatomic) IBOutlet UILabel *labelTittleKilometro;
-@property (weak, nonatomic) IBOutlet UILabel *labelSubtitulo;
-@property (weak, nonatomic) IBOutlet UILabel *labelPrecio;
+
+//table
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
 - (IBAction)pushButtonCancelar:(id)sender;
 - (IBAction)pushButtonAceptar:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonAceptar;
+@property (weak, nonatomic) IBOutlet UIButton *buttonCancelar;
 
 @end
