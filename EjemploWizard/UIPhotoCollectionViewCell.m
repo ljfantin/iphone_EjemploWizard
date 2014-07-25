@@ -26,7 +26,8 @@
             return nil;
         }
         
-        self = [arrayOfViews objectAtIndex:0];
+        //self =
+        
         /*self.backgroundColor = [UIColor whiteColor];
         self.layer.shadowColor = [UIColor blackColor].CGColor;
         self.layer.shadowRadius = 5.0f;

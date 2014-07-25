@@ -15,13 +15,8 @@
 
 
 @interface ViewControllerStep6TableView ()
-@property NSArray labels = [[NSArray alloc] initWithObjects:
-@"Titulo",
-@"A relationship with no trust is like a cell phone with no service, all you can do is play games.",
-@"People should stop talking about their problem and start thinking about the solution.",
-@"Dear Chuck Norris, Screw you. I can grill burgers under water. Sincerely, Spongebob Squarepants.",
-@"My arms will always be open for you, they will never close, not unless you're in them.",
-nil];
+//@property NSArray * labels = @[@"Titulo",@"Subtitulo",@"Kilometraje",@"Precio",@"Descripcion"];
+@property NSArray *labels;
 @end
 
 @implementation ViewControllerStep6TableView
@@ -29,7 +24,9 @@ nil];
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.labels = @[@"Titulo", @"Subtitulo", @"Kilometraje",
+                 @"Precio", @"Descripcion"];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -79,17 +76,29 @@ nil];
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cellDetail"];
-        cell.textLabel.text =
+        cell.textLabel.text = [self.labels objectAtIndex:row];
     }
     return cell;
 }
 
 - (UITableViewCell *) getCellForButtons:(UITableView *)tableView {
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellButtons"];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cellButtons"];
+        cell.textLabel.text = @"Botones";
+    }
+    return cell;
 }
 
 - (UITableViewCell *) getCellForImages:(UITableView *)tableView {
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellImages"];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cellImages"];
+        cell.textLabel.text = @"images";
+    }
+    return cell;
 }
 
 

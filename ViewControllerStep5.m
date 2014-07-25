@@ -39,7 +39,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
     
     //seteo el content size
     [[self scroll] setContentSize:[[self view] frame].size];
-
+    
     //inicializo la galeria
     [self setupCollectionView];
 }
@@ -51,7 +51,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
     //desabilito el boton si seleccione la cantidad maxima de fotos
     if ([self.carInformation.gallery count]==CANT_MAX_FOTOS)
         self.buttonAddImage.enabled = false;
-
+    
 }
 
 
@@ -64,8 +64,8 @@ const NSInteger CANT_MAX_FOTOS = 6;
     
     //registro la clase del footer
     [self.collectionViewGallery registerClass:[FooterGallery class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
-        withReuseIdentifier:@"FooterView"];
-
+                          withReuseIdentifier:@"FooterView"];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -147,20 +147,20 @@ const NSInteger CANT_MAX_FOTOS = 6;
     //Actualizo el collectionview
     // Parche que saque de aca: http://stackoverflow.com/questions/19199985/invalid-update-invalid-number-of-items-on-uicollectionview
     if (self.carInformation.gallery.count == 1) {
-      [self.collectionViewGallery reloadData];
+        [self.collectionViewGallery reloadData];
     } else {
         [self.collectionViewGallery performBatchUpdates:^{
             NSMutableArray * arrayWithIndex = [NSMutableArray array];
             NSInteger index = [self.carInformation.gallery count]-1;
             [arrayWithIndex addObject:[NSIndexPath indexPathForRow:index inSection:0]];
             [self.collectionViewGallery insertItemsAtIndexPaths:arrayWithIndex];
-
+            
         } completion:nil];
     }
     //desabilito el boton si seleccione la cantidad maxima de fotos
     if ([self.carInformation.gallery count]==CANT_MAX_FOTOS)
         self.buttonAddImage.enabled = false;
-        
+    
     [self.collectionViewGallery reloadSections:[NSIndexSet indexSetWithIndex:0]];
 }
 
@@ -215,8 +215,8 @@ const NSInteger CANT_MAX_FOTOS = 6;
             }
             [reusableview updateCantidadFotos: CANT_MAX_FOTOS - self.carInformation.gallery.count];
             /*UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-            label.text=[NSString stringWithFormat:@"%i fotos disponibles", CANT_MAX_FOTOS - self.carInformation.gallery.count];
-            [reusableview addSubview:label];*/
+             label.text=[NSString stringWithFormat:@"%i fotos disponibles", CANT_MAX_FOTOS - self.carInformation.gallery.count];
+             [reusableview addSubview:label];*/
             return reusableview;
         }
     }
