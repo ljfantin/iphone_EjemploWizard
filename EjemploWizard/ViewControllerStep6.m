@@ -43,7 +43,9 @@
     [self.buttonCancelar makeCopado];
     
     //cargo el header
-    TableViewHeader * header = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
+    //TableViewHeader * header = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
+    
+    UIView * header = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
     
     //TableViewHeader * header = [TableViewHeader initFromXib:nil];
     //seteo el header
@@ -55,14 +57,11 @@
     [super viewWillAppear:animated];
     
     //TODO BORRAR ESTO;
-    self.carInformation = [[CarInformationDTO alloc] init];
-    
-    
-    
-    [self.carInformation reset];
+    //self.carInformation = [[CarInformationDTO alloc] init];
+    //[self.carInformation reset];
     
     //TODO BORRAR TODO ESTO
-    self.carInformation.titulo = @"Esto es un titulo";
+    /*self.carInformation.titulo = @"Esto es un titulo";
     self.carInformation.subtitulo = @"Esto es un subtitulo";
     self.carInformation.descripcion = @"Esto es una descripcion";
     self.carInformation.kilometraje = @"60000";
@@ -70,10 +69,10 @@
     UIImage * image1 = [UIImage imageNamed:@"image1.jpg"];
     UIImage * image2 = [UIImage imageNamed:@"image2.jpg"];
     UIImage * image3 = [UIImage imageNamed:@"image3.jpg"];
-
     [self.carInformation.gallery addObject:image1];
     [self.carInformation.gallery addObject:image2];
-    [self.carInformation.gallery addObject:image3];
+    [self.carInformation.gallery addObject:image3];*/
+    //FIN BORRAR
     
     TableViewHeader * header = (TableViewHeader * ) self.tableView.tableHeaderView;
     [header loadGallery:self.carInformation.gallery];
@@ -85,6 +84,12 @@
     [self.values setObject:self.carInformation.precio forKey:@"Precio"];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -94,6 +99,15 @@
 - (IBAction)pushButtonAceptar:(id)sender {
     [self.carInformation reset];
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (IBAction)pageChanged:(id)sender {
+    CGRect frame;
+    frame.origin.x = self.scrollView.frame.size.width * self.pageControl.currentPage;
+    frame.origin.y = 0;
+    frame.size = self.scrollView.frame.size;
+    [self.scrollView scrollRectToVisible:frame animated:YES];
+    //pageControlUsed = YES;
 }
 
 - (IBAction)pushButtonCancelar:(id)sender {
@@ -133,9 +147,11 @@
 #pragma mark - Implementacion de UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
-    TableViewHeader * header = (TableViewHeader * ) self.tableView.tableHeaderView;
-    CGFloat pageWidth = sender.frame.size.width;
-    int page = floor((sender.contentOffset.x - pageWidth / 2) / pageWidth)+1;
-    [header updateImage:page];
+    //TableViewHeader * header = (TableViewHeader * ) self.tableView.tableHeaderView;
+    /*CGFloat pageWidth = sender.frame.size.width;
+    int page = floor((sender.contentOffset.x - pageWidth / 2 ) / pageWidth) + 1;
+    self.pageControl.currentPage = page;*/
 }
+
+
 @end

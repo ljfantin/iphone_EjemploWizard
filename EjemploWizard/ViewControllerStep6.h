@@ -16,7 +16,10 @@
 
 //table
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+- (IBAction)pageChanged:(id)sender;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 - (IBAction)pushButtonCancelar:(id)sender;
 - (IBAction)pushButtonAceptar:(id)sender;

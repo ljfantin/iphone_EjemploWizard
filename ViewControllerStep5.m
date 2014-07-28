@@ -51,7 +51,24 @@ const NSInteger CANT_MAX_FOTOS = 6;
     //desabilito el boton si seleccione la cantidad maxima de fotos
     if ([self.carInformation.gallery count]==CANT_MAX_FOTOS)
         self.buttonAddImage.enabled = false;
+    
+    //[self.scroll setContentOffset:CGPointMake(0,0) animated:YES];
+    
+    //inicializo la galeria
+    //[self setupCollectionView];
+    //self.scroll.scrollEnabled = YES;
+    
+    //seteo el content size
+    [[self scroll] setContentSize:[[self view] frame].size];
+    
+    
+    //self.automaticallyAdjustsScrollViewInsets = NO;
+    //self.scroll.contentOffset = CGPointMake(0, 0);
+}
 
+-(void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    //self.scroll.contentOffset = CGPointMake(0, 0);
 }
 
 
@@ -139,6 +156,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [self.navigationController dismissViewControllerAnimated: YES completion: nil];
+    //[self.navigationController dismissViewControllerAnimated: YES completion: NULL];
     //agarro la imagen del uiimagepicker
     UIImage *image = [info valueForKey: UIImagePickerControllerOriginalImage];
     //agrego la imagen a la galeria

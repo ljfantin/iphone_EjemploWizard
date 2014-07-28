@@ -13,12 +13,10 @@
 @property (retain, nonatomic) NSArray * images;
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 
 
 + (id)initFromXib:(NSString *) xib;
 - (void)loadGallery:(NSArray*)images;
-- (void) updateImage:(NSInteger)page;
 @end
