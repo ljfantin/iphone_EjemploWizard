@@ -18,8 +18,7 @@
     }
     
     TableViewHeader * instance = nil;
-    if (self) {
-        NSArray *arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil];
+    NSArray *arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:nil options:nil];
         //[self addSubview:self.categoryNameLabel];
         
         if ([arrayOfViews count] < 1) {
@@ -31,30 +30,29 @@
         }
         
         instance = [arrayOfViews objectAtIndex:0];
-    }
+    
     return instance;
 }
 
-
-- (void)viewDidLoad
+- (void)loadGallery:(NSArray*)images
 {
-    /*[super viewDidLoad];
-    //Put the names of our image files in our array.
-    imageArray = [[NSArray alloc] initWithObjects:@"image1.jpg", @"image2.jpg", @"image3.jpg", nil];
-    
-    for (int i = 0; i < [imageArray count]; i++) {
+    self.images = images;
+    for (int i = 0; i < [self.images count]; i++) {
         //We'll create an imageView object in every 'page' of our scrollView.
         CGRect frame;
-        frame.origin.x = self.scrollView.frame.size.width * i;
+        frame.origin.x = self.scroll.frame.size.width * i;
         frame.origin.y = 0;
-        frame.size = self.scrollView.frame.size;
+        frame.size.width = 200;
+        frame.size.height=  200;//self.scroll.frame.size;
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-        imageView.image = [UIImage imageNamed:[imageArray objectAtIndex:i]];
-        [self.scrollView addSubview:imageView];
+        imageView.image = [self.images objectAtIndex:i];
+        [self.scroll addSubview:imageView];
     }
     //Set the content size of our scrollview according to the total width of our imageView objects.
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [imageArray count], scrollView.frame.size.height);*/
+    self.scroll.contentSize = CGSizeMake(self.frame.size.width * [self.images count], self.scroll.frame.size.height);
+    self.pageControl.currentPage = 0;
+    self.pageControl.numberOfPages = [self.images count];
 }
 
 
@@ -66,6 +64,14 @@
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     self.pageControl.currentPage = page;
 }*/
+
+
+- (void) updateImage:(NSInteger)page
+{
+    self.pageControl.currentPage = page;
+}
+
+
 
 
 @end

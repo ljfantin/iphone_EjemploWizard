@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
 
-@interface ViewControllerStep6 : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface ViewControllerStep6 : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 //carInformation
 @property (retain, nonatomic) CarInformationDTO * carInformation;

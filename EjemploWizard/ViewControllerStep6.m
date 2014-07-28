@@ -43,7 +43,9 @@
     [self.buttonCancelar makeCopado];
     
     //cargo el header
-    TableViewHeader * header = [TableViewHeader initFromXib:nil];
+    TableViewHeader * header = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
+    
+    //TableViewHeader * header = [TableViewHeader initFromXib:nil];
     //seteo el header
     self.tableView.tableHeaderView = header;
 }
@@ -54,7 +56,27 @@
     
     //TODO BORRAR ESTO;
     self.carInformation = [[CarInformationDTO alloc] init];
+    
+    
+    
     [self.carInformation reset];
+    
+    //TODO BORRAR TODO ESTO
+    self.carInformation.titulo = @"Esto es un titulo";
+    self.carInformation.subtitulo = @"Esto es un subtitulo";
+    self.carInformation.descripcion = @"Esto es una descripcion";
+    self.carInformation.kilometraje = @"60000";
+    self.carInformation.precio = @"10000";
+    UIImage * image1 = [UIImage imageNamed:@"image1.jpg"];
+    UIImage * image2 = [UIImage imageNamed:@"image2.jpg"];
+    UIImage * image3 = [UIImage imageNamed:@"image3.jpg"];
+
+    [self.carInformation.gallery addObject:image1];
+    [self.carInformation.gallery addObject:image2];
+    [self.carInformation.gallery addObject:image3];
+    
+    TableViewHeader * header = (TableViewHeader * ) self.tableView.tableHeaderView;
+    [header loadGallery:self.carInformation.gallery];
     
     [self.values setObject:self.carInformation.titulo forKey:@"Titulo"];
     [self.values setObject:self.carInformation.subtitulo forKey:@"Subtitulo"];
@@ -107,4 +129,13 @@
     return cell;
 }
 
+
+#pragma mark - Implementacion de UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)sender
+{
+    TableViewHeader * header = (TableViewHeader * ) self.tableView.tableHeaderView;
+    CGFloat pageWidth = sender.frame.size.width;
+    int page = floor((sender.contentOffset.x - pageWidth / 2) / pageWidth)+1;
+    [header updateImage:page];
+}
 @end

@@ -45,6 +45,9 @@
 		8B8D17D51975EFA200D17E7B /* ViewControllerStep3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B8D17D31975EFA200D17E7B /* ViewControllerStep3.xib */; };
 		8B8D17D81975FA8E00D17E7B /* UIButton+Copado.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D17D71975FA8E00D17E7B /* UIButton+Copado.m */; };
 		8B8D17DE197604D700D17E7B /* UiTextViewCopado.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D17DD197604D700D17E7B /* UiTextViewCopado.m */; };
+		8BC1EA181985A58900BBE340 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BC1EA171985A58900BBE340 /* image2.jpg */; };
+		8BC1EA1A1985A5A000BBE340 /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BC1EA191985A5A000BBE340 /* image3.jpg */; };
+		8BC1EA1C1985A69300BBE340 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BC1EA1B1985A69300BBE340 /* image1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		8B8D17D71975FA8E00D17E7B /* UIButton+Copado.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Copado.m"; sourceTree = "<group>"; };
 		8B8D17DC197604D700D17E7B /* UiTextViewCopado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UiTextViewCopado.h; sourceTree = "<group>"; };
 		8B8D17DD197604D700D17E7B /* UiTextViewCopado.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UiTextViewCopado.m; sourceTree = "<group>"; };
+		8BC1EA171985A58900BBE340 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
+		8BC1EA191985A5A000BBE340 /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpg; sourceTree = "<group>"; };
+		8BC1EA1B1985A69300BBE340 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,9 @@
 		4F9D9B231975995A0045B680 /* EjemploWizard */ = {
 			isa = PBXGroup;
 			children = (
+				8BC1EA1B1985A69300BBE340 /* image1.jpg */,
+				8BC1EA191985A5A000BBE340 /* image3.jpg */,
+				8BC1EA171985A58900BBE340 /* image2.jpg */,
 				4FF157E81982A93700E8309E /* TableViewHeader.xib */,
 				4FB86217197EC1F80053B448 /* ViewControllerStep5.h */,
 				4FB86218197EC1F80053B448 /* ViewControllerStep5.m */,
@@ -328,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F9D9B281975995A0045B680 /* InfoPlist.strings in Resources */,
+				8BC1EA1A1985A5A000BBE340 /* image3.jpg in Resources */,
 				4F0C960A198058D700B97685 /* FooterGallery.xib in Resources */,
 				8B8D17CE1975EF4900D17E7B /* ViewControllerStep4.xib in Resources */,
 				4F9E554C198147D700F91825 /* MyLaunchImage@2x.png in Resources */,
@@ -336,8 +346,10 @@
 				4FF157F01982AB9000E8309E /* TableViewFooter.xib in Resources */,
 				8B8D17CC1975EF4900D17E7B /* ViewControllerStep2.xib in Resources */,
 				4F9E554B198147D700F91825 /* MyLaunchImage.png in Resources */,
+				8BC1EA181985A58900BBE340 /* image2.jpg in Resources */,
 				8B8D17CA1975EF4900D17E7B /* ViewControllerStep1.xib in Resources */,
 				8B8D17D01975EF4900D17E7B /* ViewControllerStep6.xib in Resources */,
+				8BC1EA1C1985A69300BBE340 /* image1.jpg in Resources */,
 				4F9D9B301975995A0045B680 /* Images.xcassets in Resources */,
 				4FF157E91982A93700E8309E /* TableViewHeader.xib in Resources */,
 				8B8D17D51975EFA200D17E7B /* ViewControllerStep3.xib in Resources */,
