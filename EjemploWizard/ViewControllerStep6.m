@@ -43,9 +43,9 @@
     [self.buttonCancelar makeCopado];
     
     //cargo el header
-    //TableViewHeader * header = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
+    TableViewHeader * header = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
     
-    UIView * header = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
+    //UIView * header = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
     
     //TableViewHeader * header = [TableViewHeader initFromXib:nil];
     //seteo el header
@@ -87,6 +87,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [self.tableView setContentOffset:CGPointMake(0, 0) animated: YES];
 }
 
 
@@ -148,9 +149,9 @@
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
     //TableViewHeader * header = (TableViewHeader * ) self.tableView.tableHeaderView;
-    /*CGFloat pageWidth = sender.frame.size.width;
+    CGFloat pageWidth = sender.frame.size.width;
     int page = floor((sender.contentOffset.x - pageWidth / 2 ) / pageWidth) + 1;
-    self.pageControl.currentPage = page;*/
+    self.pageControl.currentPage = page;
 }
 
 

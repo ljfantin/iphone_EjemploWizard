@@ -35,7 +35,7 @@
 }
 */
 
-/*- (void)loadGallery:(NSArray*)images
+- (void)loadGallery:(NSArray*)images
 {
     self.images = images;
     for (NSUInteger i = 0; i < [self.images count]; i++) {
@@ -53,7 +53,7 @@
 
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = [self.images count];
-}*/
+}
 
 
 

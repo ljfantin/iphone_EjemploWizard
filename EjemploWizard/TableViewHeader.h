@@ -17,6 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 
 
-+ (id)initFromXib:(NSString *) xib;
+//+ (id)initFromXib:(NSString *) xib;
 - (void)loadGallery:(NSArray*)images;
 @end
