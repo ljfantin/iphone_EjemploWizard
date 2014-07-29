@@ -11,18 +11,14 @@
 
 @interface ViewControllerStep5 : UIViewController<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDataSource, UICollectionViewDelegate>
 
-
-
 - (IBAction)addImagePushButton:(id)sender;
 
 - (IBAction)siguientePushButton:(id)sender;
 
-//@property (weak, nonatomic) IBOutlet UIImageView *imageView1;
-@property (weak, nonatomic) IBOutlet UIButton *buttonAddImage;
-@property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
-@property (weak, nonatomic) IBOutlet UIScrollView *scroll;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionViewGallery;
-
+@property (assign, nonatomic) IBOutlet UIButton *buttonAddImage;
+@property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;
+@property (assign, nonatomic) IBOutlet UIScrollView *scroll;
+@property (assign, nonatomic) IBOutlet UICollectionView *collectionViewGallery;
 
 @property (retain, nonatomic) CarInformationDTO * carInformation;
 

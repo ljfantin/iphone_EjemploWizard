@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FooterGallery : UICollectionReusableView
-@property (weak, nonatomic) IBOutlet UILabel *labelCantidadFotos;
+@property (assign, nonatomic) IBOutlet UILabel *labelCantidadFotos;
 
 - (void) updateCantidadFotos:(NSInteger)newCant;
 @end

@@ -24,7 +24,10 @@
     
     //le seteo el navigation controller
     [self.window setRootViewController:navigationController];
-
+    
+    [step1 release];
+    [navigationController release];
+    
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];

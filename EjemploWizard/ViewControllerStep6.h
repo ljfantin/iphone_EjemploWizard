@@ -13,19 +13,18 @@
 
 //carInformation
 @property (retain, nonatomic) CarInformationDTO * carInformation;
-
-//table
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
-- (IBAction)pageChanged:(id)sender;
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-
 - (IBAction)pushButtonCancelar:(id)sender;
 - (IBAction)pushButtonAceptar:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *buttonAceptar;
-@property (weak, nonatomic) IBOutlet UIButton *buttonCancelar;
-@property (weak, nonatomic) IBOutlet UIButton *botonAceptar;
-@property (weak, nonatomic) IBOutlet UIButton *botonCancelar;
+
+//table
+@property (assign, nonatomic) IBOutlet UITableView *tableView;
+@property (assign, nonatomic) IBOutlet UIScrollView *scrollView;
+
+- (IBAction)pageChanged:(id)sender;
+@property (assign, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (assign, nonatomic) IBOutlet UIButton *buttonAceptar;
+@property (assign, nonatomic) IBOutlet UIButton *buttonCancelar;
+@property (assign, nonatomic) IBOutlet UIButton *botonAceptar;
+@property (assign, nonatomic) IBOutlet UIButton *botonCancelar;
 
 @end

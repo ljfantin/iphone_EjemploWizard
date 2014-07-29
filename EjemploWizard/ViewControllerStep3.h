@@ -11,8 +11,8 @@
 
 @interface ViewControllerStep3 : UIViewController<UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *textfieldKilometraje;
-@property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
+@property (assign, nonatomic) IBOutlet UITextField *textfieldKilometraje;
+@property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;
 @property (retain, nonatomic) CarInformationDTO * carInformation;
 
 - (IBAction)pushButtonSiguiente:(id)sender;

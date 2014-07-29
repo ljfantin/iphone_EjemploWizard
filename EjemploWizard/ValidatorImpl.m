@@ -37,4 +37,10 @@
     return [field stringByTrimmingCharactersInSet:self.nonNumberSet].length > 0;
 }
 
+- (void)dealloc
+{
+    [self.nonNumberSet release];
+    [super dealloc];
+}
+
 @end

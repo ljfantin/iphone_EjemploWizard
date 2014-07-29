@@ -39,8 +39,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //Hago que se vea lindo el boton
-    //[self.buttonSiguiente makeCopado];
     
     //seteo el content size
     [[self scroll] setContentSize:[[self view] frame].size];
@@ -54,7 +52,7 @@
     //agrego al scroll view el identificador de gestos
     [[self scroll] addGestureRecognizer:tapRecognizer];
     
-    //self.automaticallyAdjustsScrollViewInsets = NO;
+    [tapRecognizer release];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -73,6 +71,8 @@
     nextView.carInformation = self.carInformation;
     //NSArray * arreglo = self.navigationController.viewControllers;
     [self.navigationController pushViewController:nextView animated:YES];
+    //libero el nextView
+    [nextView release];
 }
 
 - (IBAction)textFieldChangeSubtitulo:(id)sender {
@@ -189,4 +189,9 @@
     }
 }
 
+- (void)dealloc
+{
+    [self.carInformation release];
+    [super dealloc];
+}
 @end

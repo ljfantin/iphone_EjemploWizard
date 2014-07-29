@@ -85,7 +85,6 @@
     [self.tableView setContentOffset:CGPointMake(0, 0) animated: YES];
 }
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -148,5 +147,10 @@
     self.pageControl.currentPage = page;
 }
 
-
+- (void)dealloc
+{
+    [self.carInformation release];
+    [self.values release];
+    [super dealloc];
+}
 @end

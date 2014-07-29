@@ -12,13 +12,13 @@
 
 @interface ViewControllerStep4 : UIViewController<UITextViewDelegate,UIScrollViewDelegate,UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scroll;
+@property (assign, nonatomic) IBOutlet UIScrollView *scroll;
 @property (retain, nonatomic) CarInformationDTO * carInformation;
 
-@property (weak, nonatomic) IBOutlet UiTextViewCopado *textViewDescripcion;
+@property (assign, nonatomic) IBOutlet UiTextViewCopado *textViewDescripcion;
 
 
 - (IBAction)pushButtonSiguiente:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *buttonSiguiente;
+@property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;
 
 @end

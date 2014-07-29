@@ -11,7 +11,7 @@
 @interface UIPhotoCollectionViewCell : UICollectionViewCell
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (assign, nonatomic) IBOutlet UIImageView *imageView;
 
 - (void) updateCell:(UIImage*)image;
 

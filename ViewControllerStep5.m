@@ -33,10 +33,6 @@ const NSInteger CANT_MAX_FOTOS = 6;
 {
     [super viewDidLoad];
     
-    //Hago que se vea lindo el boton
-    //[self.buttonSiguiente makeCopado];
-    //[self.buttonAddImage makeCopado];
-    
     //seteo el content size
     [[self scroll] setContentSize:[[self view] frame].size];
 
@@ -52,18 +48,11 @@ const NSInteger CANT_MAX_FOTOS = 6;
     if ([self.carInformation.gallery count]==CANT_MAX_FOTOS)
         self.buttonAddImage.enabled = false;
     
-    //[self.scroll setContentOffset:CGPointMake(0,0) animated:YES];
-    
-    //inicializo la galeria
-    //[self setupCollectionView];
-    //self.scroll.scrollEnabled = YES;
-    
     //seteo el content size
     [[self scroll] setContentSize:[[self view] frame].size];
     
-    
+    //[self.scroll setContentOffset:CGPointMake(0,0) animated:YES];
     //self.automaticallyAdjustsScrollViewInsets = NO;
-    //self.scroll.contentOffset = CGPointMake(0, 0);
 }
 
 -(void)viewDidLayoutSubviews {
@@ -99,6 +88,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
                                                destructiveButtonTitle: nil
                                                     otherButtonTitles: @"Tomar una foto", @"Elegir foto del carrete", nil];
     [actionSheet showInView:self.view];
+    //se libera
     //[actionSheet release];
 }
 
@@ -107,6 +97,8 @@ const NSInteger CANT_MAX_FOTOS = 6;
     nextView.carInformation = self.carInformation;
     //NSArray * arreglo = self.navigationController.viewControllers;
     [self.navigationController pushViewController:nextView animated:YES];
+    //se libera
+    [nextView release];
 }
 
 
@@ -120,6 +112,8 @@ const NSInteger CANT_MAX_FOTOS = 6;
         controller.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType: UIImagePickerControllerSourceTypePhotoLibrary];
         controller.delegate = self;
         [self.navigationController presentViewController: controller animated: YES completion: nil];
+        //se libera
+        [controller release];
     }
 }
 
@@ -133,6 +127,8 @@ const NSInteger CANT_MAX_FOTOS = 6;
         controller.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType: UIImagePickerControllerSourceTypeCamera];
         controller.delegate = self;
         [self.navigationController presentViewController: controller animated: YES completion: nil];
+        //se libera
+        [controller release];
     }
 }
 
@@ -157,11 +153,12 @@ const NSInteger CANT_MAX_FOTOS = 6;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [self.navigationController dismissViewControllerAnimated: YES completion: nil];
-    //[self.navigationController dismissViewControllerAnimated: YES completion: NULL];
     //agarro la imagen del uiimagepicker
     UIImage *image = [info valueForKey: UIImagePickerControllerOriginalImage];
     //agrego la imagen a la galeria
     [self.carInformation.gallery addObject:image];
+    //libero la imagen
+    //[image release];
     
     //Actualizo el collectionview
     // Parche que saque de aca: http://stackoverflow.com/questions/19199985/invalid-update-invalid-number-of-items-on-uicollectionview
@@ -173,6 +170,8 @@ const NSInteger CANT_MAX_FOTOS = 6;
             NSInteger index = [self.carInformation.gallery count]-1;
             [arrayWithIndex addObject:[NSIndexPath indexPathForRow:index inSection:0]];
             [self.collectionViewGallery insertItemsAtIndexPaths:arrayWithIndex];
+            //libero la imagen
+            [arrayWithIndex release];
 
         } completion:nil];
     }
@@ -223,6 +222,10 @@ const NSInteger CANT_MAX_FOTOS = 6;
         UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
         label.text=@"Agrega fotos de tu vehiculo";
         [reusableview addSubview:label];
+        //libero el label
+        [label release];
+        //libero la vista
+        //[reusableview release];
         return reusableview;
     } else  {
         if (kind == UICollectionElementKindSectionFooter) {
@@ -233,12 +236,17 @@ const NSInteger CANT_MAX_FOTOS = 6;
                 reusableview=[[FooterGallery alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
             }
             [reusableview updateCantidadFotos: CANT_MAX_FOTOS - self.carInformation.gallery.count];
-            /*UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-            label.text=[NSString stringWithFormat:@"%i fotos disponibles", CANT_MAX_FOTOS - self.carInformation.gallery.count];
-            [reusableview addSubview:label];*/
+            //libero la vista
+            //[reusableview release];
             return reusableview;
         }
     }
     return nil;
+}
+
+- (void)dealloc
+{
+    [self.carInformation release];
+    [super dealloc];
 }
 @end

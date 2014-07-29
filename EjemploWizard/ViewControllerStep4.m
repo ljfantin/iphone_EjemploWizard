@@ -139,4 +139,9 @@
     [[self view] endEditing:YES];
 }
 
+- (void)dealloc
+{
+    [self.carInformation release];
+    [super dealloc];
+}
 @end

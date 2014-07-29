@@ -12,7 +12,7 @@
 @interface ViewControllerStep1 : UIViewController
 
 @property (retain, nonatomic) CarInformationDTO * carInformation;
-@property (weak, nonatomic) IBOutlet UIButton *buttonIngresar;
+@property (assign, nonatomic) IBOutlet UIButton *buttonIngresar;
 
 - (IBAction)pushButtonIngresar:(id)sender;
 

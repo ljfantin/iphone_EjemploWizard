@@ -10,11 +10,8 @@
 
 @interface TableViewHeader : UIView
 
-@property (retain, nonatomic) NSArray * images;
-
-
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (weak, nonatomic) IBOutlet UIScrollView *scroll;
+@property (assign, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (assign, nonatomic) IBOutlet UIScrollView *scroll;
 
 
 //+ (id)initFromXib:(NSString *) xib;

@@ -42,5 +42,14 @@
     //[self.navigationController]
     ViewControllerStep2 *nextView = [[ViewControllerStep2 alloc] initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:nextView animated:YES];
+    //release
+    [nextView release];
+}
+
+- (void)dealloc
+{
+    [self.carInformation release];
+    //va al final
+    [super dealloc];
 }
 @end
