@@ -40,7 +40,7 @@
 {
     [super viewDidLoad];
     //Hago que se vea lindo el boton
-    [self.buttonSiguiente makeCopado];
+    //[self.buttonSiguiente makeCopado];
     
     //seteo el content size
     [[self scroll] setContentSize:[[self view] frame].size];

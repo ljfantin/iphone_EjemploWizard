@@ -39,8 +39,8 @@
     /*UIView * v = [[[NSBundle mainBundle] loadNibNamed:@"TableViewFooter" owner:self options:nil] firstObject];
     //seteo el footer
     self.tableView.tableFooterView = v;*/
-    [self.botonAceptar makeCopado];
-    [self.botonCancelar makeCopado];
+    //[self.botonAceptar makeCopado];
+    //[self.botonCancelar makeCopado];
     
     TableViewHeader * header = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
     

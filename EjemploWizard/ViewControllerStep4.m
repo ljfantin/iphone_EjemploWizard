@@ -32,7 +32,7 @@
     [[self scroll] setContentSize:[[self view] frame].size];
     
     //hago el boton copado
-    [self.buttonSiguiente makeCopado];
+    //[self.buttonSiguiente makeCopado];
     
     //Creo identificador de gestos.
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewPulsado)];

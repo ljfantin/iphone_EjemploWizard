@@ -34,8 +34,8 @@ const NSInteger CANT_MAX_FOTOS = 6;
     [super viewDidLoad];
     
     //Hago que se vea lindo el boton
-    [self.buttonSiguiente makeCopado];
-    [self.buttonAddImage makeCopado];
+    //[self.buttonSiguiente makeCopado];
+    //[self.buttonAddImage makeCopado];
     
     //seteo el content size
     [[self scroll] setContentSize:[[self view] frame].size];

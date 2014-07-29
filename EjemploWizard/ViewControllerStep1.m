@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.buttonIngresar makeCopado];
+    //[self.buttonIngresar makeCopado];
 }
 
 - (void)didReceiveMemoryWarning

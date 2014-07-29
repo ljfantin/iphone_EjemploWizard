@@ -39,7 +39,7 @@
                                 <outlet property="delegate" destination="-1" id="nCs-yc-u6w"/>
                             </connections>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RqE-ZT-FBW">
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RqE-ZT-FBW" customClass="UIButtonCopado">
                             <rect key="frame" x="35" y="324" width="250" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Siguiente"/>
