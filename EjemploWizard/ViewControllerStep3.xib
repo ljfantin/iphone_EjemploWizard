@@ -29,6 +29,7 @@
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                     <connections>
                         <action selector="handleChangeKilometraje:" destination="-1" eventType="editingChanged" id="KjC-RG-XcC"/>
+                        <outlet property="delegate" destination="-1" id="l0Z-Wg-4dH"/>
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMc-I8-TXD">

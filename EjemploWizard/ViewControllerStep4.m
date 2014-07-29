@@ -74,6 +74,7 @@
     ViewControllerStep5 *nextView = [[ViewControllerStep5 alloc] initWithNibName:nil bundle:nil];
     self.carInformation.descripcion = self.textViewDescripcion.text;
     nextView.carInformation = self.carInformation;
+    //NSArray * arreglo = self.navigationController.viewControllers;
     [self.navigationController pushViewController:nextView animated:YES];
 }
 

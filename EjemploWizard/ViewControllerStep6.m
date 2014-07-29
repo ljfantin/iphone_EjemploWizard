@@ -36,20 +36,16 @@
     [super viewDidLoad];
     
     //cargo el footer
-    UIView * v = [[[NSBundle mainBundle] loadNibNamed:@"TableViewFooter" owner:self options:nil] firstObject];
+    /*UIView * v = [[[NSBundle mainBundle] loadNibNamed:@"TableViewFooter" owner:self options:nil] firstObject];
     //seteo el footer
-    self.tableView.tableFooterView = v;
-    [self.buttonAceptar makeCopado];
-    [self.buttonCancelar makeCopado];
+    self.tableView.tableFooterView = v;*/
+    [self.botonAceptar makeCopado];
+    [self.botonCancelar makeCopado];
     
-    //cargo el header
     TableViewHeader * header = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
     
-    //UIView * header = [[[NSBundle mainBundle] loadNibNamed:@"TableViewHeader" owner:self options:nil] firstObject];
-    
-    //TableViewHeader * header = [TableViewHeader initFromXib:nil];
     //seteo el header
-    self.tableView.tableHeaderView = header;
+    self.tableView.tableHeaderView=header;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -57,11 +53,10 @@
     [super viewWillAppear:animated];
     
     //TODO BORRAR ESTO;
-    //self.carInformation = [[CarInformationDTO alloc] init];
-    //[self.carInformation reset];
+    /*self.carInformation = [[CarInformationDTO alloc] init];
     
     //TODO BORRAR TODO ESTO
-    /*self.carInformation.titulo = @"Esto es un titulo";
+    self.carInformation.titulo = @"Esto es un titulo";
     self.carInformation.subtitulo = @"Esto es un subtitulo";
     self.carInformation.descripcion = @"Esto es una descripcion";
     self.carInformation.kilometraje = @"60000";
@@ -94,7 +89,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)pushButtonAceptar:(id)sender {
@@ -112,7 +106,8 @@
 }
 
 - (IBAction)pushButtonCancelar:(id)sender {
-    for (UIViewController * viewController in self.navigationController.viewControllers) {
+    NSArray * controllers = self.navigationController.viewControllers;
+    for (UIViewController * viewController in controllers) {
         if ([viewController isKindOfClass:[ViewControllerStep2 class]]) {
             [self.navigationController popToViewController:viewController animated:YES];
         }
@@ -148,7 +143,6 @@
 #pragma mark - Implementacion de UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
-    //TableViewHeader * header = (TableViewHeader * ) self.tableView.tableHeaderView;
     CGFloat pageWidth = sender.frame.size.width;
     int page = floor((sender.contentOffset.x - pageWidth / 2 ) / pageWidth) + 1;
     self.pageControl.currentPage = page;

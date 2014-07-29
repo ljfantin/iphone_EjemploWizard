@@ -105,6 +105,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
 - (IBAction)siguientePushButton:(id)sender {
     ViewControllerStep6 *nextView = [[ViewControllerStep6 alloc] initWithNibName:nil bundle:nil];
     nextView.carInformation = self.carInformation;
+    //NSArray * arreglo = self.navigationController.viewControllers;
     [self.navigationController pushViewController:nextView animated:YES];
 }
 

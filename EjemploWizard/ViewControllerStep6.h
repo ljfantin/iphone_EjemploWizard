@@ -25,5 +25,7 @@
 - (IBAction)pushButtonAceptar:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *buttonAceptar;
 @property (weak, nonatomic) IBOutlet UIButton *buttonCancelar;
+@property (weak, nonatomic) IBOutlet UIButton *botonAceptar;
+@property (weak, nonatomic) IBOutlet UIButton *botonCancelar;
 
 @end

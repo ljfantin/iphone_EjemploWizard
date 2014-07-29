@@ -71,6 +71,7 @@
     self.carInformation.precio = self.textFieldPrecio.text;
     
     nextView.carInformation = self.carInformation;
+    //NSArray * arreglo = self.navigationController.viewControllers;
     [self.navigationController pushViewController:nextView animated:YES];
 }
 
