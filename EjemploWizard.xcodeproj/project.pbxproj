@@ -26,6 +26,7 @@
 		4F9E554C198147D700F91825 /* MyLaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9E554A198147D700F91825 /* MyLaunchImage@2x.png */; };
 		4FAAA7E8197EA0230091A34A /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAA7E7197EA0230091A34A /* NSString+Utils.m */; };
 		4FAAA7EC197EA4230091A34A /* ValidatorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */; };
+		4FB06F6F198814E2000ADAC2 /* UIButtonCopado.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB06F6E198814E2000ADAC2 /* UIButtonCopado.m */; };
 		4FB8621A197EC1F80053B448 /* ViewControllerStep5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB86218197EC1F80053B448 /* ViewControllerStep5.m */; };
 		4FB8621B197EC1F80053B448 /* ViewControllerStep5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FB86219197EC1F80053B448 /* ViewControllerStep5.xib */; };
 		4FB8621E197EEC740053B448 /* UIPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB8621D197EEC740053B448 /* UIPhotoCollectionViewCell.m */; };
@@ -89,6 +90,8 @@
 		4FAAA7E9197EA3860091A34A /* Validator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Validator.h; sourceTree = "<group>"; };
 		4FAAA7EA197EA4230091A34A /* ValidatorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatorImpl.h; sourceTree = "<group>"; };
 		4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatorImpl.m; sourceTree = "<group>"; };
+		4FB06F6D198814E2000ADAC2 /* UIButtonCopado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonCopado.h; sourceTree = "<group>"; };
+		4FB06F6E198814E2000ADAC2 /* UIButtonCopado.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonCopado.m; sourceTree = "<group>"; };
 		4FB86217197EC1F80053B448 /* ViewControllerStep5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerStep5.h; path = ../ViewControllerStep5.h; sourceTree = "<group>"; };
 		4FB86218197EC1F80053B448 /* ViewControllerStep5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerStep5.m; path = ../ViewControllerStep5.m; sourceTree = "<group>"; };
 		4FB86219197EC1F80053B448 /* ViewControllerStep5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewControllerStep5.xib; path = ../ViewControllerStep5.xib; sourceTree = "<group>"; };
@@ -180,54 +183,16 @@
 		4F9D9B231975995A0045B680 /* EjemploWizard */ = {
 			isa = PBXGroup;
 			children = (
-				8BC1EA1B1985A69300BBE340 /* image1.jpg */,
-				8BC1EA191985A5A000BBE340 /* image3.jpg */,
-				8BC1EA171985A58900BBE340 /* image2.jpg */,
-				4FF157E81982A93700E8309E /* TableViewHeader.xib */,
-				4FB86217197EC1F80053B448 /* ViewControllerStep5.h */,
-				4FB86218197EC1F80053B448 /* ViewControllerStep5.m */,
-				4FB86219197EC1F80053B448 /* ViewControllerStep5.xib */,
-				4F08ECD81976FFCD00CBAD23 /* CarInformationDTO.h */,
-				4F08ECD91976FFCD00CBAD23 /* CarInformationDTO.m */,
-				8B8D17D11975EFA200D17E7B /* ViewControllerStep3.h */,
-				8B8D17D21975EFA200D17E7B /* ViewControllerStep3.m */,
-				8B8D17D31975EFA200D17E7B /* ViewControllerStep3.xib */,
-				8B8D17BD1975EF4900D17E7B /* ViewControllerStep1.h */,
-				8B8D17BE1975EF4900D17E7B /* ViewControllerStep1.m */,
-				8B8D17BF1975EF4900D17E7B /* ViewControllerStep1.xib */,
-				4FB8621F197EED820053B448 /* UIPhotoCollectionViewCell.xib */,
-				4F0C9609198058D700B97685 /* FooterGallery.xib */,
-				8B8D17C01975EF4900D17E7B /* ViewControllerStep2.h */,
-				8B8D17C11975EF4900D17E7B /* ViewControllerStep2.m */,
-				8B8D17C21975EF4900D17E7B /* ViewControllerStep2.xib */,
-				8B8D17C31975EF4900D17E7B /* ViewControllerStep4.h */,
-				8B8D17C41975EF4900D17E7B /* ViewControllerStep4.m */,
-				8B8D17C51975EF4900D17E7B /* ViewControllerStep4.xib */,
-				8B8D17C61975EF4900D17E7B /* ViewControllerStep6.h */,
-				8B8D17C71975EF4900D17E7B /* ViewControllerStep6.m */,
-				8B8D17C81975EF4900D17E7B /* ViewControllerStep6.xib */,
+				4FB06F7619881987000ADAC2 /* images */,
+				4FB06F75198818B6000ADAC2 /* ui */,
+				4FB06F741988189A000ADAC2 /* dto */,
+				4FB06F73198817CF000ADAC2 /* utils */,
+				4FB06F721988161E000ADAC2 /* controller */,
+				4FB06F7119881605000ADAC2 /* xib */,
 				4F9D9B2C1975995A0045B680 /* AppDelegate.h */,
 				4F9D9B2D1975995A0045B680 /* AppDelegate.m */,
 				4F9D9B2F1975995A0045B680 /* Images.xcassets */,
-				4F9E5549198147D700F91825 /* MyLaunchImage.png */,
-				4F9E554A198147D700F91825 /* MyLaunchImage@2x.png */,
 				4F9D9B241975995A0045B680 /* Supporting Files */,
-				8B8D17D61975FA8E00D17E7B /* UIButton+Copado.h */,
-				8B8D17D71975FA8E00D17E7B /* UIButton+Copado.m */,
-				8B8D17DC197604D700D17E7B /* UiTextViewCopado.h */,
-				8B8D17DD197604D700D17E7B /* UiTextViewCopado.m */,
-				4FAAA7E6197EA0230091A34A /* NSString+Utils.h */,
-				4FAAA7E7197EA0230091A34A /* NSString+Utils.m */,
-				4FAAA7E9197EA3860091A34A /* Validator.h */,
-				4FAAA7EA197EA4230091A34A /* ValidatorImpl.h */,
-				4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */,
-				4FB8621C197EEC740053B448 /* UIPhotoCollectionViewCell.h */,
-				4FB8621D197EEC740053B448 /* UIPhotoCollectionViewCell.m */,
-				4F0C9604198055F400B97685 /* FooterGallery.h */,
-				4F0C9605198055F400B97685 /* FooterGallery.m */,
-				4FF157E31982A83800E8309E /* TableViewHeader.h */,
-				4FF157E41982A83800E8309E /* TableViewHeader.m */,
-				4FF157EF1982AB9000E8309E /* TableViewFooter.xib */,
 			);
 			path = EjemploWizard;
 			sourceTree = "<group>";
@@ -259,6 +224,94 @@
 				4F9D9B3F1975995A0045B680 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4FB06F7119881605000ADAC2 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				4FF157E81982A93700E8309E /* TableViewHeader.xib */,
+				4FB86219197EC1F80053B448 /* ViewControllerStep5.xib */,
+				8B8D17BF1975EF4900D17E7B /* ViewControllerStep1.xib */,
+				8B8D17C81975EF4900D17E7B /* ViewControllerStep6.xib */,
+				8B8D17C51975EF4900D17E7B /* ViewControllerStep4.xib */,
+				8B8D17C21975EF4900D17E7B /* ViewControllerStep2.xib */,
+				8B8D17D31975EFA200D17E7B /* ViewControllerStep3.xib */,
+				4FF157EF1982AB9000E8309E /* TableViewFooter.xib */,
+				4FB8621F197EED820053B448 /* UIPhotoCollectionViewCell.xib */,
+				4F0C9609198058D700B97685 /* FooterGallery.xib */,
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
+		4FB06F721988161E000ADAC2 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B8D17BD1975EF4900D17E7B /* ViewControllerStep1.h */,
+				8B8D17BE1975EF4900D17E7B /* ViewControllerStep1.m */,
+				8B8D17D11975EFA200D17E7B /* ViewControllerStep3.h */,
+				8B8D17D21975EFA200D17E7B /* ViewControllerStep3.m */,
+				4FB86217197EC1F80053B448 /* ViewControllerStep5.h */,
+				4FB86218197EC1F80053B448 /* ViewControllerStep5.m */,
+				8B8D17C01975EF4900D17E7B /* ViewControllerStep2.h */,
+				8B8D17C11975EF4900D17E7B /* ViewControllerStep2.m */,
+				8B8D17C31975EF4900D17E7B /* ViewControllerStep4.h */,
+				8B8D17C41975EF4900D17E7B /* ViewControllerStep4.m */,
+				8B8D17C61975EF4900D17E7B /* ViewControllerStep6.h */,
+				8B8D17C71975EF4900D17E7B /* ViewControllerStep6.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		4FB06F73198817CF000ADAC2 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				4FAAA7E6197EA0230091A34A /* NSString+Utils.h */,
+				4FAAA7E7197EA0230091A34A /* NSString+Utils.m */,
+				4FAAA7E9197EA3860091A34A /* Validator.h */,
+				4FAAA7EA197EA4230091A34A /* ValidatorImpl.h */,
+				4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		4FB06F741988189A000ADAC2 /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				4F08ECD81976FFCD00CBAD23 /* CarInformationDTO.h */,
+				4F08ECD91976FFCD00CBAD23 /* CarInformationDTO.m */,
+			);
+			name = dto;
+			sourceTree = "<group>";
+		};
+		4FB06F75198818B6000ADAC2 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				8B8D17D61975FA8E00D17E7B /* UIButton+Copado.h */,
+				8B8D17D71975FA8E00D17E7B /* UIButton+Copado.m */,
+				8B8D17DC197604D700D17E7B /* UiTextViewCopado.h */,
+				8B8D17DD197604D700D17E7B /* UiTextViewCopado.m */,
+				4FB8621C197EEC740053B448 /* UIPhotoCollectionViewCell.h */,
+				4FB8621D197EEC740053B448 /* UIPhotoCollectionViewCell.m */,
+				4F0C9604198055F400B97685 /* FooterGallery.h */,
+				4F0C9605198055F400B97685 /* FooterGallery.m */,
+				4FF157E31982A83800E8309E /* TableViewHeader.h */,
+				4FF157E41982A83800E8309E /* TableViewHeader.m */,
+				4FB06F6D198814E2000ADAC2 /* UIButtonCopado.h */,
+				4FB06F6E198814E2000ADAC2 /* UIButtonCopado.m */,
+			);
+			name = ui;
+			sourceTree = "<group>";
+		};
+		4FB06F7619881987000ADAC2 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4F9E5549198147D700F91825 /* MyLaunchImage.png */,
+				4F9E554A198147D700F91825 /* MyLaunchImage@2x.png */,
+				8BC1EA1B1985A69300BBE340 /* image1.jpg */,
+				8BC1EA191985A5A000BBE340 /* image3.jpg */,
+				8BC1EA171985A58900BBE340 /* image2.jpg */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +432,7 @@
 				8B8D17CB1975EF4900D17E7B /* ViewControllerStep2.m in Sources */,
 				8B8D17C91975EF4900D17E7B /* ViewControllerStep1.m in Sources */,
 				8B8D17DE197604D700D17E7B /* UiTextViewCopado.m in Sources */,
+				4FB06F6F198814E2000ADAC2 /* UIButtonCopado.m in Sources */,
 				4FF157E51982A83800E8309E /* TableViewHeader.m in Sources */,
 				8B8D17CF1975EF4900D17E7B /* ViewControllerStep6.m in Sources */,
 				4FB8621A197EC1F80053B448 /* ViewControllerStep5.m in Sources */,
