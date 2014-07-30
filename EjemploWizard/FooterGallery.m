@@ -25,7 +25,8 @@
             return nil;
         }
         
-        self = [arrayOfViews objectAtIndex:0];
+        //necesito que sea own del objeto por eso le pongo el retain
+        self = [[arrayOfViews objectAtIndex:0] retain];
     }
     return self;
 }

@@ -76,6 +76,7 @@
     nextView.carInformation = self.carInformation;
     //NSArray * arreglo = self.navigationController.viewControllers;
     [self.navigationController pushViewController:nextView animated:YES];
+    [nextView release];
 }
 
 - (void)registerForKeyboardNotifications
@@ -141,7 +142,7 @@
 
 - (void)dealloc
 {
-    [self.carInformation release];
+    [_carInformation release];
     [super dealloc];
 }
 @end

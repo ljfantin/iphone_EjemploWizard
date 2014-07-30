@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
        // <#statements#>
-       self.gallery = [[NSMutableArray alloc] init];
+       _gallery = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -33,11 +33,10 @@
 - (void)dealloc
 {
     [_titulo release];
-    self.titulo = nil;
-    [self.subtitulo release];
-    [self.descripcion release];
-    [self.kilometraje release];
-    [self.precio release];
+    [_subtitulo release];
+    [_descripcion release];
+    [_kilometraje release];
+    [_precio release];
     [super dealloc];
 }
 @end

@@ -48,7 +48,7 @@
 
 - (void)dealloc
 {
-    [self.carInformation release];
+    [_carInformation release];
     //va al final
     [super dealloc];
 }

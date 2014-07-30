@@ -13,10 +13,11 @@
 #import "ValidatorImpl.h"
 
 @interface ViewControllerStep2 ()
-@property (nonatomic, retain) ValidatorImpl * validator;
 @property BOOL notEmptyTextFieldTitulo;
 @property BOOL notEmptyTextFieldSubtitulo;
 @property BOOL notEmptyTextFieldPrecio;
+@property (nonatomic, retain) ValidatorImpl * validator;
+
 @end
 
 @implementation ViewControllerStep2
@@ -27,8 +28,9 @@
     if (self) {
         self.title=@"Paso 1";
         // Custom initialization
-        self.carInformation = [[CarInformationDTO alloc] init];
-        self.validator = [[ValidatorImpl alloc] init];
+        // la otra manera es _carInformation = [[[CarInformationDTO alloc] init]
+        self.carInformation = [[[CarInformationDTO alloc] init] autorelease];
+        self.validator = [[[ValidatorImpl alloc] init] autorelease];
         self.notEmptyTextFieldTitulo = NO;
         self.notEmptyTextFieldSubtitulo = NO;
         self.notEmptyTextFieldPrecio = NO;
@@ -191,7 +193,9 @@
 
 - (void)dealloc
 {
-    [self.carInformation release];
+    //por el autorelease
+    //[self.carInformation release]
+    [_carInformation release];
     [super dealloc];
 }
 @end

@@ -46,6 +46,7 @@
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
         imageView.image = [images objectAtIndex:i];
         [self.scroll addSubview:imageView];
+        [imageView release];
     }
     //Set the content size of our scrollview according to the total width of our imageView objects.
     self.scroll.contentSize = CGSizeMake(self.frame.size.width * [images count], self.scroll.frame.size.height);

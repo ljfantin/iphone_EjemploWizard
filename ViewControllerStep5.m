@@ -166,13 +166,11 @@ const NSInteger CANT_MAX_FOTOS = 6;
       [self.collectionViewGallery reloadData];
     } else {
         [self.collectionViewGallery performBatchUpdates:^{
+            //como [NSMutableArray array] es un factory method, entonces tiene autorelease
             NSMutableArray * arrayWithIndex = [NSMutableArray array];
             NSInteger index = [self.carInformation.gallery count]-1;
             [arrayWithIndex addObject:[NSIndexPath indexPathForRow:index inSection:0]];
             [self.collectionViewGallery insertItemsAtIndexPaths:arrayWithIndex];
-            //libero la imagen
-            [arrayWithIndex release];
-
         } completion:nil];
     }
     //desabilito el boton si seleccione la cantidad maxima de fotos
@@ -216,7 +214,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
         UICollectionReusableView *reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
         
         if (reusableview==nil) {
-            reusableview=[[UICollectionReusableView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+            reusableview=[[[UICollectionReusableView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)] autorelease];
         }
         
         UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
@@ -233,7 +231,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
             FooterGallery *reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
             
             if (reusableview==nil) {
-                reusableview=[[FooterGallery alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+                reusableview=[[[FooterGallery alloc] initWithFrame:CGRectMake(0, 0, 320, 44)] autorelease];
             }
             [reusableview updateCantidadFotos: CANT_MAX_FOTOS - self.carInformation.gallery.count];
             //libero la vista
@@ -246,7 +244,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
 
 - (void)dealloc
 {
-    [self.carInformation release];
+    [_carInformation release];
     [super dealloc];
 }
 @end

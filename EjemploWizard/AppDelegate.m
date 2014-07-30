@@ -13,7 +13,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //aca en realidad estoy haciendo un self setWindow:---- necesito poner un autorelease al bounds
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
     //Creo el viewController del paso 1 del wizard
     ViewControllerStep1 * step1 = [[ViewControllerStep1 alloc] initWithNibName:nil

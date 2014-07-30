@@ -14,8 +14,8 @@
 
 //textfield para saber que textfield esta activo
 @property (assign, nonatomic) UITextField * activeField;
-
 @property (retain, nonatomic) CarInformationDTO * carInformation;
+
 //textfields
 @property (assign, nonatomic) IBOutlet UITextField *textFieldTitulo;
 @property (assign, nonatomic) IBOutlet UITextField *textFieldSubtitulo;

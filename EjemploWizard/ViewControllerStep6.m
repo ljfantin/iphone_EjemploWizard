@@ -26,7 +26,7 @@
     if (self) {
         // Custom initialization
         self.title=@"Fin Publicacion";
-        self.values = [[NSMutableDictionary alloc] init];
+        _values = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -129,7 +129,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellDetail"];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"cellDetail"];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"cellDetail"] autorelease];
         
         NSString * key = [self.values.keyEnumerator.allObjects objectAtIndex:indexPath.row];
         cell.textLabel.text = key;
@@ -149,8 +149,8 @@
 
 - (void)dealloc
 {
-    [self.carInformation release];
-    [self.values release];
+    [_carInformation release];
+    [_values release];
     [super dealloc];
 }
 @end

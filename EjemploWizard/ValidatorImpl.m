@@ -39,7 +39,7 @@
 
 - (void)dealloc
 {
-    [self.nonNumberSet release];
+    [_nonNumberSet release];
     [super dealloc];
 }
 

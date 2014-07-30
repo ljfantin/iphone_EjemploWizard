@@ -24,7 +24,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title=@"Paso 2";
-        self.validator = [[ValidatorImpl alloc] init];
+        _validator = [[ValidatorImpl alloc] init];
     }
     return self;
 }
@@ -74,8 +74,8 @@
 
 - (void)dealloc
 {
-    [self.carInformation release];
-    [self.validator release];
+    [_carInformation release];
+    [_validator release];
     [super dealloc];
 }
 

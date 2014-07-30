@@ -22,8 +22,6 @@
 		4F9D9B391975995A0045B680 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9D9B211975995A0045B680 /* UIKit.framework */; };
 		4F9D9B411975995A0045B680 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F9D9B3F1975995A0045B680 /* InfoPlist.strings */; };
 		4F9D9B431975995A0045B680 /* EjemploWizardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D9B421975995A0045B680 /* EjemploWizardTests.m */; };
-		4F9E554B198147D700F91825 /* MyLaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9E5549198147D700F91825 /* MyLaunchImage.png */; };
-		4F9E554C198147D700F91825 /* MyLaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9E554A198147D700F91825 /* MyLaunchImage@2x.png */; };
 		4FAAA7E8197EA0230091A34A /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAA7E7197EA0230091A34A /* NSString+Utils.m */; };
 		4FAAA7EC197EA4230091A34A /* ValidatorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */; };
 		4FB06F6F198814E2000ADAC2 /* UIButtonCopado.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB06F6E198814E2000ADAC2 /* UIButtonCopado.m */; };
@@ -83,8 +81,6 @@
 		4F9D9B3E1975995A0045B680 /* EjemploWizardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EjemploWizardTests-Info.plist"; sourceTree = "<group>"; };
 		4F9D9B401975995A0045B680 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4F9D9B421975995A0045B680 /* EjemploWizardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EjemploWizardTests.m; sourceTree = "<group>"; };
-		4F9E5549198147D700F91825 /* MyLaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MyLaunchImage.png; path = ../MyLaunchImage.png; sourceTree = "<group>"; };
-		4F9E554A198147D700F91825 /* MyLaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MyLaunchImage@2x.png"; path = "../MyLaunchImage@2x.png"; sourceTree = "<group>"; };
 		4FAAA7E6197EA0230091A34A /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
 		4FAAA7E7197EA0230091A34A /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 		4FAAA7E9197EA3860091A34A /* Validator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Validator.h; sourceTree = "<group>"; };
@@ -305,8 +301,6 @@
 		4FB06F7619881987000ADAC2 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				4F9E5549198147D700F91825 /* MyLaunchImage.png */,
-				4F9E554A198147D700F91825 /* MyLaunchImage@2x.png */,
 				8BC1EA1B1985A69300BBE340 /* image1.jpg */,
 				8BC1EA191985A5A000BBE340 /* image3.jpg */,
 				8BC1EA171985A58900BBE340 /* image2.jpg */,
@@ -393,12 +387,10 @@
 				8BC1EA1A1985A5A000BBE340 /* image3.jpg in Resources */,
 				4F0C960A198058D700B97685 /* FooterGallery.xib in Resources */,
 				8B8D17CE1975EF4900D17E7B /* ViewControllerStep4.xib in Resources */,
-				4F9E554C198147D700F91825 /* MyLaunchImage@2x.png in Resources */,
 				4FB86220197EED820053B448 /* UIPhotoCollectionViewCell.xib in Resources */,
 				4FB8621B197EC1F80053B448 /* ViewControllerStep5.xib in Resources */,
 				4FF157F01982AB9000E8309E /* TableViewFooter.xib in Resources */,
 				8B8D17CC1975EF4900D17E7B /* ViewControllerStep2.xib in Resources */,
-				4F9E554B198147D700F91825 /* MyLaunchImage.png in Resources */,
 				8BC1EA181985A58900BBE340 /* image2.jpg in Resources */,
 				8B8D17CA1975EF4900D17E7B /* ViewControllerStep1.xib in Resources */,
 				8B8D17D01975EF4900D17E7B /* ViewControllerStep6.xib in Resources */,
