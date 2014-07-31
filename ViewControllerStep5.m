@@ -20,14 +20,14 @@ const NSInteger CANT_MAX_FOTOS = 6;
 
 @implementation ViewControllerStep5
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+/*- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title=@"Paso 4";
     }
     return self;
-}
+}*/
 
 - (void)viewDidLoad
 {
@@ -42,24 +42,15 @@ const NSInteger CANT_MAX_FOTOS = 6;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    //////[super viewWillAppear:animated];
     
     //desabilito el boton si seleccione la cantidad maxima de fotos
     if ([self.carInformation.gallery count]==CANT_MAX_FOTOS)
         self.buttonAddImage.enabled = false;
     
     //seteo el content size
-    [[self scroll] setContentSize:[[self view] frame].size];
-    
-    //[self.scroll setContentOffset:CGPointMake(0,0) animated:YES];
-    //self.automaticallyAdjustsScrollViewInsets = NO;
+    /////[[self scroll] setContentSize:[[self view] frame].size];
 }
-
--(void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    //self.scroll.contentOffset = CGPointMake(0, 0);
-}
-
 
 -(void)setupCollectionView {
     //registro la clase de la celda
@@ -74,11 +65,11 @@ const NSInteger CANT_MAX_FOTOS = 6;
 
 }
 
-- (void)didReceiveMemoryWarning
+/*- (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
+}*/
 
 - (IBAction)addImagePushButton:(id)sender {
     
@@ -242,9 +233,9 @@ const NSInteger CANT_MAX_FOTOS = 6;
     return nil;
 }
 
-- (void)dealloc
+/*- (void)dealloc
 {
     [_carInformation release];
     [super dealloc];
-}
+}*/
 @end

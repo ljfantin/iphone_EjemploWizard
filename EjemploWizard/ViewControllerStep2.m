@@ -26,11 +26,12 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title=@"Paso 1";
+        //self.title=@"Paso 1";
         // Custom initialization
         // la otra manera es _carInformation = [[[CarInformationDTO alloc] init]
+        //self.validator = [[[ValidatorImpl alloc] init] autorelease];
+        
         self.carInformation = [[[CarInformationDTO alloc] init] autorelease];
-        self.validator = [[[ValidatorImpl alloc] init] autorelease];
         self.notEmptyTextFieldTitulo = NO;
         self.notEmptyTextFieldSubtitulo = NO;
         self.notEmptyTextFieldPrecio = NO;
@@ -38,7 +39,7 @@
     return self;
 }
 
-- (void)viewDidLoad
+/*- (void)viewDidLoad
 {
     [super viewDidLoad];
     
@@ -55,7 +56,7 @@
     [[self scroll] addGestureRecognizer:tapRecognizer];
     
     [tapRecognizer release];
-}
+}*/
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -65,7 +66,7 @@
 }
 
 - (IBAction)pushButtonSiguiente:(id)sender {
-    ViewControllerStep3 *nextView = [[ViewControllerStep3 alloc] initWithNibName:nil bundle:nil];
+    /*ViewControllerStep3 *nextView = [[ViewControllerStep3 alloc] initWithNibName:nil bundle:nil];
     self.carInformation.titulo = self.textFieldTitulo.text;
     self.carInformation.subtitulo = self.textFieldSubtitulo.text;
     self.carInformation.precio = self.textFieldPrecio.text;
@@ -74,7 +75,8 @@
     //NSArray * arreglo = self.navigationController.viewControllers;
     [self.navigationController pushViewController:nextView animated:YES];
     //libero el nextView
-    [nextView release];
+    [nextView release];*/
+    [super doNextTransition];
 }
 
 - (IBAction)textFieldChangeSubtitulo:(id)sender {
@@ -104,7 +106,7 @@
                                   self.notEmptyTextFieldPrecio);
 }
 
-- (void)registerForKeyboardNotifications
+/*- (void)registerForKeyboardNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWasShown:)
@@ -127,7 +129,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardDidHideNotification
                                                   object:nil];
-}
+}*/
 
 
 #pragma mark - Notificaciones del teclado
@@ -191,11 +193,11 @@
     }
 }
 
-- (void)dealloc
+/*- (void)dealloc
 {
     //por el autorelease
     //[self.carInformation release]
     [_carInformation release];
     [super dealloc];
-}
+}*/
 @end

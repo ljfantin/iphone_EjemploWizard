@@ -16,23 +16,20 @@
 
 @implementation ViewControllerStep4
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+/*- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title=@"Paso 3";
     }
     return self;
-}
+}*/
 
-- (void)viewDidLoad
+/*- (void)viewDidLoad
 {
     [super viewDidLoad];
     //Le seteo el content size
     [[self scroll] setContentSize:[[self view] frame].size];
-    
-    //hago el boton copado
-    //[self.buttonSiguiente makeCopado];
     
     //Creo identificador de gestos.
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewPulsado)];
@@ -40,46 +37,41 @@
     
     //agrego al scroll view el identificador de gestos
     [[self scroll] addGestureRecognizer:tapRecognizer];
-}
+}*/
 
 
-- (void) viewDidUnload
+/*- (void) viewDidUnload
 {
     [super viewDidLoad];
     [self unregisterForKeyboardNotifications];
-}
+}*/
 
-- (void)viewWillAppear:(BOOL)animated
+/*- (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     self.textViewDescripcion.text = self.carInformation.descripcion;
     //Me atacho a los eventos del teclado
     [self registerForKeyboardNotifications];
-}
+}*/
 
-- (void)viewWillDisappear:(BOOL)animated
+/*- (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     [self unregisterForKeyboardNotifications];
-}
+}*/
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    NSLog(@"Houston! Me estoy quedando sin memoria");
-}
 
 - (IBAction)pushButtonSiguiente:(id)sender {
-    ViewControllerStep5 *nextView = [[ViewControllerStep5 alloc] initWithNibName:nil bundle:nil];
+    /*ViewControllerStep5 *nextView = [[ViewControllerStep5 alloc] initWithNibName:nil bundle:nil];
     self.carInformation.descripcion = self.textViewDescripcion.text;
     nextView.carInformation = self.carInformation;
     //NSArray * arreglo = self.navigationController.viewControllers;
     [self.navigationController pushViewController:nextView animated:YES];
-    [nextView release];
+    [nextView release];*/
+    [self doNextTransition];
 }
 
-- (void)registerForKeyboardNotifications
+/*- (void)registerForKeyboardNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(apareceElTeclado:)
@@ -101,7 +93,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillHideNotification
                                                   object:nil];
-}
+}*/
 
 #pragma mark - Notificaciones del teclado
 - (void) apareceElTeclado:(NSNotification *)laNotificacion
@@ -140,9 +132,9 @@
     [[self view] endEditing:YES];
 }
 
-- (void)dealloc
+/*- (void)dealloc
 {
     [_carInformation release];
     [super dealloc];
-}
+}*/
 @end

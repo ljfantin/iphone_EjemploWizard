@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F01E51A198968C600BD9949 /* AbstractViewControlWizard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F01E519198968C600BD9949 /* AbstractViewControlWizard.m */; };
+		4F01E51E198976D000BD9949 /* WorkflowImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F01E51D198976D000BD9949 /* WorkflowImpl.m */; };
 		4F08ECDA1976FFCD00CBAD23 /* CarInformationDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F08ECD91976FFCD00CBAD23 /* CarInformationDTO.m */; };
 		4F0C9606198055F400B97685 /* FooterGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C9605198055F400B97685 /* FooterGallery.m */; };
 		4F0C960A198058D700B97685 /* FooterGallery.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C9609198058D700B97685 /* FooterGallery.xib */; };
@@ -24,6 +26,8 @@
 		4F9D9B431975995A0045B680 /* EjemploWizardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D9B421975995A0045B680 /* EjemploWizardTests.m */; };
 		4FAAA7E8197EA0230091A34A /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAA7E7197EA0230091A34A /* NSString+Utils.m */; };
 		4FAAA7EC197EA4230091A34A /* ValidatorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */; };
+		4FB014B3198A7B8400E8CFEF /* WizardManagerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB014B2198A7B8400E8CFEF /* WizardManagerImpl.m */; };
+		4FB014B5198A8AC500E8CFEF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FB014B4198A8AC500E8CFEF /* Localizable.strings */; };
 		4FB06F6F198814E2000ADAC2 /* UIButtonCopado.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB06F6E198814E2000ADAC2 /* UIButtonCopado.m */; };
 		4FB8621A197EC1F80053B448 /* ViewControllerStep5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB86218197EC1F80053B448 /* ViewControllerStep5.m */; };
 		4FB8621B197EC1F80053B448 /* ViewControllerStep5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FB86219197EC1F80053B448 /* ViewControllerStep5.xib */; };
@@ -60,6 +64,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F01E51719894B2A00BD9949 /* ViewControlWizard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControlWizard.h; sourceTree = "<group>"; };
+		4F01E518198968C600BD9949 /* AbstractViewControlWizard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractViewControlWizard.h; sourceTree = "<group>"; };
+		4F01E519198968C600BD9949 /* AbstractViewControlWizard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractViewControlWizard.m; sourceTree = "<group>"; };
+		4F01E51C198976D000BD9949 /* WorkflowImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkflowImpl.h; sourceTree = "<group>"; };
+		4F01E51D198976D000BD9949 /* WorkflowImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkflowImpl.m; sourceTree = "<group>"; };
+		4F01E51F19898BF900BD9949 /* Workflow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Workflow.h; sourceTree = "<group>"; };
 		4F08ECD81976FFCD00CBAD23 /* CarInformationDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInformationDTO.h; sourceTree = "<group>"; };
 		4F08ECD91976FFCD00CBAD23 /* CarInformationDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInformationDTO.m; sourceTree = "<group>"; };
 		4F0C9604198055F400B97685 /* FooterGallery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterGallery.h; sourceTree = "<group>"; };
@@ -86,6 +96,10 @@
 		4FAAA7E9197EA3860091A34A /* Validator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Validator.h; sourceTree = "<group>"; };
 		4FAAA7EA197EA4230091A34A /* ValidatorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatorImpl.h; sourceTree = "<group>"; };
 		4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatorImpl.m; sourceTree = "<group>"; };
+		4FB014B1198A7B8400E8CFEF /* WizardManagerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardManagerImpl.h; sourceTree = "<group>"; };
+		4FB014B2198A7B8400E8CFEF /* WizardManagerImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardManagerImpl.m; sourceTree = "<group>"; };
+		4FB014B4198A8AC500E8CFEF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ../Localizable.strings; sourceTree = "<group>"; };
+		4FB014B7198A94EE00E8CFEF /* WizardManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WizardManager.h; sourceTree = "<group>"; };
 		4FB06F6D198814E2000ADAC2 /* UIButtonCopado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonCopado.h; sourceTree = "<group>"; };
 		4FB06F6E198814E2000ADAC2 /* UIButtonCopado.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonCopado.m; sourceTree = "<group>"; };
 		4FB86217197EC1F80053B448 /* ViewControllerStep5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerStep5.h; path = ../ViewControllerStep5.h; sourceTree = "<group>"; };
@@ -179,6 +193,7 @@
 		4F9D9B231975995A0045B680 /* EjemploWizard */ = {
 			isa = PBXGroup;
 			children = (
+				4FB014B6198A8AD400E8CFEF /* resources */,
 				4FB06F7619881987000ADAC2 /* images */,
 				4FB06F75198818B6000ADAC2 /* ui */,
 				4FB06F741988189A000ADAC2 /* dto */,
@@ -222,6 +237,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4FB014B6198A8AD400E8CFEF /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				4FB014B4198A8AC500E8CFEF /* Localizable.strings */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
 		4FB06F7119881605000ADAC2 /* xib */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +277,15 @@
 				8B8D17C41975EF4900D17E7B /* ViewControllerStep4.m */,
 				8B8D17C61975EF4900D17E7B /* ViewControllerStep6.h */,
 				8B8D17C71975EF4900D17E7B /* ViewControllerStep6.m */,
+				4F01E51719894B2A00BD9949 /* ViewControlWizard.h */,
+				4F01E518198968C600BD9949 /* AbstractViewControlWizard.h */,
+				4F01E519198968C600BD9949 /* AbstractViewControlWizard.m */,
+				4F01E51C198976D000BD9949 /* WorkflowImpl.h */,
+				4F01E51D198976D000BD9949 /* WorkflowImpl.m */,
+				4F01E51F19898BF900BD9949 /* Workflow.h */,
+				4FB014B1198A7B8400E8CFEF /* WizardManagerImpl.h */,
+				4FB014B2198A7B8400E8CFEF /* WizardManagerImpl.m */,
+				4FB014B7198A94EE00E8CFEF /* WizardManager.h */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -396,6 +428,7 @@
 				8B8D17D01975EF4900D17E7B /* ViewControllerStep6.xib in Resources */,
 				8BC1EA1C1985A69300BBE340 /* image1.jpg in Resources */,
 				4F9D9B301975995A0045B680 /* Images.xcassets in Resources */,
+				4FB014B5198A8AC500E8CFEF /* Localizable.strings in Resources */,
 				4FF157E91982A93700E8309E /* TableViewHeader.xib in Resources */,
 				8B8D17D51975EFA200D17E7B /* ViewControllerStep3.xib in Resources */,
 			);
@@ -416,10 +449,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FB014B3198A7B8400E8CFEF /* WizardManagerImpl.m in Sources */,
 				4F9D9B2E1975995A0045B680 /* AppDelegate.m in Sources */,
 				4F08ECDA1976FFCD00CBAD23 /* CarInformationDTO.m in Sources */,
 				8B8D17CD1975EF4900D17E7B /* ViewControllerStep4.m in Sources */,
 				8B8D17D41975EFA200D17E7B /* ViewControllerStep3.m in Sources */,
+				4F01E51E198976D000BD9949 /* WorkflowImpl.m in Sources */,
 				4FAAA7E8197EA0230091A34A /* NSString+Utils.m in Sources */,
 				8B8D17CB1975EF4900D17E7B /* ViewControllerStep2.m in Sources */,
 				8B8D17C91975EF4900D17E7B /* ViewControllerStep1.m in Sources */,
@@ -433,6 +468,7 @@
 				4FB8621E197EEC740053B448 /* UIPhotoCollectionViewCell.m in Sources */,
 				4FAAA7EC197EA4230091A34A /* ValidatorImpl.m in Sources */,
 				8B8D17D81975FA8E00D17E7B /* UIButton+Copado.m in Sources */,
+				4F01E51A198968C600BD9949 /* AbstractViewControlWizard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

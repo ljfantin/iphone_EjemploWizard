@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  EjemploWizard
+
+  Created by Leandro Fantin on 31/07/14.
+  Copyright (c) 2014 mercadolibre. All rights reserved.
+*/
+
+"step1.title" = "Paso 1";
+"step2.title" = "Paso 2";
+"step3.title" = "Paso 3";
+"step4.title" = "Paso 4";
+"step5.title" = "Paso 5";
+"step6.title" = "Paso 6";

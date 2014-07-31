@@ -19,7 +19,7 @@
 
 @implementation ViewControllerStep3
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+/*- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -27,14 +27,14 @@
         _validator = [[ValidatorImpl alloc] init];
     }
     return self;
-}
+}*/
 
-- (void)viewDidLoad
+/*- (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //[self.buttonSiguiente makeCopado];
-}
+}*/
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -42,19 +42,22 @@
     [self handleChangeKilometraje:self.textfieldKilometraje];
 }
 
+/*
 - (void)didReceiveMemoryWarning
 {
+    //este podria subirlo para que haga siempre lo mismo
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
+}*/
 
 - (IBAction)pushButtonSiguiente:(id)sender {
-    ViewControllerStep4 *nextView = [[ViewControllerStep4 alloc] initWithNibName:nil bundle:nil];
+    /*ViewControllerStep4 *nextView = [[ViewControllerStep4 alloc] initWithNibName:nil bundle:nil];
     self.carInformation.kilometraje = self.textfieldKilometraje.text;
     nextView.carInformation = self.carInformation;
     [self.navigationController pushViewController:nextView animated:YES];
     //libero
-    [nextView release];
+    [nextView release];*/
+    [self doNextTransition];
 }
 
 - (IBAction)handleChangeKilometraje:(id)sender {
@@ -72,11 +75,11 @@
     }
 }
 
-- (void)dealloc
+/*- (void)dealloc
 {
     [_carInformation release];
     [_validator release];
     [super dealloc];
-}
+}*/
 
 @end
