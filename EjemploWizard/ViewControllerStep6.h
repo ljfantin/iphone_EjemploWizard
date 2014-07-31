@@ -11,14 +11,11 @@
 
 @interface ViewControllerStep6 : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
-//carInformation
-@property (retain, nonatomic) CarInformationDTO * carInformation;
 - (IBAction)pushButtonCancelar:(id)sender;
 - (IBAction)pushButtonAceptar:(id)sender;
 
 //table
 @property (assign, nonatomic) IBOutlet UITableView *tableView;
-@property (assign, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)pageChanged:(id)sender;
 @property (assign, nonatomic) IBOutlet UIPageControl *pageControl;

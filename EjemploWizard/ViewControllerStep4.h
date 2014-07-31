@@ -9,16 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
 #import "UiTextViewCopado.h"
+#import "AbstractViewControlWizard.h"
 
-@interface ViewControllerStep4 : UIViewController<UITextViewDelegate,UIScrollViewDelegate,UITextFieldDelegate>
-
-@property (assign, nonatomic) IBOutlet UIScrollView *scroll;
-@property (retain, nonatomic) CarInformationDTO * carInformation;
+@interface ViewControllerStep4 : AbstractViewControlWizard<UITextViewDelegate,UIScrollViewDelegate,UITextFieldDelegate>
 
 @property (assign, nonatomic) IBOutlet UiTextViewCopado *textViewDescripcion;
-
+@property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;
 
 - (IBAction)pushButtonSiguiente:(id)sender;
-@property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;
 
 @end

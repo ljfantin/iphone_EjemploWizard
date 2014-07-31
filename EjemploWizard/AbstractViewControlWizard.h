@@ -20,7 +20,10 @@
 
 @property (retain, nonatomic) id <WizardManager> wizardManager;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
+@property (assign, nonatomic) IBOutlet UIScrollView *scroll;
 
+@property (assign, nonatomic) UIView * activeView;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
 
 @end

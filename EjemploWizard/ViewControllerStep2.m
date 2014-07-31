@@ -16,8 +16,6 @@
 @property BOOL notEmptyTextFieldTitulo;
 @property BOOL notEmptyTextFieldSubtitulo;
 @property BOOL notEmptyTextFieldPrecio;
-@property (nonatomic, retain) ValidatorImpl * validator;
-
 @end
 
 @implementation ViewControllerStep2
@@ -26,12 +24,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        //self.title=@"Paso 1";
-        // Custom initialization
-        // la otra manera es _carInformation = [[[CarInformationDTO alloc] init]
-        //self.validator = [[[ValidatorImpl alloc] init] autorelease];
-        
-        self.carInformation = [[[CarInformationDTO alloc] init] autorelease];
+
+        self.dto = [[[CarInformationDTO alloc] init] autorelease];
         self.notEmptyTextFieldTitulo = NO;
         self.notEmptyTextFieldSubtitulo = NO;
         self.notEmptyTextFieldPrecio = NO;
@@ -39,43 +33,15 @@
     return self;
 }
 
-/*- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    //seteo el content size
-    [[self scroll] setContentSize:[[self view] frame].size];
-    
-    //Me atacho a los eventos del teclado
-    [self registerForKeyboardNotifications];
-    
-    //Creo identificador de gestos.
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewPulsado)];
-    [tapRecognizer setCancelsTouchesInView:NO];
-    //agrego al scroll view el identificador de gestos
-    [[self scroll] addGestureRecognizer:tapRecognizer];
-    
-    [tapRecognizer release];
-}*/
-
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.textFieldTitulo.text = self.carInformation.titulo;
-    self.textFieldSubtitulo.text = self.carInformation.subtitulo;
-    self.textFieldPrecio.text = self.carInformation.precio;
+    self.textFieldTitulo.text = self.dto.titulo;
+    self.textFieldSubtitulo.text = self.dto.subtitulo;
+    self.textFieldPrecio.text = self.dto.precio;
 }
 
 - (IBAction)pushButtonSiguiente:(id)sender {
-    /*ViewControllerStep3 *nextView = [[ViewControllerStep3 alloc] initWithNibName:nil bundle:nil];
-    self.carInformation.titulo = self.textFieldTitulo.text;
-    self.carInformation.subtitulo = self.textFieldSubtitulo.text;
-    self.carInformation.precio = self.textFieldPrecio.text;
     
-    nextView.carInformation = self.carInformation;
-    //NSArray * arreglo = self.navigationController.viewControllers;
-    [self.navigationController pushViewController:nextView animated:YES];
-    //libero el nextView
-    [nextView release];*/
     [super doNextTransition];
 }
 
@@ -106,77 +72,6 @@
                                   self.notEmptyTextFieldPrecio);
 }
 
-/*- (void)registerForKeyboardNotifications
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWasShown:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillBeHidden:)
-                                                 name:UIKeyboardDidHideNotification object:nil];
-    
-}
-
-- (void)unregisterForKeyboardNotifications
-{
-    //me desatacho los eventos del teclado
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardWillShowNotification
-                                                  object:nil];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardDidHideNotification
-                                                  object:nil];
-}*/
-
-
-#pragma mark - Notificaciones del teclado
-- (void) keyboardWasShown:(NSNotification *)notificacion
-{
-    //Nota: El ScrollView no tiene que estar en autolayout para que funcione
-    NSDictionary* info = [notificacion userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    
-    //Es como un padding, y lo pones del tamanio del teclado para que active las barras de scroll
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
-    self.scroll.contentInset = contentInsets;
-    self.scroll.scrollIndicatorInsets = contentInsets;
-    
-    //muevo las scrollbars hasta el active field que tenia el foco del usuario
-    CGRect aRect = self.view.frame;
-    aRect.size.height = kbSize.height;
-    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
-        CGRect rect = self.activeField.frame;
-        [self.scroll scrollRectToVisible:rect animated:YES];
-    }
-}
-
-- (void) keyboardWillBeHidden:(NSNotification *)notificacion
-{
-    //cuando el teclado desaparece, le sacamos el "padding" al scrollview
-    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-    self.scroll.contentInset = contentInsets;
-    self.scroll.scrollIndicatorInsets = contentInsets;
-}
-
-
-#pragma mark Delegate textfield
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    _activeField = textField;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    _activeField = nil;
-}
-
-- (void) scrollViewPulsado
-{
-    [[self view] endEditing:YES];
-}
 //
 #pragma mark Implementacion
 - (BOOL) textField: (UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString: (NSString *)string {
@@ -193,11 +88,4 @@
     }
 }
 
-/*- (void)dealloc
-{
-    //por el autorelease
-    //[self.carInformation release]
-    [_carInformation release];
-    [super dealloc];
-}*/
 @end

@@ -8,7 +8,6 @@
 
 #import "ViewControllerStep1.h"
 #import "ViewControllerStep2.h"
-#import "UIButton+Copado.h"
 
 @interface ViewControllerStep1 ()
 
@@ -20,7 +19,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }*/
@@ -32,11 +30,11 @@
     //[self.buttonIngresar makeCopado];
 }*/
 
-- (void)didReceiveMemoryWarning
+/*- (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
+}*/
 
 - (IBAction)pushButtonIngresar:(id)sender {
     //[self.navigationController]

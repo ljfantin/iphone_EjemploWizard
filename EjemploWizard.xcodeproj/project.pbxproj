@@ -28,6 +28,7 @@
 		4FAAA7EC197EA4230091A34A /* ValidatorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */; };
 		4FB014B3198A7B8400E8CFEF /* WizardManagerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB014B2198A7B8400E8CFEF /* WizardManagerImpl.m */; };
 		4FB014B5198A8AC500E8CFEF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FB014B4198A8AC500E8CFEF /* Localizable.strings */; };
+		4FB014BB198AE59D00E8CFEF /* ApplicationPropertiesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB014BA198AE59D00E8CFEF /* ApplicationPropertiesImpl.m */; };
 		4FB06F6F198814E2000ADAC2 /* UIButtonCopado.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB06F6E198814E2000ADAC2 /* UIButtonCopado.m */; };
 		4FB8621A197EC1F80053B448 /* ViewControllerStep5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB86218197EC1F80053B448 /* ViewControllerStep5.m */; };
 		4FB8621B197EC1F80053B448 /* ViewControllerStep5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FB86219197EC1F80053B448 /* ViewControllerStep5.xib */; };
@@ -100,6 +101,9 @@
 		4FB014B2198A7B8400E8CFEF /* WizardManagerImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardManagerImpl.m; sourceTree = "<group>"; };
 		4FB014B4198A8AC500E8CFEF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ../Localizable.strings; sourceTree = "<group>"; };
 		4FB014B7198A94EE00E8CFEF /* WizardManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WizardManager.h; sourceTree = "<group>"; };
+		4FB014B8198AE4F600E8CFEF /* ApplicationProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationProperties.h; sourceTree = "<group>"; };
+		4FB014B9198AE59D00E8CFEF /* ApplicationPropertiesImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationPropertiesImpl.h; sourceTree = "<group>"; };
+		4FB014BA198AE59D00E8CFEF /* ApplicationPropertiesImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationPropertiesImpl.m; sourceTree = "<group>"; };
 		4FB06F6D198814E2000ADAC2 /* UIButtonCopado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonCopado.h; sourceTree = "<group>"; };
 		4FB06F6E198814E2000ADAC2 /* UIButtonCopado.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonCopado.m; sourceTree = "<group>"; };
 		4FB86217197EC1F80053B448 /* ViewControllerStep5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerStep5.h; path = ../ViewControllerStep5.h; sourceTree = "<group>"; };
@@ -286,6 +290,9 @@
 				4FB014B1198A7B8400E8CFEF /* WizardManagerImpl.h */,
 				4FB014B2198A7B8400E8CFEF /* WizardManagerImpl.m */,
 				4FB014B7198A94EE00E8CFEF /* WizardManager.h */,
+				4FB014B8198AE4F600E8CFEF /* ApplicationProperties.h */,
+				4FB014B9198AE59D00E8CFEF /* ApplicationPropertiesImpl.h */,
+				4FB014BA198AE59D00E8CFEF /* ApplicationPropertiesImpl.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -454,6 +461,7 @@
 				4F08ECDA1976FFCD00CBAD23 /* CarInformationDTO.m in Sources */,
 				8B8D17CD1975EF4900D17E7B /* ViewControllerStep4.m in Sources */,
 				8B8D17D41975EFA200D17E7B /* ViewControllerStep3.m in Sources */,
+				4FB014BB198AE59D00E8CFEF /* ApplicationPropertiesImpl.m in Sources */,
 				4F01E51E198976D000BD9949 /* WorkflowImpl.m in Sources */,
 				4FAAA7E8197EA0230091A34A /* NSString+Utils.m in Sources */,
 				8B8D17CB1975EF4900D17E7B /* ViewControllerStep2.m in Sources */,

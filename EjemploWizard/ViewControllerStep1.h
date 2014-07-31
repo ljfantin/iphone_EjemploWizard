@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
+#import "AbstractViewControlWizard.h"
 
-@interface ViewControllerStep1 : UIViewController
-
-@property (retain, nonatomic) CarInformationDTO * carInformation;
-@property (assign, nonatomic) IBOutlet UIButton *buttonIngresar;
+@interface ViewControllerStep1 : AbstractViewControlWizard
 
 - (IBAction)pushButtonIngresar:(id)sender;
 

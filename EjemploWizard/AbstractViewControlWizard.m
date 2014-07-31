@@ -63,7 +63,6 @@
     return YES;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -117,11 +116,11 @@
     self.scroll.contentInset = contentInsets;
     self.scroll.scrollIndicatorInsets = contentInsets;
     
-    //muevo las scrollbars hasta el active field que tenia el foco del usuario
+    //muevo las scrollbars hasta el active view que tenia el foco del usuario
     CGRect aRect = self.view.frame;
     aRect.size.height = kbSize.height;
-    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
-        CGRect rect = self.activeField.frame;
+    if (!CGRectContainsPoint(aRect, self.activeView.frame.origin) ) {
+        CGRect rect = self.activeView.frame;
         [self.scroll scrollRectToVisible:rect animated:YES];
     }
 }
@@ -156,5 +155,22 @@
     [super dealloc];
 }
 
+- (id)findFirstResponder
+{
+    if (self.isFirstResponder) {
+        return self;
+    }
+    for (UIView *subView in self.view.subviews) {
+        if ([subView isFirstResponder]) {
+            return subView;
+        }
+    }
+    return nil;
+}
+
+- (void) scrollViewPulsado
+{
+    [[self view] endEditing:YES];
+}
 
 @end

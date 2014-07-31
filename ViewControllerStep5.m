@@ -20,36 +20,22 @@ const NSInteger CANT_MAX_FOTOS = 6;
 
 @implementation ViewControllerStep5
 
-/*- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.title=@"Paso 4";
-    }
-    return self;
-}*/
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //seteo el content size
-    [[self scroll] setContentSize:[[self view] frame].size];
-
     //inicializo la galeria
     [self setupCollectionView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //////[super viewWillAppear:animated];
+    [super viewWillAppear:animated];
     
     //desabilito el boton si seleccione la cantidad maxima de fotos
-    if ([self.carInformation.gallery count]==CANT_MAX_FOTOS)
+    if ([self.dto.gallery count]==CANT_MAX_FOTOS)
         self.buttonAddImage.enabled = false;
-    
-    //seteo el content size
-    /////[[self scroll] setContentSize:[[self view] frame].size];
 }
 
 -(void)setupCollectionView {
@@ -62,14 +48,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
     //registro la clase del footer
     [self.collectionViewGallery registerClass:[FooterGallery class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
         withReuseIdentifier:@"FooterView"];
-
 }
-
-/*- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}*/
 
 - (IBAction)addImagePushButton:(id)sender {
     
@@ -79,19 +58,11 @@ const NSInteger CANT_MAX_FOTOS = 6;
                                                destructiveButtonTitle: nil
                                                     otherButtonTitles: @"Tomar una foto", @"Elegir foto del carrete", nil];
     [actionSheet showInView:self.view];
-    //se libera
-    //[actionSheet release];
 }
 
 - (IBAction)siguientePushButton:(id)sender {
-    ViewControllerStep6 *nextView = [[ViewControllerStep6 alloc] initWithNibName:nil bundle:nil];
-    nextView.carInformation = self.carInformation;
-    //NSArray * arreglo = self.navigationController.viewControllers;
-    [self.navigationController pushViewController:nextView animated:YES];
-    //se libera
-    [nextView release];
+    [self doNextTransition];
 }
-
 
 -(void)choosePhotoFromExistingImages
 {
@@ -147,7 +118,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
     //agarro la imagen del uiimagepicker
     UIImage *image = [info valueForKey: UIImagePickerControllerOriginalImage];
     //agrego la imagen a la galeria
-    [self.carInformation.gallery addObject:image];
+    [self.dto.gallery addObject:image];
     //libero la imagen
     //[image release];
     
@@ -159,13 +130,13 @@ const NSInteger CANT_MAX_FOTOS = 6;
         [self.collectionViewGallery performBatchUpdates:^{
             //como [NSMutableArray array] es un factory method, entonces tiene autorelease
             NSMutableArray * arrayWithIndex = [NSMutableArray array];
-            NSInteger index = [self.carInformation.gallery count]-1;
+            NSInteger index = [self.dto.gallery count]-1;
             [arrayWithIndex addObject:[NSIndexPath indexPathForRow:index inSection:0]];
             [self.collectionViewGallery insertItemsAtIndexPaths:arrayWithIndex];
         } completion:nil];
     }
     //desabilito el boton si seleccione la cantidad maxima de fotos
-    if ([self.carInformation.gallery count]==CANT_MAX_FOTOS)
+    if ([self.dto.gallery count]==CANT_MAX_FOTOS)
         self.buttonAddImage.enabled = false;
         
     [self.collectionViewGallery reloadSections:[NSIndexSet indexSetWithIndex:0]];
@@ -185,14 +156,14 @@ const NSInteger CANT_MAX_FOTOS = 6;
 
 //Devuelve la cantidad de celdas en la seccion
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.carInformation.gallery count];
+    return [self.dto.gallery count];
 }
 
 //Devuelve la celda
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     UIPhotoCollectionViewCell *cell = (UIPhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    UIImage *image = [self.carInformation.gallery objectAtIndex:indexPath.row];
+    UIImage *image = [self.dto.gallery objectAtIndex:indexPath.row];
     [cell updateCell:image];
     return cell;
 }
@@ -224,7 +195,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
             if (reusableview==nil) {
                 reusableview=[[[FooterGallery alloc] initWithFrame:CGRectMake(0, 0, 320, 44)] autorelease];
             }
-            [reusableview updateCantidadFotos: CANT_MAX_FOTOS - self.carInformation.gallery.count];
+            [reusableview updateCantidadFotos: CANT_MAX_FOTOS - self.dto.gallery.count];
             //libero la vista
             //[reusableview release];
             return reusableview;

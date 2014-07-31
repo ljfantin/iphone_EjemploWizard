@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
+#import "AbstractViewControlWizard.h"
 
-@interface ViewControllerStep2 : UIViewController<UITextFieldDelegate>
-@property (assign, nonatomic) IBOutlet UIScrollView *scroll;
+
+@interface ViewControllerStep2 : AbstractViewControlWizard<UITextFieldDelegate>
 
 //textfield para saber que textfield esta activo
 @property (assign, nonatomic) UITextField * activeField;
-@property (retain, nonatomic) CarInformationDTO * carInformation;
 
 //textfields
 @property (assign, nonatomic) IBOutlet UITextField *textFieldTitulo;
