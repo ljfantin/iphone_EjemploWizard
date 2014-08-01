@@ -12,6 +12,4 @@
 
 @interface ViewControllerStep1 : AbstractViewControlWizard
 
-- (IBAction)pushButtonIngresar:(id)sender;
-
 @end

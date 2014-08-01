@@ -11,26 +11,19 @@
 #import "UIButton+Copado.h"
 
 @interface ViewControllerStep4 ()
-@property UITextField * activeField;
 @end
 
 @implementation ViewControllerStep4
 
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.textViewDescripcion.text = self.dto.descripcion;
-}
 
 - (void) fillDto
 {
     self.dto.descripcion = self.textViewDescripcion.text;
 }
 
-
-- (IBAction)pushButtonSiguiente:(id)sender {
-    [self doNextTransition];
+- (void) fillView
+{
+    self.textViewDescripcion.text = self.dto.descripcion;
 }
 
 @end

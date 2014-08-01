@@ -11,11 +11,9 @@
 #import "UiTextViewCopado.h"
 #import "AbstractViewControlWizard.h"
 
-@interface ViewControllerStep4 : AbstractViewControlWizard<UITextViewDelegate,UIScrollViewDelegate,UITextFieldDelegate>
+@interface ViewControllerStep4 : AbstractViewControlWizard<UITextViewDelegate,UITextFieldDelegate>
 
 @property (assign, nonatomic) IBOutlet UiTextViewCopado *textViewDescripcion;
 @property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;
-
-- (IBAction)pushButtonSiguiente:(id)sender;
 
 @end

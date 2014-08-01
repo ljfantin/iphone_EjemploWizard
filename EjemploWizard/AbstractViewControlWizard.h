@@ -12,7 +12,7 @@
 #import "WizardManager.h"
 
 
-@interface AbstractViewControlWizard : UIViewController<ViewControlWizard>
+@interface AbstractViewControlWizard : UIViewController<ViewControlWizard,UIScrollViewDelegate>
 
 @property (retain, nonatomic) CarInformationDTO * dto;
 
@@ -23,6 +23,8 @@
 @property (assign, nonatomic) IBOutlet UIScrollView *scroll;
 
 @property (assign, nonatomic) UIView * activeView;
+
+- (IBAction)doNextTransition:(id)sender;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
 

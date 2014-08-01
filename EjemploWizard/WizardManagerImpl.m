@@ -13,6 +13,7 @@
 #import "ViewControllerStep4.h"
 #import "ViewControllerStep5.h"
 #import "ViewControllerStep6.h"
+#import "WorkflowImpl.h"
 
 
 @implementation WizardManagerImpl
@@ -28,6 +29,7 @@
         NSString * class4 = NSStringFromClass([ViewControllerStep4 class]);
         NSString * class5 = NSStringFromClass([ViewControllerStep5 class]);
         NSString * class6 = NSStringFromClass([ViewControllerStep6 class]);
+        _workflow = [[WorkflowImpl alloc] init];
         [self.workflow addTransition:class1 to:class2];
         [self.workflow addTransition:class2 to:class3];
         [self.workflow addTransition:class3 to:class4];

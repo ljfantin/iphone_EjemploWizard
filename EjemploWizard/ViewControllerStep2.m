@@ -33,7 +33,7 @@
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void) fillView
 {
     self.textFieldTitulo.text = self.dto.titulo;
     self.textFieldSubtitulo.text = self.dto.subtitulo;
@@ -45,11 +45,6 @@
     self.dto.titulo = self.textFieldTitulo.text;
     self.dto.subtitulo = self.textFieldSubtitulo.text;
     self.dto.precio = self.textFieldPrecio.text;
-}
-
-- (IBAction)pushButtonSiguiente:(id)sender {
-    
-    [super doNextTransition];
 }
 
 - (IBAction)textFieldChangeSubtitulo:(id)sender {

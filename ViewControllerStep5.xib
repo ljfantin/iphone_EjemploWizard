@@ -9,7 +9,7 @@
                 <outlet property="buttonAddImage" destination="cDp-mK-iqN" id="VZD-hx-bJJ"/>
                 <outlet property="buttonSiguiente" destination="EDP-eb-pwS" id="Dnu-4g-dAD"/>
                 <outlet property="collectionViewGallery" destination="YJd-Vw-VH7" id="oRZ-ON-7Ve"/>
-                <outlet property="scroll" destination="LoW-HC-RHW" id="Gtz-yT-Ji3"/>
+                <outlet property="scroll" destination="LoW-HC-RHW" id="UrK-2t-Qi2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,7 +39,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="siguientePushButton:" destination="-1" eventType="touchUpInside" id="Awa-Ly-6qO"/>
+                                <action selector="doNextTransition:" destination="-1" eventType="touchUpInside" id="gtO-HI-djL"/>
                             </connections>
                         </button>
                         <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" id="YJd-Vw-VH7">

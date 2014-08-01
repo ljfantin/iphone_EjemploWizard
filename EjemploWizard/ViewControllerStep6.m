@@ -21,6 +21,16 @@
 @implementation ViewControllerStep6
 
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _values = [[NSMutableDictionary alloc] init];
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,10 +41,8 @@
     self.tableView.tableHeaderView=header;
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void) fillView
 {
-    [super viewWillAppear:animated];
-    
     TableViewHeader * header = (TableViewHeader * ) self.tableView.tableHeaderView;
     [header loadGallery:self.dto.gallery];
     
@@ -45,18 +53,18 @@
     [self.values setObject:self.dto.precio forKey:@"Precio"];
 }
 
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     [self.tableView setContentOffset:CGPointMake(0, 0) animated: YES];
 }
 
-
-
-- (IBAction)pushButtonAceptar:(id)sender {
+- (IBAction)doNextTransition:(id)sender {
     [self.dto reset];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
 
 - (IBAction)pageChanged:(id)sender {
     CGRect frame;

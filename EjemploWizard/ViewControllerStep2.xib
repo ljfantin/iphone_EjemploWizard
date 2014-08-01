@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerStep2">
             <connections>
                 <outlet property="buttonSiguiente" destination="RqE-ZT-FBW" id="Brs-hG-IwK"/>
-                <outlet property="scroll" destination="aj8-cN-RiW" id="EGY-Jh-gBN"/>
+                <outlet property="scroll" destination="aj8-cN-RiW" id="2UP-Zs-y5v"/>
                 <outlet property="textFieldPrecio" destination="zIB-hW-smy" id="2uM-C5-20E"/>
                 <outlet property="textFieldSubtitulo" destination="Rf5-Zt-4Uu" id="mRW-gJ-K45"/>
                 <outlet property="textFieldTitulo" destination="ecx-ky-BhL" id="NZu-E3-cV8"/>
@@ -44,7 +44,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Siguiente"/>
                             <connections>
-                                <action selector="pushButtonSiguiente:" destination="-1" eventType="touchUpInside" id="anY-cg-Axx"/>
+                                <action selector="doNextTransition:" destination="-1" eventType="touchUpInside" id="GYB-HU-Jbz"/>
                             </connections>
                         </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitulo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="orq-Is-uHr">
@@ -81,9 +81,6 @@
                             </connections>
                         </textField>
                     </subviews>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="wL4-Eo-WkF"/>
-                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

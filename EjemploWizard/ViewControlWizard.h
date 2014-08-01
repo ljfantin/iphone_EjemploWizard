@@ -12,9 +12,11 @@
 @protocol ViewControlWizard <NSObject>
 
 - (void) fillDto;
+- (void) fillView;
 - (CarInformationDTO*) getDto;
 - (void) setDto:(CarInformationDTO*) dto;
 - (BOOL) validateValues;
 - (void) doNextTransition;
+- (IBAction)doNextTransition:(id)sender;
 
 @end

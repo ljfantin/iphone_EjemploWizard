@@ -18,6 +18,7 @@
         _wizardManager = [[WizardManagerImpl alloc] init];
         self.title=[self.wizardManager getTitle:NSStringFromClass([self class])];
         _validator = [[ValidatorImpl alloc] init];
+        _dto = [[CarInformationDTO alloc] init];
     }
     return self;
 }
@@ -36,20 +37,35 @@
     
     //pusheo el controller
     [self.navigationController pushViewController:nextController animated:YES];
-    
-    //hago un release
-    [nextController release];
 }
+
+- (IBAction)doNextTransition:(id)sender
+{
+    [self doNextTransition];
+}
+
+- (void) fillDto
+{
+    //Quizas podria hacer el filldto por reflection o lo que exista parecido
+}
+
+- (void) fillView
+{
+    //Quizas podria hacer el filldto por reflection o lo que exista parecido
+}
+
 
 - (CarInformationDTO*) getDto
 {
     return self.dto;
 }
 
-- (void) setDto:(CarInformationDTO*) dto
+- (void) setDto:(CarInformationDTO*) newDto
 {
     //ver si tengo que hacerlo a mano
-    self.dto = dto;
+    [newDto retain];
+    [_dto release];
+    _dto = newDto;
 }
 
 - (BOOL) validateValues {
@@ -70,6 +86,13 @@
     //Me desatacho de los eventos del teclado
     [self unregisterForKeyboardNotifications];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:true];
+    [self fillView];
+}
+
 
 - (void)registerForKeyboardNotifications
 {
@@ -165,5 +188,7 @@
 {
     [[self view] endEditing:YES];
 }
+
+
 
 @end

@@ -44,7 +44,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="pushButtonSiguiente:" destination="-1" eventType="touchUpInside" id="AIW-Ka-j8e"/>
+                                <action selector="doNextTransition:" destination="-1" eventType="touchUpInside" id="DJ1-Sr-kQc"/>
                             </connections>
                         </button>
                     </subviews>

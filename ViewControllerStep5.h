@@ -13,7 +13,6 @@
 @interface ViewControllerStep5 : AbstractViewControlWizard<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDataSource, UICollectionViewDelegate>
 
 - (IBAction)addImagePushButton:(id)sender;
-- (IBAction)siguientePushButton:(id)sender;
 
 @property (assign, nonatomic) IBOutlet UIButton *buttonAddImage;
 @property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;

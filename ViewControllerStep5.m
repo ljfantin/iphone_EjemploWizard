@@ -60,9 +60,6 @@ const NSInteger CANT_MAX_FOTOS = 6;
     [actionSheet showInView:self.view];
 }
 
-- (IBAction)siguientePushButton:(id)sender {
-    [self doNextTransition];
-}
 
 -(void)choosePhotoFromExistingImages
 {

@@ -19,19 +19,14 @@
 
 @implementation ViewControllerStep3
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    self.textfieldKilometraje.text = self.carInformation.kilometraje;
-    [self handleChangeKilometraje:self.textfieldKilometraje];
-}
-
 - (void) fillDto
 {
-    self.carInformation.kilometraje = self.textfieldKilometraje.text;
+    self.dto.kilometraje = self.textfieldKilometraje.text;
 }
 
-- (IBAction)pushButtonSiguiente:(id)sender {
-    [self doNextTransition];
+- (void) fillView
+{
+    self.textfieldKilometraje.text = self.dto.kilometraje;
 }
 
 - (IBAction)handleChangeKilometraje:(id)sender {

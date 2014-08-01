@@ -16,10 +16,4 @@
 @implementation ViewControllerStep1
 
 
-- (IBAction)pushButtonIngresar:(id)sender {
-    //[self.navigationController]
-    [self doNextTransition];
-}
-
-
 @end
