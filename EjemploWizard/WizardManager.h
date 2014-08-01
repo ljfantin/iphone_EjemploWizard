@@ -13,5 +13,6 @@
 
 - (NSString *) getTitle:(NSString *) from;
 - (AbstractViewControlWizard *) nextController:(NSString *) from;
-
+//Deberia ser un map con array [variable,validators],[variable,validators]
+- (NSDictionary *) getValidators:(NSString *) from;
 @end
