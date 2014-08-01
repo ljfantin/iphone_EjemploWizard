@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
+#import "AbstractViewControlWizard.h"
 
-@interface ViewControllerStep6 : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@interface ViewControllerStep6 : AbstractViewControlWizard<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 - (IBAction)pushButtonCancelar:(id)sender;
 - (IBAction)pushButtonAceptar:(id)sender;

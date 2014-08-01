@@ -29,23 +29,16 @@
     AbstractViewControlWizard * nextController = [self.wizardManager nextController:NSStringFromClass([self class])];
     
     //obtengo el dto con los valores colocados
-    CarInformationDTO * dto = [self fillDto];
+    [self fillDto];
     
     //le seteo el dto al proximo controller
-    [nextController setDto:dto];
+    [nextController setDto:self.dto];
     
     //pusheo el controller
     [self.navigationController pushViewController:nextController animated:YES];
     
     //hago un release
     [nextController release];
-}
-
-- (CarInformationDTO*) fillDto
-{
-    
-    //habria que llenar con los valores de los fields
-    return self.dto;
 }
 
 - (CarInformationDTO*) getDto

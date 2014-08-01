@@ -124,7 +124,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
     
     //Actualizo el collectionview
     // Parche que saque de aca: http://stackoverflow.com/questions/19199985/invalid-update-invalid-number-of-items-on-uicollectionview
-    if (self.carInformation.gallery.count == 1) {
+    if (self.dto.gallery.count == 1) {
       [self.collectionViewGallery reloadData];
     } else {
         [self.collectionViewGallery performBatchUpdates:^{
@@ -204,9 +204,5 @@ const NSInteger CANT_MAX_FOTOS = 6;
     return nil;
 }
 
-/*- (void)dealloc
-{
-    [_carInformation release];
-    [super dealloc];
-}*/
+
 @end

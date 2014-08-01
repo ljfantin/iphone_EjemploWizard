@@ -25,6 +25,11 @@
     [self handleChangeKilometraje:self.textfieldKilometraje];
 }
 
+- (void) fillDto
+{
+    self.carInformation.kilometraje = self.textfieldKilometraje.text;
+}
+
 - (IBAction)pushButtonSiguiente:(id)sender {
     [self doNextTransition];
 }

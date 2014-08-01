@@ -11,6 +11,6 @@
 
 @interface ApplicationPropertiesImpl : NSObject<ApplicationProperties>
 
-@property (nonatomic,retain) NSMutableDictionary * dictionary;
+@property (nonatomic,retain) NSDictionary * dictionary;
 
 @end

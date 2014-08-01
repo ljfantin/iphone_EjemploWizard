@@ -10,9 +10,17 @@
 
 @implementation ApplicationPropertiesImpl
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _dictionary = @{@"CANT_MAX_FOTOS":@"6"};
+    }
+    return self;
+}
 -(id) getProperty:(NSString *) key
 {
-
+    return self.dictionary[key];
 }
 
 @end

@@ -11,7 +11,7 @@
 
 @protocol ViewControlWizard <NSObject>
 
-- (CarInformationDTO*) fillDto;
+- (void) fillDto;
 - (CarInformationDTO*) getDto;
 - (void) setDto:(CarInformationDTO*) dto;
 - (BOOL) validateValues;

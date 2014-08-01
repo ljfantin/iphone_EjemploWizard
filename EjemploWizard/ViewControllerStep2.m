@@ -40,6 +40,13 @@
     self.textFieldPrecio.text = self.dto.precio;
 }
 
+- (void) fillDto
+{
+    self.dto.titulo = self.textFieldTitulo.text;
+    self.dto.subtitulo = self.textFieldSubtitulo.text;
+    self.dto.precio = self.textFieldPrecio.text;
+}
+
 - (IBAction)pushButtonSiguiente:(id)sender {
     
     [super doNextTransition];

@@ -17,23 +17,20 @@
 @implementation ViewControllerStep4
 
 
-/*- (void)viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.textViewDescripcion.text = self.carInformation.descripcion;
-    //Me atacho a los eventos del teclado
-    [self registerForKeyboardNotifications];
-}*/
+    self.textViewDescripcion.text = self.dto.descripcion;
+}
 
+- (void) fillDto
+{
+    self.dto.descripcion = self.textViewDescripcion.text;
+}
 
 
 - (IBAction)pushButtonSiguiente:(id)sender {
     [self doNextTransition];
 }
 
-/*- (void)dealloc
-{
-    [_carInformation release];
-    [super dealloc];
-}*/
 @end
