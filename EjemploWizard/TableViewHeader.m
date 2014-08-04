@@ -38,7 +38,6 @@
 - (void)loadGallery:(NSArray*)images
 {
     for (NSUInteger i = 0; i < [images count]; i++) {
-        //We'll create an imageView object in every 'page' of our scrollView.
         CGRect frame;
         frame.origin.x = self.scroll.frame.size.width * i;
         frame.origin.y = 0;
@@ -48,9 +47,7 @@
         [self.scroll addSubview:imageView];
         [imageView release];
     }
-    //Set the content size of our scrollview according to the total width of our imageView objects.
     self.scroll.contentSize = CGSizeMake(self.frame.size.width * [images count], self.scroll.frame.size.height);
-
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = [images count];
 }

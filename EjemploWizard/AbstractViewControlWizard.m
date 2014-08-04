@@ -8,6 +8,7 @@
 
 #import "AbstractViewControlWizard.h"
 #import "WizardManagerImpl.h"
+#import "Validator.h"
 
 @implementation AbstractViewControlWizard
 
@@ -17,7 +18,6 @@
     if (self) {
         _wizardManager = [[WizardManagerImpl alloc] init];
         self.title=[self.wizardManager getTitle:NSStringFromClass([self class])];
-        _validator = [[ValidatorImpl alloc] init];
         _dto = [[CarInformationDTO alloc] init];
     }
     return self;
@@ -69,9 +69,17 @@
 }
 
 - (BOOL) validateValues {
+    for (NSString * key in self.validators.keyEnumerator)   {
+        NSArray *validatorByKey = self.validators[key];
+        for (id<Validator> val in validatorByKey) {
+            if (![val isValid:])
+                return NO;
+        }
+    }
     return YES;
 }
 
+#pragma mark Implementacion metodos View Controller
 - (void)viewDidLoad
 {
     [super viewDidLoad];

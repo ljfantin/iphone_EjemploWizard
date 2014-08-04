@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Validator.h"
 
-@interface ValidatorIsNumber : NSObject
+@interface ValidatorIsNumber : NSObject<Validator>
 
 @property (nonatomic,retain) NSCharacterSet *nonNumberSet;
 

@@ -14,6 +14,9 @@
 #import "ViewControllerStep5.h"
 #import "ViewControllerStep6.h"
 #import "WorkflowImpl.h"
+#import "Validator.h"
+#import "ValidatorNotEmpty.h"
+#import "ValidatorIsNumber.h"
 
 
 @implementation WizardManagerImpl
@@ -42,6 +45,22 @@
                        class4:@"step4.title",
                        class5:@"step5.title",
                        class6:@"step6.title"};
+        
+        id<Validator> validatorNotEmpty = [[ValidatorNotEmpty alloc] init];
+        id<Validator> validatorIsNumber = [[ValidatorIsNumber alloc] init];
+        
+        // validators paso 2;
+        NSArray * validatorsTitulo = @[validatorNotEmpty];
+        NSArray * validatorsSubtitulo = @[validatorNotEmpty];
+        NSArray * validatorsPrecio = @[validatorNotEmpty,validatorIsNumber];
+        NSDictionary * validatorsStep2 = @{@"titulo": validatorsTitulo,@"subtitulo" : validatorsSubtitulo, @"precio": validatorsPrecio};
+        
+        // validators paso 3;
+        NSArray * validatorsKilometraje = @[validatorNotEmpty,validatorIsNumber];
+        NSDictionary * validatorsStep3 = @{@"kilometraje": validatorsKilometraje};
+       
+        
+        self.mappingValidations = @{class2: validatorsStep2, class3: validatorsStep3};
     }
     return self;
 }
@@ -61,4 +80,10 @@
 {
     return NSLocalizedString(self.titles[from],@"");
 }
+
+- (NSDictionary *) getValidators:(NSString *) from
+{
+    return self.mappingValidations[from];
+}
+
 @end

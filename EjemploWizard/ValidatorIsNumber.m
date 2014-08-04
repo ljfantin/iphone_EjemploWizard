@@ -7,6 +7,7 @@
 //
 
 #import "ValidatorIsNumber.h"
+#import "Error.h"
 
 @implementation ValidatorIsNumber
 
@@ -19,9 +20,15 @@
     return self;
 }
 
--(BOOL) isValid:(NSString*)field
+-(NSArray*) isValid:(NSString*)field
 {
-    return [field stringByTrimmingCharactersInSet:self.nonNumberSet].length > 0;
+    NSArray * errores = nil;
+    if ([field stringByTrimmingCharactersInSet:self.nonNumberSet].length > 0)    {
+        //De alguna manera habria que indicar cual es la field que se esta validando
+        Error * error = [Error errorWith:IS_NUMBER message:@"The field is not number"];
+        errores = @[error];
+    }
+    return errores;
 }
 
 @end

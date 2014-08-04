@@ -8,13 +8,20 @@
 
 #import "ValidatorNotEmpty.h"
 #import "NSString+Utils.h"
+#import "Error.h"
 
 
 @implementation ValidatorNotEmpty
 
--(BOOL) isValid:(NSString*)field
+-(NSArray*) isValid:(NSString*)field
 {
-    return([[field trim] length]>0);
+    NSArray * errores = nil;
+    if ([[field trim] length]>0)    {
+        //De alguna manera habria que indicar cual es la field que se esta validando
+        Error * error = [Error errorWith:OBLIGATORY message:@"The field is empty"];
+        errores = @[error];
+    }
+    return errores;
 }
 
 @end

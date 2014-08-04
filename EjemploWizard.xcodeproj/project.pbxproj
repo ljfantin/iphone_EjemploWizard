@@ -25,7 +25,6 @@
 		4F9D9B411975995A0045B680 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F9D9B3F1975995A0045B680 /* InfoPlist.strings */; };
 		4F9D9B431975995A0045B680 /* EjemploWizardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D9B421975995A0045B680 /* EjemploWizardTests.m */; };
 		4FAAA7E8197EA0230091A34A /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAA7E7197EA0230091A34A /* NSString+Utils.m */; };
-		4FAAA7EC197EA4230091A34A /* ValidatorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */; };
 		4FB014B3198A7B8400E8CFEF /* WizardManagerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB014B2198A7B8400E8CFEF /* WizardManagerImpl.m */; };
 		4FB014B5198A8AC500E8CFEF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FB014B4198A8AC500E8CFEF /* Localizable.strings */; };
 		4FB014BB198AE59D00E8CFEF /* ApplicationPropertiesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB014BA198AE59D00E8CFEF /* ApplicationPropertiesImpl.m */; };
@@ -51,6 +50,7 @@
 		8B8D17D51975EFA200D17E7B /* ViewControllerStep3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B8D17D31975EFA200D17E7B /* ViewControllerStep3.xib */; };
 		8B8D17D81975FA8E00D17E7B /* UIButton+Copado.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D17D71975FA8E00D17E7B /* UIButton+Copado.m */; };
 		8B8D17DE197604D700D17E7B /* UiTextViewCopado.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D17DD197604D700D17E7B /* UiTextViewCopado.m */; };
+		8BAA1AB8198EFF5E0068E709 /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA1AB7198EFF5E0068E709 /* Error.m */; };
 		8BC1EA181985A58900BBE340 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BC1EA171985A58900BBE340 /* image2.jpg */; };
 		8BC1EA1A1985A5A000BBE340 /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BC1EA191985A5A000BBE340 /* image3.jpg */; };
 		8BC1EA1C1985A69300BBE340 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BC1EA1B1985A69300BBE340 /* image1.jpg */; };
@@ -97,8 +97,6 @@
 		4FAAA7E6197EA0230091A34A /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
 		4FAAA7E7197EA0230091A34A /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 		4FAAA7E9197EA3860091A34A /* Validator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Validator.h; sourceTree = "<group>"; };
-		4FAAA7EA197EA4230091A34A /* ValidatorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatorImpl.h; sourceTree = "<group>"; };
-		4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatorImpl.m; sourceTree = "<group>"; };
 		4FB014B1198A7B8400E8CFEF /* WizardManagerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardManagerImpl.h; sourceTree = "<group>"; };
 		4FB014B2198A7B8400E8CFEF /* WizardManagerImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardManagerImpl.m; sourceTree = "<group>"; };
 		4FB014B4198A8AC500E8CFEF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ../Localizable.strings; sourceTree = "<group>"; };
@@ -141,6 +139,8 @@
 		8B8D17D71975FA8E00D17E7B /* UIButton+Copado.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Copado.m"; sourceTree = "<group>"; };
 		8B8D17DC197604D700D17E7B /* UiTextViewCopado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UiTextViewCopado.h; sourceTree = "<group>"; };
 		8B8D17DD197604D700D17E7B /* UiTextViewCopado.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UiTextViewCopado.m; sourceTree = "<group>"; };
+		8BAA1AB6198EFF5E0068E709 /* Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Error.h; sourceTree = "<group>"; };
+		8BAA1AB7198EFF5E0068E709 /* Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Error.m; sourceTree = "<group>"; };
 		8BC1EA171985A58900BBE340 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
 		8BC1EA191985A5A000BBE340 /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpg; sourceTree = "<group>"; };
 		8BC1EA1B1985A69300BBE340 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
@@ -203,12 +203,13 @@
 		4F9D9B231975995A0045B680 /* EjemploWizard */ = {
 			isa = PBXGroup;
 			children = (
+				4FB06F721988161E000ADAC2 /* controller */,
+				8BAA1AB9198F098C0068E709 /* validators */,
 				4FB014B6198A8AD400E8CFEF /* resources */,
 				4FB06F7619881987000ADAC2 /* images */,
 				4FB06F75198818B6000ADAC2 /* ui */,
 				4FB06F741988189A000ADAC2 /* dto */,
 				4FB06F73198817CF000ADAC2 /* utils */,
-				4FB06F721988161E000ADAC2 /* controller */,
 				4FB06F7119881605000ADAC2 /* xib */,
 				4F9D9B2C1975995A0045B680 /* AppDelegate.h */,
 				4F9D9B2D1975995A0045B680 /* AppDelegate.m */,
@@ -275,8 +276,9 @@
 		4FB06F721988161E000ADAC2 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				8B8D17BD1975EF4900D17E7B /* ViewControllerStep1.h */,
+				8BAA1ABB198F09D40068E709 /* abstraccion */,
 				8B8D17BE1975EF4900D17E7B /* ViewControllerStep1.m */,
+				8B8D17BD1975EF4900D17E7B /* ViewControllerStep1.h */,
 				8B8D17D11975EFA200D17E7B /* ViewControllerStep3.h */,
 				8B8D17D21975EFA200D17E7B /* ViewControllerStep3.m */,
 				4FB86217197EC1F80053B448 /* ViewControllerStep5.h */,
@@ -287,18 +289,6 @@
 				8B8D17C41975EF4900D17E7B /* ViewControllerStep4.m */,
 				8B8D17C61975EF4900D17E7B /* ViewControllerStep6.h */,
 				8B8D17C71975EF4900D17E7B /* ViewControllerStep6.m */,
-				4F01E51719894B2A00BD9949 /* ViewControlWizard.h */,
-				4F01E518198968C600BD9949 /* AbstractViewControlWizard.h */,
-				4F01E519198968C600BD9949 /* AbstractViewControlWizard.m */,
-				4F01E51C198976D000BD9949 /* WorkflowImpl.h */,
-				4F01E51D198976D000BD9949 /* WorkflowImpl.m */,
-				4F01E51F19898BF900BD9949 /* Workflow.h */,
-				4FB014B1198A7B8400E8CFEF /* WizardManagerImpl.h */,
-				4FB014B2198A7B8400E8CFEF /* WizardManagerImpl.m */,
-				4FB014B7198A94EE00E8CFEF /* WizardManager.h */,
-				4FB014B8198AE4F600E8CFEF /* ApplicationProperties.h */,
-				4FB014B9198AE59D00E8CFEF /* ApplicationPropertiesImpl.h */,
-				4FB014BA198AE59D00E8CFEF /* ApplicationPropertiesImpl.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -306,15 +296,11 @@
 		4FB06F73198817CF000ADAC2 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				4FB014B8198AE4F600E8CFEF /* ApplicationProperties.h */,
+				4FB014B9198AE59D00E8CFEF /* ApplicationPropertiesImpl.h */,
+				4FB014BA198AE59D00E8CFEF /* ApplicationPropertiesImpl.m */,
 				4FAAA7E6197EA0230091A34A /* NSString+Utils.h */,
 				4FAAA7E7197EA0230091A34A /* NSString+Utils.m */,
-				4FAAA7E9197EA3860091A34A /* Validator.h */,
-				4FAAA7EA197EA4230091A34A /* ValidatorImpl.h */,
-				4FAAA7EB197EA4230091A34A /* ValidatorImpl.m */,
-				4FE3C68C198C32180055F044 /* ValidatorNotEmpty.h */,
-				4FE3C68D198C32180055F044 /* ValidatorNotEmpty.m */,
-				4FE3C68F198C32C10055F044 /* ValidatorIsNumber.h */,
-				4FE3C690198C32C10055F044 /* ValidatorIsNumber.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -355,6 +341,36 @@
 				8BC1EA171985A58900BBE340 /* image2.jpg */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		8BAA1AB9198F098C0068E709 /* validators */ = {
+			isa = PBXGroup;
+			children = (
+				4FAAA7E9197EA3860091A34A /* Validator.h */,
+				4FE3C68C198C32180055F044 /* ValidatorNotEmpty.h */,
+				4FE3C68D198C32180055F044 /* ValidatorNotEmpty.m */,
+				4FE3C68F198C32C10055F044 /* ValidatorIsNumber.h */,
+				4FE3C690198C32C10055F044 /* ValidatorIsNumber.m */,
+				8BAA1AB6198EFF5E0068E709 /* Error.h */,
+				8BAA1AB7198EFF5E0068E709 /* Error.m */,
+			);
+			name = validators;
+			sourceTree = "<group>";
+		};
+		8BAA1ABB198F09D40068E709 /* abstraccion */ = {
+			isa = PBXGroup;
+			children = (
+				4F01E51719894B2A00BD9949 /* ViewControlWizard.h */,
+				4F01E518198968C600BD9949 /* AbstractViewControlWizard.h */,
+				4F01E519198968C600BD9949 /* AbstractViewControlWizard.m */,
+				4F01E51C198976D000BD9949 /* WorkflowImpl.h */,
+				4F01E51D198976D000BD9949 /* WorkflowImpl.m */,
+				4F01E51F19898BF900BD9949 /* Workflow.h */,
+				4FB014B1198A7B8400E8CFEF /* WizardManagerImpl.h */,
+				4FB014B2198A7B8400E8CFEF /* WizardManagerImpl.m */,
+				4FB014B7198A94EE00E8CFEF /* WizardManager.h */,
+			);
+			name = abstraccion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +491,7 @@
 				4FE3C68E198C32180055F044 /* ValidatorNotEmpty.m in Sources */,
 				4F01E51E198976D000BD9949 /* WorkflowImpl.m in Sources */,
 				4FAAA7E8197EA0230091A34A /* NSString+Utils.m in Sources */,
+				8BAA1AB8198EFF5E0068E709 /* Error.m in Sources */,
 				8B8D17CB1975EF4900D17E7B /* ViewControllerStep2.m in Sources */,
 				8B8D17C91975EF4900D17E7B /* ViewControllerStep1.m in Sources */,
 				8B8D17DE197604D700D17E7B /* UiTextViewCopado.m in Sources */,
@@ -486,7 +503,6 @@
 				4F9D9B2A1975995A0045B680 /* main.m in Sources */,
 				4F0C9606198055F400B97685 /* FooterGallery.m in Sources */,
 				4FB8621E197EEC740053B448 /* UIPhotoCollectionViewCell.m in Sources */,
-				4FAAA7EC197EA4230091A34A /* ValidatorImpl.m in Sources */,
 				8B8D17D81975FA8E00D17E7B /* UIButton+Copado.m in Sources */,
 				4F01E51A198968C600BD9949 /* AbstractViewControlWizard.m in Sources */,
 			);

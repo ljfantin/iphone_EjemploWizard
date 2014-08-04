@@ -10,7 +10,7 @@
 
 @protocol Validator <NSObject>
 
--(BOOL) isValid:(NSString*)field;
--(BOOL) isNotEmpty:(NSString*)field;
--(BOOL) isNumber:(NSString*)field;
+//Devuelve un array de errores
+-(NSArray*) isValid:(NSString*)field;
+
 @end

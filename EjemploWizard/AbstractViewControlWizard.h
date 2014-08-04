@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "ViewControlWizard.h"
-#import "ValidatorImpl.h"
 #import "WizardManager.h"
 
 
@@ -16,13 +15,13 @@
 
 @property (retain, nonatomic) CarInformationDTO * dto;
 
-@property (retain, nonatomic) ValidatorImpl * validator;
-
 @property (retain, nonatomic) id <WizardManager> wizardManager;
 
 @property (assign, nonatomic) IBOutlet UIScrollView *scroll;
 
 @property (assign, nonatomic) UIView * activeView;
+
+@property (assign, nonatomic) NSDictionary * validators;
 
 - (IBAction)doNextTransition:(id)sender;
 
