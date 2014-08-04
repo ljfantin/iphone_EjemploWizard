@@ -21,6 +21,15 @@
 
 @implementation WizardManagerImpl
 
++ (id)instance {
+    static WizardManagerImpl *sharedMyManager = nil;
+    @synchronized(self) {
+        if (sharedMyManager == nil)
+            sharedMyManager = [[self alloc] init];
+    }
+    return sharedMyManager;
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -38,29 +47,6 @@
         [self.workflow addTransition:class3 to:class4];
         [self.workflow addTransition:class4 to:class5];
         [self.workflow addTransition:class5 to:class6];
-        
-        self.titles=@{class1:@"step1.title",
-                       class2:@"step2.title",
-                       class3:@"step3.title",
-                       class4:@"step4.title",
-                       class5:@"step5.title",
-                       class6:@"step6.title"};
-        
-        id<Validator> validatorNotEmpty = [[ValidatorNotEmpty alloc] init];
-        id<Validator> validatorIsNumber = [[ValidatorIsNumber alloc] init];
-        
-        // validators paso 2;
-        NSArray * validatorsTitulo = @[validatorNotEmpty];
-        NSArray * validatorsSubtitulo = @[validatorNotEmpty];
-        NSArray * validatorsPrecio = @[validatorNotEmpty,validatorIsNumber];
-        NSDictionary * validatorsStep2 = @{@"titulo": validatorsTitulo,@"subtitulo" : validatorsSubtitulo, @"precio": validatorsPrecio};
-        
-        // validators paso 3;
-        NSArray * validatorsKilometraje = @[validatorNotEmpty,validatorIsNumber];
-        NSDictionary * validatorsStep3 = @{@"kilometraje": validatorsKilometraje};
-       
-        
-        self.mappingValidations = @{class2: validatorsStep2, class3: validatorsStep3};
     }
     return self;
 }
@@ -76,14 +62,5 @@
     return nextController;
 }
 
-- (NSString *) getTitle:(NSString *) from
-{
-    return NSLocalizedString(self.titles[from],@"");
-}
-
-- (NSDictionary *) getValidators:(NSString *) from
-{
-    return self.mappingValidations[from];
-}
 
 @end

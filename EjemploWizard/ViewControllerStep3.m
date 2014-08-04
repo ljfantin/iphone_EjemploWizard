@@ -10,14 +10,28 @@
 #import "ViewControllerStep4.h"
 #import "UIButton+Copado.h"
 #import "NSString+Utils.h"
-#import "ValidatorImpl.h"
-
+#import "ValidatorNotEmpty.h"
+#import "ValidatorIsNumber.h"
 
 @interface ViewControllerStep3 ()
-@property (nonatomic, retain) ValidatorImpl * validator;
+
+@property (nonatomic,retain) ValidatorIsNumber * validatorIsNumber;
+@property (nonatomic,retain) ValidatorNotEmpty * validatorNotEmpty;
+
 @end
 
 @implementation ViewControllerStep3
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+
+        self.validatorIsNumber = [[[ValidatorIsNumber alloc] init] autorelease];
+        self.validatorNotEmpty = [[[ValidatorNotEmpty alloc] init] autorelease];
+    }
+    return self;
+}
 
 - (void) fillDto
 {
@@ -29,9 +43,9 @@
     self.textfieldKilometraje.text = self.dto.kilometraje;
 }
 
-- (IBAction)handleChangeKilometraje:(id)sender {
-    UITextField* textField = (UITextField*)sender;
-    self.buttonSiguiente.enabled=[self.validator isNotEmpty:textField.text];
+- (IBAction)handleChangeKilometraje:(id)sender
+{
+    self.buttonSiguiente.enabled = [self validateChange];
 }
 
 #pragma mark Implementacion
@@ -40,7 +54,27 @@
     if (range.length == 1){
         return YES;
     }else{
-        return [self.validator isNumber:string];
+        return ([[self.validatorIsNumber isValid:string] count]==0);
     }
 }
+
+- (BOOL) validate
+{
+    //Deberian mostrarse los errores
+    NSMutableArray * errors = [[[NSMutableArray alloc] init] autorelease];
+    
+    [errors addObjectsFromArray:[self.validatorNotEmpty isValid:self.textfieldKilometraje.text]];
+    [errors addObjectsFromArray:[self.validatorIsNumber isValid:self.textfieldKilometraje.text]];
+    
+    return ([errors count]==0);
+}
+
+- (BOOL) validateChange
+{
+    //por ahora llamo al mismo metodo, pero la idea es que tenga su propia implementacion
+    return [self validate];
+}
+
+
+
 @end

@@ -13,7 +13,5 @@
 @interface WizardManagerImpl : NSObject<WizardManager>
 
 @property (retain,nonatomic) id<Workflow> workflow;
-@property (retain,nonatomic) NSDictionary * titles;
-@property (retain,nonatomic) NSDictionary * mappingValidations;
 
 @end

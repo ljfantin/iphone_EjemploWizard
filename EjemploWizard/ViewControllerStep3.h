@@ -13,6 +13,7 @@
 @interface ViewControllerStep3 : AbstractViewControlWizard<UITextFieldDelegate>
 
 @property (assign, nonatomic) IBOutlet UITextField *textfieldKilometraje;
+
 @property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;
 
 - (IBAction)handleChangeKilometraje:(id)sender;

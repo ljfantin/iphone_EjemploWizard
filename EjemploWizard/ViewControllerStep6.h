@@ -13,7 +13,6 @@
 @interface ViewControllerStep6 : AbstractViewControlWizard<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 - (IBAction)pushButtonCancelar:(id)sender;
-- (IBAction)pushButtonAceptar:(id)sender;
 
 //table
 @property (assign, nonatomic) IBOutlet UITableView *tableView;

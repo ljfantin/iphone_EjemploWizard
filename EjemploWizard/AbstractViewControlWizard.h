@@ -21,10 +21,11 @@
 
 @property (assign, nonatomic) UIView * activeView;
 
-@property (assign, nonatomic) NSDictionary * validators;
+//@property (assign, nonatomic) NSDictionary * validators;
 
 - (IBAction)doNextTransition:(id)sender;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
+
 
 @end

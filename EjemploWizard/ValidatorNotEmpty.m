@@ -15,11 +15,11 @@
 
 -(NSArray*) isValid:(NSString*)field
 {
-    NSArray * errores = nil;
-    if ([[field trim] length]>0)    {
+    NSMutableArray * errores =  [NSMutableArray array];
+    if ([[field trim] length] == 0)    {
         //De alguna manera habria que indicar cual es la field que se esta validando
         Error * error = [Error errorWith:OBLIGATORY message:@"The field is empty"];
-        errores = @[error];
+        [errores addObject:error];
     }
     return errores;
 }

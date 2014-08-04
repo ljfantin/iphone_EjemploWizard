@@ -10,12 +10,15 @@
 #import "ViewControllerStep3.h"
 #import "UIButton+Copado.h"
 #import "NSString+Utils.h"
-#import "ValidatorImpl.h"
+#import "ValidatorIsNumber.h"
+#import "ValidatorNotEmpty.h"
+
 
 @interface ViewControllerStep2 ()
-@property BOOL notEmptyTextFieldTitulo;
-@property BOOL notEmptyTextFieldSubtitulo;
-@property BOOL notEmptyTextFieldPrecio;
+
+@property (nonatomic,retain) ValidatorIsNumber * validatorIsNumber;
+@property (nonatomic,retain) ValidatorNotEmpty * validatorNotEmpty;
+
 @end
 
 @implementation ViewControllerStep2
@@ -26,9 +29,8 @@
     if (self) {
 
         self.dto = [[[CarInformationDTO alloc] init] autorelease];
-        self.notEmptyTextFieldTitulo = NO;
-        self.notEmptyTextFieldSubtitulo = NO;
-        self.notEmptyTextFieldPrecio = NO;
+        self.validatorIsNumber = [[[ValidatorIsNumber alloc] init] autorelease];
+        self.validatorNotEmpty = [[[ValidatorNotEmpty alloc] init] autorelease];
     }
     return self;
 }
@@ -49,29 +51,17 @@
 
 - (IBAction)textFieldChangeSubtitulo:(id)sender {
     
-    UITextField * textField = (UITextField *) sender;
-    self.notEmptyTextFieldSubtitulo = [self.validator isNotEmpty:textField.text];
-    self.buttonSiguiente.enabled=(self.notEmptyTextFieldSubtitulo &&
-                                  self.notEmptyTextFieldTitulo &&
-                                  self.notEmptyTextFieldPrecio);
+    self.buttonSiguiente.enabled = [self validateChange];
 }
 
 - (IBAction)textFieldChangeTitulo:(id)sender {
     
-    UITextField * textField = (UITextField *) sender;
-    self.notEmptyTextFieldTitulo = [self.validator isNotEmpty:textField.text];
-    self.buttonSiguiente.enabled=(self.notEmptyTextFieldSubtitulo &&
-                                  self.notEmptyTextFieldTitulo &&
-                                  self.notEmptyTextFieldPrecio);
+    self.buttonSiguiente.enabled = [self validateChange];
 }
 
 - (IBAction)textFieldChangePrecio:(id)sender {
     
-    UITextField * textField = (UITextField *) sender;
-    self.notEmptyTextFieldPrecio = [self.validator isNotEmpty:textField.text];
-    self.buttonSiguiente.enabled=(self.notEmptyTextFieldSubtitulo &&
-                                  self.notEmptyTextFieldTitulo &&
-                                  self.notEmptyTextFieldPrecio);
+    self.buttonSiguiente.enabled = [self validateChange];
 }
 
 //
@@ -86,8 +76,28 @@
     if (range.length == 1){
         return YES;
     }else{
-        return [self.validator isNumber:string];
+        return ([[self.validatorIsNumber isValid:string] count]==0);
     }
+}
+
+- (BOOL) validate
+{
+    //Deberian mostrarse los errores
+    NSMutableArray * errors = [[[NSMutableArray alloc] init] autorelease];
+
+    [errors addObjectsFromArray:[self.validatorNotEmpty isValid:self.textFieldTitulo.text]];
+    [errors addObjectsFromArray:[self.validatorNotEmpty isValid:self.textFieldSubtitulo.text]];
+    [errors addObjectsFromArray:[self.validatorNotEmpty isValid:self.textFieldPrecio.text]];
+    [errors addObjectsFromArray:[self.validatorIsNumber isValid:self.textFieldPrecio.text]];
+
+    return ([errors count]==0);
+}
+        
+- (BOOL) validateChange
+{
+    //por ahora llamo al mismo metodo, pero la idea es que tenga una propia implementacion
+    //que valide menos cosas
+    return [self validate];
 }
 
 @end

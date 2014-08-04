@@ -6,9 +6,9 @@
   Copyright (c) 2014 mercadolibre. All rights reserved.
 */
 
-"step1.title" = "Paso 1";
-"step2.title" = "Paso 2";
-"step3.title" = "Paso 3";
-"step4.title" = "Paso 4";
-"step5.title" = "Paso 5";
-"step6.title" = "Paso 6";
+"ViewControllerStep1.title" = "Paso 1";
+"ViewControllerStep2.title" = "Paso 2";
+"ViewControllerStep3.title" = "Paso 3";
+"ViewControllerStep4.title" = "Paso 4";
+"ViewControllerStep5.title" = "Paso 5";
+"ViewControllerStep6.title" = "Paso 6";

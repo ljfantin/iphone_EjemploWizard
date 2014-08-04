@@ -15,8 +15,10 @@
 - (void) fillView;
 - (CarInformationDTO*) getDto;
 - (void) setDto:(CarInformationDTO*) dto;
-- (BOOL) validateValues;
+//- (BOOL) validateValues;
 - (void) doNextTransition;
 - (IBAction)doNextTransition:(id)sender;
-
+- (BOOL) validate;
+- (BOOL) validateChange;
+- (NSString *) getTitle;
 @end

@@ -22,11 +22,11 @@
 
 -(NSArray*) isValid:(NSString*)field
 {
-    NSArray * errores = nil;
-    if ([field stringByTrimmingCharactersInSet:self.nonNumberSet].length > 0)    {
+    NSMutableArray * errores =  [NSMutableArray array];
+    if ([field stringByTrimmingCharactersInSet:self.nonNumberSet].length == 0)    {
         //De alguna manera habria que indicar cual es la field que se esta validando
         Error * error = [Error errorWith:IS_NUMBER message:@"The field is not number"];
-        errores = @[error];
+        [errores addObject:error];
     }
     return errores;
 }

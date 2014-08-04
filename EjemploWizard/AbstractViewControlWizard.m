@@ -9,6 +9,7 @@
 #import "AbstractViewControlWizard.h"
 #import "WizardManagerImpl.h"
 #import "Validator.h"
+#import <objc/message.h>
 
 @implementation AbstractViewControlWizard
 
@@ -17,7 +18,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _wizardManager = [[WizardManagerImpl alloc] init];
-        self.title=[self.wizardManager getTitle:NSStringFromClass([self class])];
+        self.title=[self getTitle];
         _dto = [[CarInformationDTO alloc] init];
     }
     return self;
@@ -26,17 +27,18 @@
 
 - (void) doNextTransition;
 {
+    if ([self validate])    {
+        AbstractViewControlWizard * nextController = [self.wizardManager nextController:NSStringFromClass([self class])];
     
-    AbstractViewControlWizard * nextController = [self.wizardManager nextController:NSStringFromClass([self class])];
+        //obtengo el dto con los valores colocados
+        [self fillDto];
     
-    //obtengo el dto con los valores colocados
-    [self fillDto];
+        //le seteo el dto al proximo controller
+        [nextController setDto:self.dto];
     
-    //le seteo el dto al proximo controller
-    [nextController setDto:self.dto];
-    
-    //pusheo el controller
-    [self.navigationController pushViewController:nextController animated:YES];
+        //pusheo el controller
+        [self.navigationController pushViewController:nextController animated:YES];
+    }
 }
 
 - (IBAction)doNextTransition:(id)sender
@@ -46,12 +48,12 @@
 
 - (void) fillDto
 {
-    //Quizas podria hacer el filldto por reflection o lo que exista parecido
+    //como marco estos metodos como abstractos
 }
 
 - (void) fillView
 {
-    //Quizas podria hacer el filldto por reflection o lo que exista parecido
+    //como marco estos metodos como abstractos
 }
 
 
@@ -68,16 +70,47 @@
     _dto = newDto;
 }
 
-- (BOOL) validateValues {
-    for (NSString * key in self.validators.keyEnumerator)   {
-        NSArray *validatorByKey = self.validators[key];
-        for (id<Validator> val in validatorByKey) {
-            if (![val isValid:])
-                return NO;
-        }
-    }
+- (BOOL) validate
+{
     return YES;
 }
+
+- (BOOL) validateChange
+{
+    return YES;
+}
+
+- (NSString*) getTitle
+{
+    // Implementacion por default
+    NSMutableString *key = [[NSMutableString alloc] init];
+    [key appendString:NSStringFromClass([self class])];
+    [key appendString:@".title"];
+    return NSLocalizedString(key,@"");
+}
+
+/*- (BOOL) validateValues
+{
+    NSMutableArray * errors = [[NSMutableArray alloc] init];
+    //Itero las validaciones por cada propiedad y valido
+    for (NSString * key in self.validators.keyEnumerator)   {
+        const char * propertyName = [key UTF8String];
+        //verifico que la clase tenga la propiedad
+        if  (class_getProperty([self class], propertyName))
+        {
+            //obtengo el valor que tiene el objeto para la propiedad
+            NSString *value = [self valueForKey:[NSString stringWithUTF8String:propertyName]];
+            //obtengo los validadores
+            NSArray * validatorByKey = self.validators[key];
+            for (id<Validator> val in validatorByKey)
+            {
+                NSArray * errorsByProperty = [val isValid:value];
+                [errors addObjectsFromArray:errorsByProperty];
+            }
+        }
+    }
+    return ([errors count]==0);
+}*/
 
 #pragma mark Implementacion metodos View Controller
 - (void)viewDidLoad
@@ -174,7 +207,7 @@
 - (void)dealloc
 {
     [_wizardManager release];
-    [_validator release];
+    //[_validator release];
     [_dto release];
     [super dealloc];
 }
