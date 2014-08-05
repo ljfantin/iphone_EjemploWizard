@@ -974,11 +974,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EjemploWizard/AbstractViewControlWizard.m"
-            timestampString = "428942166.890645"
+            timestampString = "428952805.504358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "-keyboardWillBeHidden:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1022,11 +1022,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EjemploWizard/AbstractViewControlWizard.m"
-            timestampString = "428942166.890645"
+            timestampString = "428952805.504358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "-keyboardWillBeHidden:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1480,7 +1480,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EjemploWizard/ApplicationPropertiesImpl.m"
@@ -1493,31 +1493,31 @@
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "+[ApplicationPropertiesImpl sharedInstance]"
                   moduleName = "EjemploWizard"
                   urlString = "file:///Users/lfantin/desarrollo/EjemploWizard/EjemploWizard/ApplicationPropertiesImpl.m"
-                  timestampString = "428949367.150492"
+                  timestampString = "428952995.217826"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
                   offsetFromSymbolStart = "63">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__43+[ApplicationPropertiesImpl sharedInstance]_block_invoke"
                   moduleName = "EjemploWizard"
                   urlString = "file:///Users/lfantin/desarrollo/EjemploWizard/EjemploWizard/ApplicationPropertiesImpl.m"
-                  timestampString = "428949367.150753"
+                  timestampString = "428952995.218075"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
                   offsetFromSymbolStart = "18">
                </Location>
             </Locations>
@@ -1526,7 +1526,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EjemploWizard/ApplicationPropertiesImpl.m"
@@ -1542,7 +1542,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewControllerStep5.m"
@@ -1552,6 +1552,38 @@
             startingLineNumber = "30"
             endingLineNumber = "30"
             landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EjemploWizard/ViewControllerStep6.m"
+            timestampString = "428952976.002421"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-viewWillDisappear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EjemploWizard/AbstractViewControlWizard.m"
+            timestampString = "428953756.327952"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "-viewDidUnload"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

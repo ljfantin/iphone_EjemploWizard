@@ -117,6 +117,7 @@
 {
     [super viewWillAppear:true];
     [self fillView];
+    self.buttonSiguiente.enabled = [self validate];
 }
 
 
