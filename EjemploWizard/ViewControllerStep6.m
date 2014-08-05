@@ -68,10 +68,10 @@
 
 - (IBAction)pageChanged:(id)sender {
     CGRect frame;
-    frame.origin.x = self.scroll.frame.size.width * self.pageControl.currentPage;
+    frame.origin.x = self.scrollViewGallery.frame.size.width * self.pageControl.currentPage;
     frame.origin.y = 0;
-    frame.size = self.scroll.frame.size;
-    [self.scroll scrollRectToVisible:frame animated:YES];
+    frame.size = self.scrollViewGallery.frame.size;
+    [self.scrollViewGallery scrollRectToVisible:frame animated:YES];
     //pageControlUsed = YES;
 }
 
@@ -118,4 +118,7 @@
     self.pageControl.currentPage = page;
 }
 
+- (void)dealloc {
+    [super dealloc];
+}
 @end

@@ -14,21 +14,21 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="4wc-VG-7Vy">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="c4O-39-I2E">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Descripcion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfM-MP-Ejs">
-                            <rect key="frame" x="30" y="77" width="250" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descripcion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfM-MP-Ejs">
+                            <rect key="frame" x="35" y="32" width="250" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKK-hZ-8oy" customClass="UiTextViewCopado">
-                            <rect key="frame" x="30" y="106" width="250" height="128"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKK-hZ-8oy" customClass="UiTextViewCopado">
+                            <rect key="frame" x="35" y="61" width="250" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -37,8 +37,8 @@
                                 <outlet property="delegate" destination="-1" id="Vai-ha-XmB"/>
                             </connections>
                         </textView>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBP-eE-pOg" customClass="UIButtonCopado">
-                            <rect key="frame" x="30" y="254" width="250" height="18"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBP-eE-pOg" customClass="UIButtonCopado">
+                            <rect key="frame" x="35" y="204" width="250" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Siguiente">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,18 +48,12 @@
                             </connections>
                         </button>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="UKK-hZ-8oy" firstAttribute="top" secondItem="tfM-MP-Ejs" secondAttribute="bottom" constant="8" id="Vjs-xN-CDo"/>
-                        <constraint firstItem="MBP-eE-pOg" firstAttribute="width" secondItem="UKK-hZ-8oy" secondAttribute="width" id="dJc-zX-QBg"/>
-                        <constraint firstItem="MBP-eE-pOg" firstAttribute="top" secondItem="UKK-hZ-8oy" secondAttribute="bottom" constant="20" id="jzS-N0-px1"/>
-                        <constraint firstItem="tfM-MP-Ejs" firstAttribute="width" secondItem="UKK-hZ-8oy" secondAttribute="width" id="skY-Kt-Jqh"/>
-                        <constraint firstItem="tfM-MP-Ejs" firstAttribute="width" secondItem="UKK-hZ-8oy" secondAttribute="width" id="wI7-Bi-7eJ"/>
-                    </constraints>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
         </view>
     </objects>
 </document>

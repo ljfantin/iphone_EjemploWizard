@@ -23,6 +23,7 @@
 
 @property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;
 
+
 - (IBAction)doNextTransition:(id)sender;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;

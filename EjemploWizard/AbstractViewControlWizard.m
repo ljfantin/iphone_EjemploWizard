@@ -43,14 +43,7 @@
 
 - (IBAction)doNextTransition:(id)sender
 {
-    @try {
-        [self doNextTransition];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"error %@",exception);
-    }
-    @finally {
-    }
+    [self doNextTransition];
 }
 
 - (void) fillDto
@@ -101,7 +94,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initScroll];
     //Me atacho a los eventos del teclado
     [self registerForKeyboardNotifications];
 }
@@ -117,6 +109,7 @@
 {
     [super viewWillAppear:true];
     [self fillView];
+    [self initScroll];
     self.buttonSiguiente.enabled = [self validate];
 }
 
@@ -150,8 +143,9 @@
 #pragma mark - Notificaciones del teclado
 - (void) keyboardWasShown:(NSNotification *)notificacion
 {
+    
     //Nota: El ScrollView no tiene que estar en autolayout para que funcione
-    NSDictionary* info = [notificacion userInfo];
+    /*NSDictionary* info = [notificacion userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
     //Es como un padding, y lo pones del tamanio del teclado para que active las barras de scroll
@@ -162,18 +156,23 @@
     //muevo las scrollbars hasta el active view que tenia el foco del usuario
     CGRect aRect = self.view.frame;
     aRect.size.height = kbSize.height;
-    if (!CGRectContainsPoint(aRect, self.activeView.frame.origin) ) {
-        CGRect rect = self.activeView.frame;
-        [self.scroll scrollRectToVisible:rect animated:YES];
-    }
+    self.activeView = [self findFirstResponder];*/
+    
+    /*if (self.activeView!=nil) {
+        if (!CGRectContainsPoint(aRect, self.activeView.frame.origin) ) {
+            CGRect rect = self.activeView.frame;
+            [self.scroll scrollRectToVisible:rect animated:YES];
+        }
+    }*/
+    
 }
 
 - (void) keyboardWillBeHidden:(NSNotification *)notificacion
 {
     //cuando el teclado desaparece, le sacamos el "padding" al scrollview
-    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    /*UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     self.scroll.contentInset = contentInsets;
-    self.scroll.scrollIndicatorInsets = contentInsets;
+    self.scroll.scrollIndicatorInsets = contentInsets;*/
 }
 
 - (void) initScroll

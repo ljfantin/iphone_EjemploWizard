@@ -19,5 +19,6 @@
 
 - (IBAction)pageChanged:(id)sender;
 @property (assign, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (retain, nonatomic) IBOutlet UIScrollView *scrollViewGallery;
 
 @end
