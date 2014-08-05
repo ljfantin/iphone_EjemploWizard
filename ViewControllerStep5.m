@@ -11,11 +11,10 @@
 #import "UIPhotoCollectionViewCell.h"
 #import "ViewControllerStep6.h"
 #import "FooterGallery.h"
-
-const NSInteger CANT_MAX_FOTOS = 6;
+#import "ApplicationPropertiesImpl.h"
 
 @interface ViewControllerStep5 ()
-
+@property (nonatomic) NSInteger cantMaxFotos;
 @end
 
 @implementation ViewControllerStep5
@@ -27,6 +26,9 @@ const NSInteger CANT_MAX_FOTOS = 6;
     
     //inicializo la galeria
     [self setupCollectionView];
+    // ver esto no funciona el Singleton
+    ApplicationPropertiesImpl * appProperties = [[ApplicationPropertiesImpl alloc] init];
+    self.cantMaxFotos = [[appProperties getProperty:@"CANT_MAX_FOTOS"] intValue];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -34,7 +36,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
     [super viewWillAppear:animated];
     
     //desabilito el boton si seleccione la cantidad maxima de fotos
-    if ([self.dto.gallery count]==CANT_MAX_FOTOS)
+    if ([self.dto.gallery count]==self.cantMaxFotos)
         self.buttonAddImage.enabled = false;
 }
 
@@ -133,7 +135,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
         } completion:nil];
     }
     //desabilito el boton si seleccione la cantidad maxima de fotos
-    if ([self.dto.gallery count]==CANT_MAX_FOTOS)
+    if ([self.dto.gallery count]==self.cantMaxFotos)
         self.buttonAddImage.enabled = false;
         
     [self.collectionViewGallery reloadSections:[NSIndexSet indexSetWithIndex:0]];
@@ -192,7 +194,7 @@ const NSInteger CANT_MAX_FOTOS = 6;
             if (reusableview==nil) {
                 reusableview=[[[FooterGallery alloc] initWithFrame:CGRectMake(0, 0, 320, 44)] autorelease];
             }
-            [reusableview updateCantidadFotos: CANT_MAX_FOTOS - self.dto.gallery.count];
+            [reusableview updateCantidadFotos: self.cantMaxFotos - self.dto.gallery.count];
             //libero la vista
             //[reusableview release];
             return reusableview;

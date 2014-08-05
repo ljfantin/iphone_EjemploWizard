@@ -10,5 +10,6 @@
 
 @protocol ApplicationProperties <NSObject>
 
--(id) getProperty:(NSString *) key;
+-(NSString *) getProperty:(NSString *) key;
+
 @end

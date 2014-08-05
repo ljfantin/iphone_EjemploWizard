@@ -14,4 +14,6 @@
 
 @property (retain,nonatomic) id<Workflow> workflow;
 
++ (instancetype)sharedInstance;
+
 @end

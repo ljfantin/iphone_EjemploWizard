@@ -10,17 +10,38 @@
 
 @implementation ApplicationPropertiesImpl
 
+static ApplicationPropertiesImpl * instance = nil;
+
++ (ApplicationPropertiesImpl*)sharedInstance {
+    
+    static dispatch_once_t onceToken = 0;
+    
+    dispatch_once(&onceToken,^{
+        instance = [[[self alloc] init] retain];
+    });
+    
+    return instance;
+}
+
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _dictionary = @{@"CANT_MAX_FOTOS":@"6"};
+        _dictionary = @{@"CANT_MAX_FOTOS": @"6"};
     }
     return self;
 }
--(id) getProperty:(NSString *) key
+
+-(NSString *) getProperty:(NSString *) key
 {
-    return self.dictionary[key];
+    return[self.dictionary objectForKey:key];
 }
+
+
+- (void)dealloc {
+    [_dictionary release];
+    [super dealloc];
+}
+
 
 @end

@@ -21,7 +21,7 @@
 
 @property (assign, nonatomic) UIView * activeView;
 
-//@property (assign, nonatomic) NSDictionary * validators;
+@property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;
 
 - (IBAction)doNextTransition:(id)sender;
 

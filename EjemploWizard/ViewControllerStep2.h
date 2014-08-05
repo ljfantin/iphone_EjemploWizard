@@ -18,7 +18,6 @@
 @property (assign, nonatomic) IBOutlet UITextField *textFieldTitulo;
 @property (assign, nonatomic) IBOutlet UITextField *textFieldSubtitulo;
 @property (assign, nonatomic) IBOutlet UITextField *textFieldPrecio;
-@property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;
 
 //actions
 - (IBAction)textFieldChangePrecio:(id)sender;

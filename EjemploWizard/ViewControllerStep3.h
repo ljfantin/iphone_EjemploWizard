@@ -14,8 +14,6 @@
 
 @property (assign, nonatomic) IBOutlet UITextField *textfieldKilometraje;
 
-@property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;
-
 - (IBAction)handleChangeKilometraje:(id)sender;
 
 @end

@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerStep2">
             <connections>
-                <outlet property="buttonSiguiente" destination="RqE-ZT-FBW" id="Brs-hG-IwK"/>
+                <outlet property="buttonSiguiente" destination="RqE-ZT-FBW" id="tcE-cT-YWW"/>
                 <outlet property="scroll" destination="aj8-cN-RiW" id="2UP-Zs-y5v"/>
                 <outlet property="textFieldPrecio" destination="zIB-hW-smy" id="2uM-C5-20E"/>
                 <outlet property="textFieldSubtitulo" destination="Rf5-Zt-4Uu" id="mRW-gJ-K45"/>

@@ -33,6 +33,11 @@
     [self transitions][from] = to;
 }
 
+- (void)dealloc
+{
+    [_transitions release];
+    [super dealloc];
+}
 
 
 @end

@@ -14,6 +14,5 @@
 @interface ViewControllerStep4 : AbstractViewControlWizard<UITextViewDelegate,UITextFieldDelegate>
 
 @property (assign, nonatomic) IBOutlet UiTextViewCopado *textViewDescripcion;
-@property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;
 
 @end

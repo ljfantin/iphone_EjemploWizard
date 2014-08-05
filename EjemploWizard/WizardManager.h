@@ -13,4 +13,7 @@
 
 - (AbstractViewControlWizard *) nextController:(NSString *) from;
 
+// Se puede hacer esto en objective c?
+//+ (instancetype)sharedInstance;
+
 @end

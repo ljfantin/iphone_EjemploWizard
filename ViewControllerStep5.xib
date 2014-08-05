@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerStep5">
             <connections>
                 <outlet property="buttonAddImage" destination="cDp-mK-iqN" id="VZD-hx-bJJ"/>
-                <outlet property="buttonSiguiente" destination="EDP-eb-pwS" id="Dnu-4g-dAD"/>
+                <outlet property="buttonSiguiente" destination="EDP-eb-pwS" id="dFK-q3-19m"/>
                 <outlet property="collectionViewGallery" destination="YJd-Vw-VH7" id="oRZ-ON-7Ve"/>
                 <outlet property="scroll" destination="LoW-HC-RHW" id="UrK-2t-Qi2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

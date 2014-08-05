@@ -21,13 +21,17 @@
 
 @implementation WizardManagerImpl
 
-+ (id)instance {
-    static WizardManagerImpl *sharedMyManager = nil;
-    @synchronized(self) {
-        if (sharedMyManager == nil)
-            sharedMyManager = [[self alloc] init];
-    }
-    return sharedMyManager;
+
++ (instancetype)sharedInstance {
+    
+    static dispatch_once_t onceToken;
+    static id instance;
+    
+    dispatch_once(&onceToken,^{
+        instance = [[WizardManagerImpl alloc] init];
+    });
+    
+    return instance;
 }
 
 - (instancetype)init
@@ -51,6 +55,19 @@
     return self;
 }
 
+
+/*+ (id) allocWithZone:(NSZone *)zone {
+    NSString *reason = [NSString stringWithFormat:@"Se debe crear una instancia a travez de sharedInstance"];
+    NSException *exception = [NSException exceptionWithName:@"Haciendo alloc a un singleton"
+                                                     reason:reason
+                                                   userInfo:nil];
+    [exception raise];
+    
+    return nil;
+}*/
+
+
+
 - (AbstractViewControlWizard *) nextController:(NSString *) from;
 {
     //obtengo el nombre del proximo controller
@@ -62,5 +79,10 @@
     return nextController;
 }
 
+- (void)dealloc
+{
+    [_workflow release];
+    [super dealloc];
+}
 
 @end

@@ -13,4 +13,6 @@
 
 @property (nonatomic,retain) NSDictionary * dictionary;
 
++ (ApplicationPropertiesImpl *)sharedInstance;
+
 @end

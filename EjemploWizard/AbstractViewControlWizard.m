@@ -17,7 +17,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _wizardManager = [[WizardManagerImpl alloc] init];
+        _wizardManager = [WizardManagerImpl sharedInstance];
         self.title=[self getTitle];
         _dto = [[CarInformationDTO alloc] init];
     }
@@ -43,7 +43,14 @@
 
 - (IBAction)doNextTransition:(id)sender
 {
-    [self doNextTransition];
+    @try {
+        [self doNextTransition];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"error %@",exception);
+    }
+    @finally {
+    }
 }
 
 - (void) fillDto
@@ -83,34 +90,12 @@
 - (NSString*) getTitle
 {
     // Implementacion por default
-    NSMutableString *key = [[NSMutableString alloc] init];
+    NSMutableString *key = [[[NSMutableString alloc] init] autorelease];
     [key appendString:NSStringFromClass([self class])];
     [key appendString:@".title"];
     return NSLocalizedString(key,@"");
 }
 
-/*- (BOOL) validateValues
-{
-    NSMutableArray * errors = [[NSMutableArray alloc] init];
-    //Itero las validaciones por cada propiedad y valido
-    for (NSString * key in self.validators.keyEnumerator)   {
-        const char * propertyName = [key UTF8String];
-        //verifico que la clase tenga la propiedad
-        if  (class_getProperty([self class], propertyName))
-        {
-            //obtengo el valor que tiene el objeto para la propiedad
-            NSString *value = [self valueForKey:[NSString stringWithUTF8String:propertyName]];
-            //obtengo los validadores
-            NSArray * validatorByKey = self.validators[key];
-            for (id<Validator> val in validatorByKey)
-            {
-                NSArray * errorsByProperty = [val isValid:value];
-                [errors addObjectsFromArray:errorsByProperty];
-            }
-        }
-    }
-    return ([errors count]==0);
-}*/
 
 #pragma mark Implementacion metodos View Controller
 - (void)viewDidLoad
@@ -204,13 +189,6 @@
     [tapRecognizer release];
 }
 
-- (void)dealloc
-{
-    [_wizardManager release];
-    //[_validator release];
-    [_dto release];
-    [super dealloc];
-}
 
 - (id)findFirstResponder
 {
@@ -230,6 +208,10 @@
     [[self view] endEditing:YES];
 }
 
-
+- (void)dealloc
+{
+    [_dto release];
+    [super dealloc];
+}
 
 @end

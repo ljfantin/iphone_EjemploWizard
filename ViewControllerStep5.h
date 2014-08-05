@@ -15,7 +15,6 @@
 - (IBAction)addImagePushButton:(id)sender;
 
 @property (assign, nonatomic) IBOutlet UIButton *buttonAddImage;
-@property (assign, nonatomic) IBOutlet UIButton *buttonSiguiente;
 @property (assign, nonatomic) IBOutlet UICollectionView *collectionViewGallery;
 
 

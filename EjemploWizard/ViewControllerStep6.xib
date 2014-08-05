@@ -7,8 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerStep6">
             <connections>
-                <outlet property="botonAceptar" destination="hPi-6H-HYA" id="DLM-BL-Mcu"/>
-                <outlet property="botonCancelar" destination="eQo-xa-Nvw" id="7Zr-8C-fmP"/>
+                <outlet property="buttonSiguiente" destination="hPi-6H-HYA" id="0gV-oz-sW2"/>
                 <outlet property="scroll" destination="nEo-MX-cPd" id="k0f-X3-V1k"/>
                 <outlet property="tableView" destination="uDH-U0-XrX" id="OEk-px-BEc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

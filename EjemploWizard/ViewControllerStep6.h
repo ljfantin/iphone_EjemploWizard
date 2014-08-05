@@ -19,9 +19,5 @@
 
 - (IBAction)pageChanged:(id)sender;
 @property (assign, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (assign, nonatomic) IBOutlet UIButton *buttonAceptar;
-@property (assign, nonatomic) IBOutlet UIButton *buttonCancelar;
-@property (assign, nonatomic) IBOutlet UIButton *botonAceptar;
-@property (assign, nonatomic) IBOutlet UIButton *botonCancelar;
 
 @end
