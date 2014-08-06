@@ -39,6 +39,11 @@
     
     //seteo el header
     self.tableView.tableHeaderView=header;
+    
+    //seteo el footer
+    UIView * footer = [[[NSBundle mainBundle] loadNibNamed:@"TableViewFooter" owner:self options:nil] firstObject];
+     //seteo el footer
+     self.tableView.tableFooterView = footer;
 }
 
 - (void) fillView
@@ -53,12 +58,18 @@
     [self.values setObject:self.dto.precio forKey:@"Precio"];
 }
 
-
-/*- (void)viewWillDisappear:(BOOL)animated
+- (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.tableView setContentOffset:CGPointMake(0, 0) animated: YES];
-}*/
+    //[self.tableView setContentOffset:CGPointMake(0, 0)];
+    //[self.scrollViewGallery setContentOffset:CGPointMake(0, 0)];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    //Si no pongo esto pincha
+    self.tableView.contentOffset = CGPointMake(0, 0);
+}
 
 - (IBAction)doNextTransition:(id)sender {
     [self.dto reset];

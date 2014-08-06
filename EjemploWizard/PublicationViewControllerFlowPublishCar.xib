@@ -6,7 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PublicationViewControllerFlowPublishCar">
             <connections>
-                <outlet property="buttonSiguiente" destination="hPi-6H-HYA" id="0gV-oz-sW2"/>
                 <outlet property="tableView" destination="uDH-U0-XrX" id="OEk-px-BEc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="rAe-hf-4kA"/>
             </connections>
@@ -16,54 +15,19 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" directionalLockEnabled="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="190" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="uDH-U0-XrX">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="359"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" directionalLockEnabled="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="190" sectionFooterHeight="130" translatesAutoresizingMaskIntoConstraints="NO" id="uDH-U0-XrX">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="21m-f9-rYK"/>
                         <outlet property="delegate" destination="-1" id="inN-he-G0v"/>
                     </connections>
                 </tableView>
-                <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2T-pA-SoO">
-                    <rect key="frame" x="0.0" y="340" width="320" height="96"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPi-6H-HYA" customClass="UIButtonCopado">
-                            <rect key="frame" x="36" y="16" width="249" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Publicar">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="doNextTransition:" destination="-1" eventType="touchUpInside" id="Rxo-UK-u9o"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQo-xa-Nvw" customClass="UIButtonCopado">
-                            <rect key="frame" x="36" y="54" width="249" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Cancelar">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="pushButtonCancelar:" destination="-1" eventType="touchUpInside" id="Sdh-JW-aGZ"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="centerX" secondItem="hPi-6H-HYA" secondAttribute="centerX" constant="-0.5" id="7Mh-6B-WXp"/>
-                        <constraint firstAttribute="centerY" secondItem="hPi-6H-HYA" secondAttribute="centerY" constant="17" id="8fF-b2-8LA"/>
-                        <constraint firstAttribute="centerX" secondItem="eQo-xa-Nvw" secondAttribute="centerX" constant="-0.5" id="B52-zh-fCh"/>
-                        <constraint firstAttribute="centerY" secondItem="eQo-xa-Nvw" secondAttribute="centerY" constant="-16" id="lk3-mc-BrW"/>
-                    </constraints>
-                </view>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="a2T-pA-SoO" secondAttribute="bottom" id="3vg-7O-Meb"/>
-                <constraint firstItem="a2T-pA-SoO" firstAttribute="top" secondItem="uDH-U0-XrX" secondAttribute="bottom" id="Cpx-uQ-uuh"/>
-                <constraint firstAttribute="trailing" secondItem="a2T-pA-SoO" secondAttribute="trailing" id="Kiu-TB-Da6"/>
-                <constraint firstItem="uDH-U0-XrX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eLy-fe-RaE"/>
-                <constraint firstItem="a2T-pA-SoO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mV4-r7-FpG"/>
+                <constraint firstItem="uDH-U0-XrX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Hjj-yX-qGp"/>
+                <constraint firstItem="uDH-U0-XrX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lOY-AL-Ug0"/>
+                <constraint firstAttribute="trailing" secondItem="uDH-U0-XrX" secondAttribute="trailing" id="pv6-Ky-3ko"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
