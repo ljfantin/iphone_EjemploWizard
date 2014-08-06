@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
-#import "AbstractViewControlWizard.h"
+#import "AbstractViewControllerFlowPublishCar.h"
 
-@interface ViewControllerStep5 : AbstractViewControlWizard<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDataSource, UICollectionViewDelegate>
+@interface PicturesViewControllerFlowPublishCar : AbstractViewControllerFlowPublishCar<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDataSource, UICollectionViewDelegate>
 
 - (IBAction)addImagePushButton:(id)sender;
 

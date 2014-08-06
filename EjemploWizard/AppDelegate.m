@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewControllerStep1.h"
+#import "WelcomeViewControllerFlowPublishCar.h"
 
 @implementation AppDelegate
 
@@ -17,7 +17,7 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
     //Creo el viewController del paso 1 del wizard
-    ViewControllerStep1 * step1 = [[ViewControllerStep1 alloc] initWithNibName:nil
+    WelcomeViewControllerFlowPublishCar * step1 = [[WelcomeViewControllerFlowPublishCar alloc] initWithNibName:nil
                                                                 bundle:nil];
     
     //Creo un navigationcontrolles con el paso 1

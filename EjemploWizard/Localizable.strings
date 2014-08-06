@@ -1,0 +1,20 @@
+
+/*
+  Localizable.strings.strings
+  EjemploWizard
+
+  Created by Leandro Fantin on 06/08/14.
+  Copyright (c) 2014 mercadolibre. All rights reserved.
+*/
+
+"WelcomeViewControllerFlowPublishCar.title" = "Bienvenido";
+
+"TitleSubtitlePriceViewControllerFlowPublishCar.title" = "Publicar";
+
+"KilometerViewControllerFlowPublishCar.title" = "Publicar";
+
+"PicturesViewControllerFlowPublishCar.title" = "Publicar";
+
+"DescriptionViewControllerFlowPublishCar.title" = "Publicar";
+
+"PublicationViewControllerFlowPublishCar.title" = "Publicacion";

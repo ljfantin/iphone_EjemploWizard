@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
-#import "AbstractViewControlWizard.h"
+#import "AbstractViewControllerFlowPublishCar.h"
 
-@interface ViewControllerStep6 : AbstractViewControlWizard<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@interface PublicationViewControllerFlowPublishCar : AbstractViewControllerFlowPublishCar<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 - (IBAction)pushButtonCancelar:(id)sender;
 

@@ -4,10 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerStep6">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PublicationViewControllerFlowPublishCar">
             <connections>
                 <outlet property="pageControl" destination="Tje-6y-OrV" id="IKN-0s-KFQ"/>
-                <outlet property="scroll" destination="hWb-HI-4sr" id="msU-hn-yWr"/>
                 <outlet property="scrollViewGallery" destination="hWb-HI-4sr" id="MAs-fS-FD7"/>
             </connections>
         </placeholder>

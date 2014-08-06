@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "ViewControllerStep4.h"
-#import "ViewControllerStep5.h"
+#import "DescriptionViewControllerFlowPublishCar.h"
+#import "PicturesViewControllerFlowPublishCar.h"
 #import "UIButton+Copado.h"
 
-@interface ViewControllerStep4 ()
+@interface DescriptionViewControllerFlowPublishCar ()
 @end
 
-@implementation ViewControllerStep4
+@implementation DescriptionViewControllerFlowPublishCar
 
 
 - (void) fillDto

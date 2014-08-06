@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
-#import "AbstractViewControlWizard.h"
+#import "AbstractViewControllerFlowPublishCar.h"
 
-@interface ViewControllerStep1 : AbstractViewControlWizard
+@interface WelcomeViewControllerFlowPublishCar : AbstractViewControllerFlowPublishCar
 
 @end

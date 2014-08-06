@@ -6,21 +6,21 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "ViewControllerStep3.h"
-#import "ViewControllerStep4.h"
+#import "KilometerViewControllerFlowPublishCar.h"
+#import "DescriptionViewControllerFlowPublishCar.h"
 #import "UIButton+Copado.h"
 #import "NSString+Utils.h"
 #import "ValidatorNotEmpty.h"
 #import "ValidatorIsNumber.h"
 
-@interface ViewControllerStep3 ()
+@interface KilometerViewControllerFlowPublishCar ()
 
 @property (nonatomic,retain) ValidatorIsNumber * validatorIsNumber;
 @property (nonatomic,retain) ValidatorNotEmpty * validatorNotEmpty;
 
 @end
 
-@implementation ViewControllerStep3
+@implementation KilometerViewControllerFlowPublishCar
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,6 +46,7 @@
 - (IBAction)handleChangeKilometraje:(id)sender
 {
     self.buttonSiguiente.enabled = [self validateChange];
+    [self updateButonSiguienteState];
 }
 
 #pragma mark Implementacion

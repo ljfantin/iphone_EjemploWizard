@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerStep6">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PublicationViewControllerFlowPublishCar">
             <connections>
                 <outlet property="buttonAceptar" destination="RDa-hH-5MG" id="Krz-K9-Wcl"/>
                 <outlet property="buttonCancelar" destination="c7s-ky-Fqo" id="qr1-wf-JTT"/>

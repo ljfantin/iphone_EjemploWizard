@@ -28,8 +28,8 @@
     [layer setMasksToBounds:YES];
     [layer setCornerRadius:5.0f];
     
-    [layer setBorderWidth:2.0f];
-    [layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [layer setBorderWidth:0.1f];
+    //[layer setBorderColor:[[UIColor grayColor] CGColor]];
     [super drawRect:rect];
 }
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CarInformationDTO.h"
 
-@protocol ViewControlWizard <NSObject>
+@protocol FlowPublishCar <NSObject>
 
 - (void) fillDto;
 - (void) fillView;

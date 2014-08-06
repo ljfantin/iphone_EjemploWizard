@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "AbstractViewControlWizard.h"
+#import "AbstractViewControllerFlowPublishCar.h"
 #import "WizardManagerImpl.h"
 #import "Validator.h"
 #import <objc/message.h>
 
-@implementation AbstractViewControlWizard
+@implementation AbstractViewControllerFlowPublishCar
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +28,7 @@
 - (void) doNextTransition;
 {
     if ([self validate])    {
-        AbstractViewControlWizard * nextController = [self.wizardManager nextController:NSStringFromClass([self class])];
+        AbstractViewControllerFlowPublishCar * nextController = [self.wizardManager nextController:NSStringFromClass([self class])];
     
         //obtengo el dto con los valores colocados
         [self fillDto];
@@ -39,6 +39,7 @@
         //pusheo el controller
         [self.navigationController pushViewController:nextController animated:YES];
     }
+    [self updateButonSiguienteState];
 }
 
 - (IBAction)doNextTransition:(id)sender
@@ -111,6 +112,7 @@
     [self fillView];
     [self initScroll];
     self.buttonSiguiente.enabled = [self validate];
+    [self updateButonSiguienteState];
 }
 
 
@@ -212,6 +214,15 @@
 {
     [_dto release];
     [super dealloc];
+}
+
+- (void) updateButonSiguienteState{
+    
+    if (self.buttonSiguiente.enabled)   {
+        self.buttonSiguiente.alpha = 1;
+    }   else {
+        self.buttonSiguiente.alpha = 0.5;
+    }
 }
 
 @end

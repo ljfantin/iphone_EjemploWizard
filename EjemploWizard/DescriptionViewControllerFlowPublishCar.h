@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
 #import "UiTextViewCopado.h"
-#import "AbstractViewControlWizard.h"
+#import "AbstractViewControllerFlowPublishCar.h"
 
-@interface ViewControllerStep4 : AbstractViewControlWizard<UITextViewDelegate,UITextFieldDelegate>
+@interface DescriptionViewControllerFlowPublishCar : AbstractViewControllerFlowPublishCar<UITextViewDelegate,UITextFieldDelegate>
 
 @property (assign, nonatomic) IBOutlet UiTextViewCopado *textViewDescripcion;
 

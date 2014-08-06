@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-@class AbstractViewControlWizard;
+@class AbstractViewControllerFlowPublishCar;
 
 @protocol WizardManager <NSObject>
 
-- (AbstractViewControlWizard *) nextController:(NSString *) from;
+- (AbstractViewControllerFlowPublishCar *) nextController:(NSString *) from;
 
 // Se puede hacer esto en objective c?
 //+ (instancetype)sharedInstance;

@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
-#import "AbstractViewControlWizard.h"
+#import "AbstractViewControllerFlowPublishCar.h"
 
 
-@interface ViewControllerStep2 : AbstractViewControlWizard<UITextFieldDelegate>
+@interface TitleSubtitlePriceViewControllerFlowPublishCar : AbstractViewControllerFlowPublishCar<UITextFieldDelegate>
 
 
 //textfields

@@ -6,22 +6,22 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "ViewControllerStep2.h"
-#import "ViewControllerStep3.h"
+#import "TitleSubtitlePriceViewControllerFlowPublishCar.h"
+#import "KilometerViewControllerFlowPublishCar.h"
 #import "UIButton+Copado.h"
 #import "NSString+Utils.h"
 #import "ValidatorIsNumber.h"
 #import "ValidatorNotEmpty.h"
 
 
-@interface ViewControllerStep2 ()
+@interface TitleSubtitlePriceViewControllerFlowPublishCar ()
 
 @property (nonatomic,retain) ValidatorIsNumber * validatorIsNumber;
 @property (nonatomic,retain) ValidatorNotEmpty * validatorNotEmpty;
 
 @end
 
-@implementation ViewControllerStep2
+@implementation TitleSubtitlePriceViewControllerFlowPublishCar
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,16 +52,19 @@
 - (IBAction)textFieldChangeSubtitulo:(id)sender {
     
     self.buttonSiguiente.enabled = [self validateChange];
+    [self updateButonSiguienteState];
 }
 
 - (IBAction)textFieldChangeTitulo:(id)sender {
     
     self.buttonSiguiente.enabled = [self validateChange];
+    [self updateButonSiguienteState];
 }
 
 - (IBAction)textFieldChangePrecio:(id)sender {
     
     self.buttonSiguiente.enabled = [self validateChange];
+    [self updateButonSiguienteState];
 }
 
 //
@@ -99,5 +102,8 @@
     //que valide menos cosas
     return [self validate];
 }
+
+
+
 
 @end

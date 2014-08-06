@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CarInformationDTO.h"
-#import "AbstractViewControlWizard.h"
+#import "AbstractViewControllerFlowPublishCar.h"
 
-@interface ViewControllerStep3 : AbstractViewControlWizard<UITextFieldDelegate>
+@interface KilometerViewControllerFlowPublishCar : AbstractViewControllerFlowPublishCar<UITextFieldDelegate>
 
 @property (assign, nonatomic) IBOutlet UITextField *textfieldKilometraje;
 

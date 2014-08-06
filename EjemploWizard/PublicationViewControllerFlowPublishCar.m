@@ -6,19 +6,19 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "ViewControllerStep6.h"
-#import "ViewControllerStep2.h"
+#import "PublicationViewControllerFlowPublishCar.h"
+#import "TitleSubtitlePriceViewControllerFlowPublishCar.h"
 #import "UIButton+Copado.h"
 #import "NSString+Utils.h"
 #import "TableViewHeader.h"
 
 #define COUNT_SECTIONS 1
 
-@interface ViewControllerStep6 ()
+@interface PublicationViewControllerFlowPublishCar ()
 @property NSMutableDictionary * values;
 @end
 
-@implementation ViewControllerStep6
+@implementation PublicationViewControllerFlowPublishCar
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -54,11 +54,11 @@
 }
 
 
-- (void)viewWillDisappear:(BOOL)animated
+/*- (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     [self.tableView setContentOffset:CGPointMake(0, 0) animated: YES];
-}
+}*/
 
 - (IBAction)doNextTransition:(id)sender {
     [self.dto reset];
@@ -78,7 +78,7 @@
 - (IBAction)pushButtonCancelar:(id)sender {
     NSArray * controllers = self.navigationController.viewControllers;
     for (UIViewController * viewController in controllers) {
-        if ([viewController isKindOfClass:[ViewControllerStep2 class]]) {
+        if ([viewController isKindOfClass:[TitleSubtitlePriceViewControllerFlowPublishCar class]]) {
             [self.navigationController popToViewController:viewController animated:YES];
         }
     }
@@ -121,4 +121,5 @@
 - (void)dealloc {
     [super dealloc];
 }
+
 @end

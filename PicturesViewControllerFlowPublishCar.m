@@ -6,18 +6,17 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "ViewControllerStep5.h"
+#import "PicturesViewControllerFlowPublishCar.h"
 #import "UIButton+Copado.h"
 #import "UIPhotoCollectionViewCell.h"
-#import "ViewControllerStep6.h"
 #import "FooterGallery.h"
 #import "ApplicationPropertiesImpl.h"
 
-@interface ViewControllerStep5 ()
+@interface PicturesViewControllerFlowPublishCar ()
 @property (nonatomic) NSInteger cantMaxFotos;
 @end
 
-@implementation ViewControllerStep5
+@implementation PicturesViewControllerFlowPublishCar
 
 
 - (void)viewDidLoad

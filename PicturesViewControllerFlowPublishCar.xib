@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerStep5">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PicturesViewControllerFlowPublishCar">
             <connections>
                 <outlet property="buttonAddImage" destination="cDp-mK-iqN" id="VZD-hx-bJJ"/>
                 <outlet property="buttonSiguiente" destination="EDP-eb-pwS" id="dFK-q3-19m"/>
@@ -22,6 +22,22 @@
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
+                        <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" id="YJd-Vw-VH7">
+                            <rect key="frame" x="35" y="58" width="250" height="269"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="xrz-Hx-gPy">
+                                <size key="itemSize" width="80" height="80"/>
+                                <size key="headerReferenceSize" width="50" height="50"/>
+                                <size key="footerReferenceSize" width="50" height="50"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <cells/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="dkc-mp-pYl"/>
+                                <outlet property="delegate" destination="-1" id="nHb-Aa-tSs"/>
+                            </connections>
+                        </collectionView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cDp-mK-iqN" customClass="UIButtonCopado">
                             <rect key="frame" x="35" y="347" width="250" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -42,22 +58,6 @@
                                 <action selector="doNextTransition:" destination="-1" eventType="touchUpInside" id="gtO-HI-djL"/>
                             </connections>
                         </button>
-                        <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" id="YJd-Vw-VH7">
-                            <rect key="frame" x="35" y="58" width="250" height="269"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="xrz-Hx-gPy">
-                                <size key="itemSize" width="80" height="80"/>
-                                <size key="headerReferenceSize" width="50" height="50"/>
-                                <size key="footerReferenceSize" width="50" height="50"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                            <cells/>
-                            <connections>
-                                <outlet property="dataSource" destination="-1" id="dkc-mp-pYl"/>
-                                <outlet property="delegate" destination="-1" id="nHb-Aa-tSs"/>
-                            </connections>
-                        </collectionView>
                     </subviews>
                     <connections>
                         <outlet property="delegate" destination="-1" id="51H-VR-jc7"/>

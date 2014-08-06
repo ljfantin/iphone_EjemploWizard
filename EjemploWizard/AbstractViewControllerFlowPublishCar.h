@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ViewControlWizard.h"
+#import "FlowPublishCar.h"
 #import "WizardManager.h"
 
 
-@interface AbstractViewControlWizard : UIViewController<ViewControlWizard,UIScrollViewDelegate>
+@interface AbstractViewControllerFlowPublishCar : UIViewController<FlowPublishCar,UIScrollViewDelegate>
 
 @property (retain, nonatomic) CarInformationDTO * dto;
 
@@ -28,5 +28,6 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
 
+- (void) updateButonSiguienteState;
 
 @end
