@@ -35,8 +35,11 @@
     [super viewWillAppear:animated];
     
     //desabilito el boton si seleccione la cantidad maxima de fotos
-    if ([self.dto.gallery count]==self.cantMaxFotos)
-        self.buttonAddImage.enabled = false;
+    self.buttonAddImage.enabled = ([self.dto.gallery count]<self.cantMaxFotos);
+    [self updateButonAddImageState];
+    
+    self.buttonSiguiente.enabled = ([self.dto.gallery count]>0);
+    [self updateButonSiguienteState];
 }
 
 -(void)setupCollectionView {
@@ -134,8 +137,11 @@
         } completion:nil];
     }
     //desabilito el boton si seleccione la cantidad maxima de fotos
-    if ([self.dto.gallery count]==self.cantMaxFotos)
-        self.buttonAddImage.enabled = false;
+    self.buttonAddImage.enabled = ([self.dto.gallery count]<self.cantMaxFotos);
+    [self updateButonAddImageState];
+
+    self.buttonSiguiente.enabled = ([self.dto.gallery count]>0);
+    [self updateButonSiguienteState];
         
     [self.collectionViewGallery reloadSections:[NSIndexSet indexSetWithIndex:0]];
 }
@@ -200,6 +206,15 @@
         }
     }
     return nil;
+}
+
+- (void) updateButonAddImageState{
+    
+    if (self.buttonSiguiente.enabled)   {
+        self.buttonSiguiente.alpha = 1;
+    }   else {
+        self.buttonSiguiente.alpha = 0.5;
+    }
 }
 
 
